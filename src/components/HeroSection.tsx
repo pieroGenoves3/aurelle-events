@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 const HeroSection = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
   
   const heroTexts = [
     {
@@ -29,7 +30,11 @@ const HeroSection = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTextIndex((prevIndex) => (prevIndex + 1) % heroTexts.length);
+      setIsAnimating(true);
+      setTimeout(() => {
+        setCurrentTextIndex((prevIndex) => (prevIndex + 1) % heroTexts.length);
+        setIsAnimating(false);
+      }, 500); // Half of the transition duration
     }, 4000); // Change every 4 seconds
 
     return () => clearInterval(interval);
@@ -59,10 +64,13 @@ const HeroSection = () => {
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tighter text-white mb-6 drop-shadow-2xl">
           {heroTexts[currentTextIndex].title}
         </h1>
-        <div className="relative h-32 md:h-24 flex items-center justify-center">
+        <div className="relative h-32 md:h-24 flex items-center justify-center overflow-hidden">
           <p 
-            key={currentTextIndex}
-            className="text-xl md:text-2xl text-white/95 font-light max-w-2xl mx-auto leading-relaxed drop-shadow-lg animate-fade-in absolute inset-0 flex items-center justify-center"
+            className={`text-xl md:text-2xl text-white/95 font-light max-w-2xl mx-auto leading-relaxed drop-shadow-lg absolute inset-0 flex items-center justify-center transition-all duration-1000 ease-in-out ${
+              isAnimating 
+                ? 'opacity-0 transform translate-y-4 blur-sm' 
+                : 'opacity-100 transform translate-y-0 blur-none'
+            }`}
           >
             {heroTexts[currentTextIndex].subtitle}
           </p>
