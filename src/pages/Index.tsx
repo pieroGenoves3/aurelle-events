@@ -46,7 +46,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div ref={pageRef} className="min-h-screen bg-gradient-to-br from-background to-secondary/50">
+    <div ref={pageRef} className="min-h-screen bg-gradient-to-br from-white via-amber-50/30 to-yellow-100/40">
       <Navigation />
       <HeroSection />
       <EventsSection />
