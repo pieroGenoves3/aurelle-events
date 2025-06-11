@@ -45,6 +45,11 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Luxury gradient colors */
+    --luxury-white: 255 255 255;
+    --luxury-gold-light: 254 252 232;
+    --luxury-gold-medium: 251 243 189;
   }
 
   .dark {
@@ -105,6 +110,18 @@
 }
 
 @layer components {
+  .luxury-gradient {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      135deg,
+      rgb(var(--luxury-white)) 0%,
+      rgb(var(--luxury-gold-light)) 40%,
+      rgb(var(--luxury-gold-medium)) 100%
+    );
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
   .glass-card {
     @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-lg;
   }
