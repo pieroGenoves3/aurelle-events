@@ -42,7 +42,7 @@ const Navigation = () => {
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="text-2xl font-light tracking-tight text-foreground">
+            <div className="text-2xl font-medium tracking-tight text-foreground">
               Aurelle Events
             </div>
 
@@ -52,7 +52,7 @@ const Navigation = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-foreground/80 hover:text-foreground transition-colors duration-200 font-light tracking-wide"
+                  className="text-foreground/80 hover:text-foreground transition-all duration-200 font-medium tracking-wide hover:scale-105"
                 >
                   {item.name}
                 </button>
@@ -81,7 +81,7 @@ const Navigation = () => {
             isMobileMenuOpen ? 'animate-slide-in-right' : 'animate-slide-out-right'
           }`}>
             <div className="flex justify-between items-center p-6 border-b border-white/20">
-              <span className="text-xl font-light tracking-tight">Menu</span>
+              <span className="text-xl font-medium tracking-tight">Menu</span>
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-foreground"
@@ -94,7 +94,7 @@ const Navigation = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-left text-lg text-foreground/80 hover:text-foreground transition-colors duration-200 font-light tracking-wide py-2"
+                  className="text-left text-lg text-foreground/80 hover:text-foreground transition-colors duration-200 font-medium tracking-wide py-2"
                 >
                   {item.name}
                 </button>

@@ -6,25 +6,25 @@ const TestimonialsSection = () => {
 
   const testimonials = [
     {
-      quote: "Aurelle Events transformed our wedding into a fairytale beyond our wildest dreams.",
+      quote: "Aurelle Events transformed our wedding into a fairytale beyond our wildest dreams. Every detail was perfection.",
       author: "Sofia & Alessandro Benedetti",
       result: "300 guests, Villa San Martino, Tuscany",
       image: "https://images.unsplash.com/photo-1494790108755-2616c7e18b2a?auto=format&fit=crop&w=150&h=150&q=80"
     },
     {
-      quote: "The attention to detail and seamless execution made our product launch unforgettable.",
+      quote: "The attention to detail and seamless execution made our product launch unforgettable. Truly exceptional service.",
       author: "Charlotte Dubois, CEO Maison Lumière",
       result: "€2.5M in pre-orders within 48 hours",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&h=150&q=80"
     },
     {
-      quote: "Every element was perfect. Our guests are still talking about the evening.",
+      quote: "Every element was perfect. Our guests are still talking about the evening months later. Simply extraordinary.",
       author: "Lord James Wellington",
       result: "Annual charity gala, £850K raised",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&h=150&q=80"
     },
     {
-      quote: "Aurelle Events elevated our brand's presence to new heights of sophistication.",
+      quote: "Aurelle Events elevated our brand's presence to new heights of sophistication and elegance. Remarkable work.",
       author: "Isabella Rodriguez, Fashion Director",
       result: "Paris Fashion Week afterparty, 400 VIP guests",
       image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&h=150&q=80"
