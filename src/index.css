@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -111,14 +110,7 @@
 
 @layer components {
   .luxury-gradient {
-    background: rgb(255, 255, 255);
-    background: linear-gradient(
-      135deg,
-      rgb(var(--luxury-white)) 0%,
-      rgb(var(--luxury-gold-light)) 40%,
-      rgb(var(--luxury-gold-medium)) 100%
-    );
-    background-attachment: fixed;
+    background: rgb(var(--luxury-white));
     min-height: 100vh;
   }
 
