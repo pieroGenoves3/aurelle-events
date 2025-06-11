@@ -1,7 +1,40 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const HeroSection = () => {
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  
+  const heroTexts = [
+    {
+      language: 'English',
+      title: 'Aurelle Events',
+      subtitle: 'Crafting extraordinary experiences for luxury weddings, corporate events, and haute couture fashion shows'
+    },
+    {
+      language: 'Italiano',
+      title: 'Aurelle Events',
+      subtitle: 'Creando esperienze straordinarie per matrimoni di lusso, eventi aziendali e sfilate di alta moda'
+    },
+    {
+      language: 'Deutsch', 
+      title: 'Aurelle Events',
+      subtitle: 'Außergewöhnliche Erlebnisse für Luxushochzeiten, Firmenevents und Haute-Couture-Modenschauen schaffen'
+    },
+    {
+      language: 'Português',
+      title: 'Aurelle Events',
+      subtitle: 'Criando experiências extraordinárias para casamentos de luxo, eventos corporativos e desfiles de alta costura'
+    }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTextIndex((prevIndex) => (prevIndex + 1) % heroTexts.length);
+    }, 4000); // Change every 4 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   const scrollToEvents = () => {
     const element = document.getElementById('events');
     if (element) {
@@ -24,14 +57,19 @@ const HeroSection = () => {
       {/* Hero Content */}
       <div className="relative z-20 text-center max-w-4xl mx-auto px-4 animate-fade-in-up">
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tighter text-white mb-6 drop-shadow-2xl">
-          Aurelle Events
+          {heroTexts[currentTextIndex].title}
         </h1>
-        <p className="text-xl md:text-2xl text-white/95 font-light mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow-lg">
-          Crafting extraordinary experiences for luxury weddings, corporate events, and haute couture fashion shows
-        </p>
+        <div className="relative h-32 md:h-24 flex items-center justify-center">
+          <p 
+            key={currentTextIndex}
+            className="text-xl md:text-2xl text-white/95 font-light max-w-2xl mx-auto leading-relaxed drop-shadow-lg animate-fade-in absolute inset-0 flex items-center justify-center"
+          >
+            {heroTexts[currentTextIndex].subtitle}
+          </p>
+        </div>
         <button
           onClick={scrollToEvents}
-          className="neumorphic-btn text-lg"
+          className="neumorphic-btn sparkle-btn text-lg mt-8"
         >
           Discover Our Work
         </button>

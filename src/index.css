@@ -167,6 +167,15 @@
     50% { opacity: 1; transform: translate(-50%, -50%) scale(1.2) rotate(180deg); }
   }
 
+  @keyframes fade-in {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s ease-out;
+  }
+
   .scroll-reveal {
     @apply opacity-0 blur-sm translate-y-4 transition-all duration-700;
   }

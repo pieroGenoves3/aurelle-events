@@ -1,10 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [language, setLanguage] = useState('en');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,6 +35,13 @@ const Navigation = () => {
     { name: 'Contact', id: 'contact' }
   ];
 
+  const languages = [
+    { code: 'en', label: 'English', flag: '🇺🇸' },
+    { code: 'it', label: 'Italiano', flag: '🇮🇹' },
+    { code: 'de', label: 'Deutsch', flag: '🇩🇪' },
+    { code: 'pt', label: 'Português', flag: '🇧🇷' }
+  ];
+
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -47,7 +56,7 @@ const Navigation = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden md:flex items-center space-x-8">
               {navigationItems.map((item) => (
                 <button
                   key={item.id}
@@ -57,6 +66,26 @@ const Navigation = () => {
                   {item.name}
                 </button>
               ))}
+              
+              {/* Language Selector */}
+              <div className="flex items-center space-x-2">
+                <Globe size={16} className="text-foreground/60" />
+                <Select value={language} onValueChange={setLanguage}>
+                  <SelectTrigger className="w-32 h-8 text-sm border-none bg-transparent text-foreground/80 hover:text-foreground">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {languages.map((lang) => (
+                      <SelectItem key={lang.code} value={lang.code}>
+                        <span className="flex items-center space-x-2">
+                          <span>{lang.flag}</span>
+                          <span>{lang.label}</span>
+                        </span>
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
 
             {/* Mobile Menu Button */}
@@ -99,6 +128,29 @@ const Navigation = () => {
                   {item.name}
                 </button>
               ))}
+              
+              {/* Mobile Language Selector */}
+              <div className="pt-4 border-t border-white/20">
+                <div className="flex items-center space-x-2 mb-3">
+                  <Globe size={16} className="text-foreground/60" />
+                  <span className="text-sm text-foreground/60">Language</span>
+                </div>
+                <Select value={language} onValueChange={setLanguage}>
+                  <SelectTrigger className="w-full">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {languages.map((lang) => (
+                      <SelectItem key={lang.code} value={lang.code}>
+                        <span className="flex items-center space-x-2">
+                          <span>{lang.flag}</span>
+                          <span>{lang.label}</span>
+                        </span>
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
           </div>
         </div>
