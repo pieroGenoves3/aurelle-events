@@ -32,7 +32,7 @@ const MissionSection = () => {
         <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-8">
           Our Mission
         </h2>
-        <div className="space-y-8 text-lg md:text-xl leading-relaxed text-muted-foreground">
+        <div className="space-y-8 text-lg md:text-xl leading-relaxed text-foreground/80">
           <p>
             At Aurelle Events, we believe that life's most precious moments deserve to be celebrated 
             with unparalleled beauty and sophistication. Our mission is to transform your dreams into 
@@ -81,7 +81,7 @@ const MissionSection = () => {
                       </h3>
                       
                       {/* Description */}
-                      <p className="text-sm text-muted-foreground leading-relaxed text-center">
+                      <p className="text-sm text-foreground/70 leading-relaxed text-center">
                         {value.description}
                       </p>
 
