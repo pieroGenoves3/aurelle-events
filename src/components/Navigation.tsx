@@ -69,6 +69,7 @@ const Navigation = () => {
                         ? 'opacity-0 rotate-180 scale-75' 
                         : 'opacity-100 rotate-0 scale-100'
                     }`}
+                    style={{ display: isMobileMenuOpen ? 'none' : 'block' }}
                   />
                   <X 
                     size={24} 
@@ -77,6 +78,7 @@ const Navigation = () => {
                         ? 'opacity-100 rotate-0 scale-100' 
                         : 'opacity-0 rotate-180 scale-75'
                     }`}
+                    style={{ display: isMobileMenuOpen ? 'block' : 'none' }}
                   />
                 </div>
               </button>
@@ -129,11 +131,11 @@ const Navigation = () => {
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-50 md:hidden">
           <div 
-            className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/30 backdrop-blur-sm transition-opacity duration-200"
             onClick={() => setIsMobileMenuOpen(false)}
           />
-          <div className={`absolute right-0 top-0 h-full w-80 bg-white border-l border-white/20 shadow-2xl transform transition-transform duration-300 ${
-            isMobileMenuOpen ? 'animate-slide-in-right' : 'animate-slide-out-right'
+          <div className={`absolute right-0 top-0 h-full w-80 bg-white border-l border-white/20 shadow-lg transform transition-transform duration-200 ease-out ${
+            isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}>
             <div className="flex justify-between items-center p-6 border-b border-white/20">
               <span className="text-xl font-medium tracking-tight">Menu</span>

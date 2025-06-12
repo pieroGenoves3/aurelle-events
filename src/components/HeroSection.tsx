@@ -64,13 +64,13 @@ const HeroSection = () => {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-20 text-center max-w-4xl mx-auto px-4 animate-fade-in-up">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tighter text-white mb-6 drop-shadow-2xl">
+      <div className="relative z-20 text-center max-w-4xl mx-auto px-4 animate-fade-in-up flex flex-col items-center justify-center min-h-screen pt-16">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-light tracking-tighter text-white mb-4 sm:mb-6 drop-shadow-2xl">
           {heroTexts[currentTextIndex].title}
         </h1>
-        <div className="relative h-32 md:h-24 flex items-center justify-center overflow-hidden">
+        <div className="relative h-40 sm:h-32 md:h-24 flex items-center justify-center overflow-hidden mb-4 sm:mb-6 md:mb-8">
           <p 
-            className={`text-xl md:text-2xl text-white/90 font-light max-w-2xl mx-auto leading-relaxed drop-shadow-lg absolute inset-0 flex items-center justify-center transition-all duration-1000 ease-in-out ${
+            className={`text-lg sm:text-xl md:text-2xl text-white/90 font-light max-w-2xl mx-auto leading-relaxed drop-shadow-lg absolute inset-0 flex items-center justify-center transition-all duration-1000 ease-in-out px-4 ${
               isAnimating 
                 ? 'opacity-0 transform translate-y-4 blur-sm' 
                 : 'opacity-100 transform translate-y-0 blur-none'
@@ -81,7 +81,7 @@ const HeroSection = () => {
         </div>
         <button
           onClick={scrollToEvents}
-          className="neumorphic-btn sparkle-btn text-lg mt-8"
+          className="neumorphic-btn sparkle-btn text-lg"
         >
           Discover Our Work
         </button>
