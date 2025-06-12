@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -95,8 +96,28 @@
     @apply border-border;
   }
 
+  html {
+    background: #ffffff;
+    background-color: #ffffff;
+  }
+
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply font-inter;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: rgb(41, 37, 36);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  #root {
+    background: #ffffff;
+    background-color: #ffffff;
+    min-height: 100vh;
+    width: 100%;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -106,12 +127,30 @@
   p, span, div {
     @apply opacity-80 font-light;
   }
+
+  /* Mobile-specific fixes */
+  @media screen and (max-width: 768px) {
+    body {
+      background: #ffffff !important;
+      background-color: #ffffff !important;
+      -webkit-background-size: cover;
+      background-size: cover;
+      background-attachment: scroll;
+    }
+    
+    #root {
+      background: #ffffff !important;
+      background-color: #ffffff !important;
+    }
+  }
 }
 
 @layer components {
   .luxury-gradient {
-    background: rgb(var(--luxury-white));
+    background: #ffffff;
+    background-color: #ffffff;
     min-height: 100vh;
+    width: 100%;
   }
 
   .glass-card {

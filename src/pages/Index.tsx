@@ -46,7 +46,14 @@ const Index = () => {
   }, []);
 
   return (
-    <div ref={pageRef} className="min-h-screen luxury-gradient">
+    <div 
+      ref={pageRef} 
+      className="min-h-screen luxury-gradient"
+      style={{ 
+        backgroundColor: '#ffffff',
+        background: '#ffffff'
+      }}
+    >
       <Navigation />
       <HeroSection />
       <EventsSection />
