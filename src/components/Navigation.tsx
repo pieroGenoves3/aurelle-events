@@ -50,8 +50,40 @@ const Navigation = () => {
           : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="text-2xl font-medium tracking-tight text-foreground">
+          <div className="flex justify-between items-center h-16 md:justify-between">
+            {/* Mobile Layout - Center aligned title and hamburger */}
+            <div className="flex md:hidden items-center justify-between w-full">
+              <div></div> {/* Empty spacer */}
+              <div className="text-2xl font-medium tracking-tight text-foreground">
+                Aurelle Events
+              </div>
+              <button
+                className="text-foreground relative w-6 h-6 flex items-center justify-center"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              >
+                <div className="relative">
+                  <Menu 
+                    size={24} 
+                    className={`absolute transition-all duration-300 ease-in-out ${
+                      isMobileMenuOpen 
+                        ? 'opacity-0 rotate-180 scale-75' 
+                        : 'opacity-100 rotate-0 scale-100'
+                    }`}
+                  />
+                  <X 
+                    size={24} 
+                    className={`absolute transition-all duration-300 ease-in-out ${
+                      isMobileMenuOpen 
+                        ? 'opacity-100 rotate-0 scale-100' 
+                        : 'opacity-0 rotate-180 scale-75'
+                    }`}
+                  />
+                </div>
+              </button>
+            </div>
+
+            {/* Desktop Layout */}
+            <div className="hidden md:block text-2xl font-medium tracking-tight text-foreground">
               Aurelle Events
             </div>
 
@@ -89,31 +121,6 @@ const Navigation = () => {
                 </SelectContent>
               </Select>
             </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden text-foreground relative w-6 h-6 flex items-center justify-center"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              <div className="relative">
-                <Menu 
-                  size={24} 
-                  className={`absolute transition-all duration-300 ease-in-out ${
-                    isMobileMenuOpen 
-                      ? 'opacity-0 rotate-180 scale-75' 
-                      : 'opacity-100 rotate-0 scale-100'
-                  }`}
-                />
-                <X 
-                  size={24} 
-                  className={`absolute transition-all duration-300 ease-in-out ${
-                    isMobileMenuOpen 
-                      ? 'opacity-100 rotate-0 scale-100' 
-                      : 'opacity-0 rotate-180 scale-75'
-                  }`}
-                />
-              </div>
-            </button>
           </div>
         </div>
       </nav>
@@ -125,10 +132,10 @@ const Navigation = () => {
             className="absolute inset-0 bg-black/70 backdrop-blur-sm"
             onClick={() => setIsMobileMenuOpen(false)}
           />
-          <div className={`absolute right-0 top-0 h-full w-80 backdrop-blur-lg border-l border-white/20 shadow-2xl transform transition-transform duration-300 ${
+          <div className={`absolute right-0 top-0 h-full w-80 border-l border-white/20 shadow-2xl transform transition-transform duration-300 ${
             isMobileMenuOpen ? 'animate-slide-in-right' : 'animate-slide-out-right'
           }`}
-          style={{ backgroundColor: 'rgba(255, 255, 255, 0.95)' }}
+          style={{ backgroundColor: 'rgb(255, 255, 255)' }}
           >
             <div className="flex justify-between items-center p-6 border-b border-white/20">
               <span className="text-xl font-medium tracking-tight">Menu</span>
