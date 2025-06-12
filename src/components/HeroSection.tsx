@@ -66,7 +66,7 @@ const HeroSection = () => {
         </h1>
         <div className="relative h-32 md:h-24 flex items-center justify-center overflow-hidden">
           <p 
-            className={`text-xl md:text-2xl text-white/95 font-light max-w-2xl mx-auto leading-relaxed drop-shadow-lg absolute inset-0 flex items-center justify-center transition-all duration-1000 ease-in-out ${
+            className={`text-xl md:text-2xl text-white/90 font-light max-w-2xl mx-auto leading-relaxed drop-shadow-lg absolute inset-0 flex items-center justify-center transition-all duration-1000 ease-in-out ${
               isAnimating 
                 ? 'opacity-0 transform translate-y-4 blur-sm' 
                 : 'opacity-100 transform translate-y-0 blur-none'
