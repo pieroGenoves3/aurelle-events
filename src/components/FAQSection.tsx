@@ -38,7 +38,7 @@ const FAQSection = () => {
           <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6">
             Frequently Asked Questions
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-xl text-foreground/80">
             Everything you need to know about working with us
           </p>
         </div>
@@ -50,7 +50,7 @@ const FAQSection = () => {
                 <AccordionTrigger className="text-left text-lg font-light tracking-tight hover:text-primary transition-colors">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pt-4 leading-relaxed">
+                <AccordionContent className="text-foreground/70 pt-4 leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

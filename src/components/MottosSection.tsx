@@ -28,7 +28,7 @@ const MottosSection = () => {
           <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6">
             Our Philosophy
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
             The principles that guide every extraordinary event we create
           </p>
         </div>
@@ -46,7 +46,7 @@ const MottosSection = () => {
               <h3 className="text-2xl font-light tracking-tight mb-4">
                 {motto.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-foreground/70 leading-relaxed">
                 {motto.description}
               </p>
             </div>

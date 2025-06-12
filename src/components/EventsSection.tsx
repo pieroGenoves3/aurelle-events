@@ -35,7 +35,7 @@ const EventsSection = () => {
         <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6">
           Signature Events
         </h2>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
           A curated selection of our most memorable luxury experiences
         </p>
       </div>
@@ -64,7 +64,7 @@ const EventsSection = () => {
               <h3 className="text-2xl font-light tracking-tight mb-3">
                 {event.title}
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-foreground/70">
                 {event.description}
               </p>
             </div>

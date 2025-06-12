@@ -59,7 +59,7 @@ const TestimonialsSection = () => {
           <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6">
             Client Stories
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
             Testimonials from our distinguished clientele
           </p>
         </div>
@@ -85,10 +85,10 @@ const TestimonialsSection = () => {
                 />
                 <div>
                   <h4 className="font-medium text-foreground">{testimonial.author}</h4>
-                  <p className="text-sm text-muted-foreground">{testimonial.result}</p>
+                  <p className="text-sm text-foreground/70">{testimonial.result}</p>
                 </div>
               </div>
-              <blockquote className="text-lg italic text-muted-foreground">
+              <blockquote className="text-lg italic text-foreground/70">
                 "{testimonial.quote}"
               </blockquote>
             </div>
