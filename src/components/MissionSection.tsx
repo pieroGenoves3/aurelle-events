@@ -3,7 +3,7 @@ import React from 'react';
 
 const MissionSection = () => {
   return (
-    <section id="mission" className="py-24 px-4 bg-gradient-to-br from-accent/30 to-secondary/20">
+    <section id="mission" className="py-24 px-4 bg-accent/30">
       <div className="max-w-4xl mx-auto text-center scroll-reveal">
         <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-8">
           Our Mission
