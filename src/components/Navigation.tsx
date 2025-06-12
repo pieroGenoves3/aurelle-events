@@ -58,7 +58,9 @@ const Navigation = () => {
                 Aurelle Events
               </div>
               <button
-                className="text-foreground relative w-6 h-6 flex items-center justify-center"
+                className={`text-foreground relative w-6 h-6 flex items-center justify-center transition-opacity duration-300 ${
+                  isMobileMenuOpen ? 'opacity-0' : 'opacity-100'
+                }`}
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               >
                 <div className="relative flex items-center justify-center">
