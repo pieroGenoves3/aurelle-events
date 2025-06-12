@@ -53,7 +53,11 @@ const TestimonialsSection = () => {
   }, []);
 
   return (
-    <section id="testimonials" className="py-24 bg-gradient-to-r from-secondary/30 to-accent/20">
+    <section 
+      id="testimonials" 
+      className="py-24"
+      style={{ backgroundColor: 'rgb(248, 248, 248)' }}
+    >
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16 scroll-reveal">
           <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6">

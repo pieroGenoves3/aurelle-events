@@ -90,10 +90,27 @@ const Navigation = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden text-foreground"
-              onClick={() => setIsMobileMenuOpen(true)}
+              className="md:hidden text-foreground relative w-6 h-6 flex items-center justify-center"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              <Menu size={24} />
+              <div className="relative">
+                <Menu 
+                  size={24} 
+                  className={`absolute transition-all duration-300 ease-in-out ${
+                    isMobileMenuOpen 
+                      ? 'opacity-0 rotate-180 scale-75' 
+                      : 'opacity-100 rotate-0 scale-100'
+                  }`}
+                />
+                <X 
+                  size={24} 
+                  className={`absolute transition-all duration-300 ease-in-out ${
+                    isMobileMenuOpen 
+                      ? 'opacity-100 rotate-0 scale-100' 
+                      : 'opacity-0 rotate-180 scale-75'
+                  }`}
+                />
+              </div>
             </button>
           </div>
         </div>
@@ -103,12 +120,14 @@ const Navigation = () => {
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-50 md:hidden">
           <div 
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/70 backdrop-blur-sm"
             onClick={() => setIsMobileMenuOpen(false)}
           />
-          <div className={`absolute right-0 top-0 h-full w-80 bg-white/90 backdrop-blur-lg border-l border-white/20 shadow-2xl transform transition-transform duration-300 ${
+          <div className={`absolute right-0 top-0 h-full w-80 backdrop-blur-lg border-l border-white/20 shadow-2xl transform transition-transform duration-300 ${
             isMobileMenuOpen ? 'animate-slide-in-right' : 'animate-slide-out-right'
-          }`}>
+          }`}
+          style={{ backgroundColor: 'rgba(255, 255, 255, 0.95)' }}
+          >
             <div className="flex justify-between items-center p-6 border-b border-white/20">
               <span className="text-xl font-medium tracking-tight">Menu</span>
               <button

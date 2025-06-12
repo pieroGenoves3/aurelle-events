@@ -30,7 +30,11 @@ const EventsSection = () => {
   ];
 
   return (
-    <section id="events" className="py-24 px-4 max-w-7xl mx-auto">
+    <section 
+      id="events" 
+      className="py-24 px-4 max-w-7xl mx-auto"
+      style={{ backgroundColor: 'rgb(255, 255, 255)' }}
+    >
       <div className="text-center mb-16 scroll-reveal">
         <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6">
           Signature Events

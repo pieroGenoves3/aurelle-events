@@ -32,7 +32,11 @@ const FAQSection = () => {
   ];
 
   return (
-    <section id="faq" className="py-24 px-4">
+    <section 
+      id="faq" 
+      className="py-24 px-4"
+      style={{ backgroundColor: 'rgb(255, 255, 255)' }}
+    >
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16 scroll-reveal">
           <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6">

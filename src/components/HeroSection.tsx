@@ -48,7 +48,11 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section 
+      id="hero" 
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      style={{ backgroundColor: 'rgb(255, 255, 255)' }}
+    >
       {/* Luxury Wedding Photo Background */}
       <div className="absolute inset-0 w-full h-full">
         <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-amber-50/30 to-amber-100/40 z-10" />
