@@ -4,7 +4,7 @@ import { Mail, Phone } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer id="contact" className="bg-gradient-to-br from-primary/5 to-secondary/10 py-16 px-4">
+    <footer id="contact" className="bg-background py-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
           <div className="scroll-reveal">
