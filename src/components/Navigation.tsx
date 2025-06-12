@@ -61,7 +61,7 @@ const Navigation = () => {
                 className="text-foreground relative w-6 h-6 flex items-center justify-center"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               >
-                <div className="relative">
+                <div className="relative flex items-center justify-center">
                   <Menu 
                     size={24} 
                     className={`absolute transition-all duration-300 ease-in-out ${
@@ -132,11 +132,9 @@ const Navigation = () => {
             className="absolute inset-0 bg-black/70 backdrop-blur-sm"
             onClick={() => setIsMobileMenuOpen(false)}
           />
-          <div className={`absolute right-0 top-0 h-full w-80 border-l border-white/20 shadow-2xl transform transition-transform duration-300 ${
+          <div className={`absolute right-0 top-0 h-full w-80 bg-white border-l border-white/20 shadow-2xl transform transition-transform duration-300 ${
             isMobileMenuOpen ? 'animate-slide-in-right' : 'animate-slide-out-right'
-          }`}
-          style={{ backgroundColor: 'rgb(255, 255, 255)' }}
-          >
+          }`}>
             <div className="flex justify-between items-center p-6 border-b border-white/20">
               <span className="text-xl font-medium tracking-tight">Menu</span>
               <button
@@ -164,7 +162,7 @@ const Navigation = () => {
                   <span className="text-sm text-foreground/60">Language</span>
                 </div>
                 <Select value={language} onValueChange={setLanguage}>
-                  <SelectTrigger className="w-full">
+                  <SelectTrigger className="w-full bg-white border-gray-200">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
