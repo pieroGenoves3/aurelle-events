@@ -55,37 +55,39 @@ const Navigation = () => {
               Aurelle Events
             </div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              {navigationItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-foreground/80 hover:text-foreground transition-all duration-200 font-medium tracking-wide hover:scale-105"
-                >
-                  {item.name}
-                </button>
-              ))}
-              
-              {/* Language Selector */}
-              <div className="flex items-center space-x-2">
-                <Globe size={16} className="text-foreground/60" />
-                <Select value={language} onValueChange={setLanguage}>
-                  <SelectTrigger className="w-32 h-8 text-sm border-none bg-transparent text-foreground/80 hover:text-foreground">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {languages.map((lang) => (
-                      <SelectItem key={lang.code} value={lang.code}>
-                        <span className="flex items-center space-x-2">
-                          <span>{lang.flag}</span>
-                          <span>{lang.label}</span>
-                        </span>
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+            {/* Desktop Navigation - Centered */}
+            <div className="hidden md:flex items-center justify-center flex-1 mx-8">
+              <div className="flex items-center space-x-8">
+                {navigationItems.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className="text-foreground/80 hover:text-foreground transition-all duration-200 font-medium tracking-wide hover:scale-105"
+                  >
+                    {item.name}
+                  </button>
+                ))}
               </div>
+            </div>
+
+            {/* Language Selector - Right side */}
+            <div className="hidden md:flex items-center space-x-2">
+              <Globe size={16} className="text-foreground/60" />
+              <Select value={language} onValueChange={setLanguage}>
+                <SelectTrigger className="w-32 h-8 text-sm border-none bg-transparent text-foreground/80 hover:text-foreground">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {languages.map((lang) => (
+                    <SelectItem key={lang.code} value={lang.code}>
+                      <span className="flex items-center space-x-2">
+                        <span>{lang.flag}</span>
+                        <span>{lang.label}</span>
+                      </span>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
 
             {/* Mobile Menu Button */}
