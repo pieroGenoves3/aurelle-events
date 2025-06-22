@@ -1,46 +1,9 @@
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const HeroSection = () => {
-  const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
   const { t } = useLanguage();
-  
-  const heroTexts = [
-    {
-      language: 'English',
-      title: 'Aurelle Events',
-      subtitle: 'Crafting extraordinary experiences for luxury weddings, corporate events, and haute couture fashion shows'
-    },
-    {
-      language: 'Italiano',
-      title: 'Aurelle Events',
-      subtitle: 'Creando esperienze straordinarie per matrimoni di lusso, eventi aziendali e sfilate di alta moda'
-    },
-    {
-      language: 'Deutsch', 
-      title: 'Aurelle Events',
-      subtitle: 'Außergewöhnliche Erlebnisse für Luxushochzeiten, Firmenevents und Haute-Couture-Modenschauen schaffen'
-    },
-    {
-      language: 'Português',
-      title: 'Aurelle Events',
-      subtitle: 'Criando experiências extraordinárias para casamentos de luxo, eventos corporativos e desfiles de alta costura'
-    }
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsAnimating(true);
-      setTimeout(() => {
-        setCurrentTextIndex((prevIndex) => (prevIndex + 1) % heroTexts.length);
-        setIsAnimating(false);
-      }, 500); // Half of the transition duration
-    }, 4000); // Change every 4 seconds
-
-    return () => clearInterval(interval);
-  }, []);
 
   const scrollToEvents = () => {
     const element = document.getElementById('events');
@@ -70,20 +33,12 @@ const HeroSection = () => {
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tighter text-white mb-6 drop-shadow-2xl">
           {t.hero.title}
         </h1>
-        <div className="relative h-32 md:h-24 flex items-center justify-center overflow-hidden">
-          <p 
-            className={`text-xl md:text-2xl text-white/90 font-light max-w-2xl mx-auto leading-relaxed drop-shadow-lg absolute inset-0 flex items-center justify-center transition-all duration-1000 ease-in-out ${
-              isAnimating 
-                ? 'opacity-0 transform translate-y-4 blur-sm' 
-                : 'opacity-100 transform translate-y-0 blur-none'
-            }`}
-          >
-            {t.hero.subtitle}
-          </p>
-        </div>
+        <p className="text-xl md:text-2xl text-white/90 font-light max-w-2xl mx-auto leading-relaxed drop-shadow-lg mb-8">
+          {t.hero.subtitle}
+        </p>
         <button
           onClick={scrollToEvents}
-          className="neumorphic-btn sparkle-btn text-lg mt-8"
+          className="neumorphic-btn sparkle-btn text-lg"
         >
           {t.hero.cta}
         </button>
