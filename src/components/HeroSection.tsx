@@ -1,9 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const HeroSection = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const { t } = useLanguage();
   
   const heroTexts = [
     {
@@ -66,7 +68,7 @@ const HeroSection = () => {
       {/* Hero Content */}
       <div className="relative z-20 text-center max-w-4xl mx-auto px-4 animate-fade-in-up">
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tighter text-white mb-6 drop-shadow-2xl">
-          {heroTexts[currentTextIndex].title}
+          {t.hero.title}
         </h1>
         <div className="relative h-32 md:h-24 flex items-center justify-center overflow-hidden">
           <p 
@@ -76,14 +78,14 @@ const HeroSection = () => {
                 : 'opacity-100 transform translate-y-0 blur-none'
             }`}
           >
-            {heroTexts[currentTextIndex].subtitle}
+            {t.hero.subtitle}
           </p>
         </div>
         <button
           onClick={scrollToEvents}
           className="neumorphic-btn sparkle-btn text-lg mt-8"
         >
-          Discover Our Work
+          {t.hero.cta}
         </button>
       </div>
 

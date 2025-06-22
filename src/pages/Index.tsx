@@ -8,6 +8,7 @@ import MottosSection from '@/components/MottosSection';
 import MissionSection from '@/components/MissionSection';
 import FAQSection from '@/components/FAQSection';
 import Footer from '@/components/Footer';
+import { LanguageProvider } from '@/contexts/LanguageContext';
 
 const Index = () => {
   const pageRef = useRef<HTMLDivElement>(null);
@@ -46,23 +47,25 @@ const Index = () => {
   }, []);
 
   return (
-    <div 
-      ref={pageRef} 
-      className="min-h-screen luxury-gradient"
-      style={{ 
-        backgroundColor: '#ffffff',
-        background: '#ffffff'
-      }}
-    >
-      <Navigation />
-      <HeroSection />
-      <EventsSection />
-      <TestimonialsSection />
-      <MottosSection />
-      <MissionSection />
-      <FAQSection />
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div 
+        ref={pageRef} 
+        className="min-h-screen luxury-gradient"
+        style={{ 
+          backgroundColor: '#ffffff',
+          background: '#ffffff'
+        }}
+      >
+        <Navigation />
+        <HeroSection />
+        <EventsSection />
+        <TestimonialsSection />
+        <MottosSection />
+        <MissionSection />
+        <FAQSection />
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 };
 

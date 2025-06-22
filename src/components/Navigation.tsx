@@ -2,11 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [language, setLanguage] = useState('en');
+  const { currentLanguage, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,13 +27,13 @@ const Navigation = () => {
   };
 
   const navigationItems = [
-    { name: 'Home', id: 'hero' },
-    { name: 'Events', id: 'events' },
-    { name: 'Testimonials', id: 'testimonials' },
-    { name: 'About', id: 'mottos' },
-    { name: 'Mission', id: 'mission' },
-    { name: 'FAQ', id: 'faq' },
-    { name: 'Contact', id: 'contact' }
+    { name: t.navigation.home, id: 'hero' },
+    { name: t.navigation.events, id: 'events' },
+    { name: t.navigation.testimonials, id: 'testimonials' },
+    { name: t.navigation.about, id: 'mottos' },
+    { name: t.navigation.mission, id: 'mission' },
+    { name: t.navigation.faq, id: 'faq' },
+    { name: t.navigation.contact, id: 'contact' }
   ];
 
   const languages = [
@@ -107,7 +108,7 @@ const Navigation = () => {
             {/* Language Selector - Right side */}
             <div className="hidden md:flex items-center space-x-2">
               <Globe size={16} className="text-foreground/60" />
-              <Select value={language} onValueChange={setLanguage}>
+              <Select value={currentLanguage} onValueChange={(value) => setLanguage(value as any)}>
                 <SelectTrigger className="w-32 h-8 text-sm border-none bg-transparent text-foreground/80 hover:text-foreground">
                   <SelectValue />
                 </SelectTrigger>
@@ -163,7 +164,7 @@ const Navigation = () => {
                   <Globe size={16} className="text-foreground/60" />
                   <span className="text-sm text-foreground/60">Language</span>
                 </div>
-                <Select value={language} onValueChange={setLanguage}>
+                <Select value={currentLanguage} onValueChange={(value) => setLanguage(value as any)}>
                   <SelectTrigger className="w-full bg-white border-gray-200">
                     <SelectValue />
                   </SelectTrigger>
