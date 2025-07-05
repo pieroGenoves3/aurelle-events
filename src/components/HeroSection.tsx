@@ -45,7 +45,7 @@ const HeroSection = () => {
         {/* Logo */}
         <div className="mb-8">
           <img 
-            src="/lovable-uploads/228f7ab9-d7a6-48d2-9e1b-f388fbf94320.png" 
+            src="/lovable-uploads/logo-horizontal.png" 
             alt="Aurelle Events" 
             className={`${logoConfig.desktop.height} ${logoConfig.desktop.maxHeight} md:${logoConfig.desktop.height} md:${logoConfig.desktop.maxHeight} ${logoConfig.mobile.height} ${logoConfig.mobile.maxHeight} w-auto object-contain mx-auto drop-shadow-2xl`}
           />
