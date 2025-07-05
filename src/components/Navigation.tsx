@@ -9,6 +9,18 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { currentLanguage, setLanguage, t } = useLanguage();
 
+  // Logo configuration - easily adjustable
+  const logoConfig = {
+    desktop: {
+      height: 'h-10', // Tailwind class for desktop logo height
+      padding: 'py-3' // Header padding to accommodate logo
+    },
+    mobile: {
+      height: 'h-8', // Tailwind class for mobile logo height
+      padding: 'py-2' // Header padding to accommodate logo
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -49,14 +61,16 @@ const Navigation = () => {
           : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16 md:justify-between">
+          <div className={`flex justify-between items-center ${logoConfig.mobile.padding} md:${logoConfig.desktop.padding} md:justify-between`}>
             {/* Mobile Layout - Center aligned logo and hamburger */}
             <div className="flex md:hidden items-center justify-between w-full">
               <div></div> {/* Empty spacer */}
               <div className="flex items-center">
-                <h1 className="text-xl font-light tracking-wider text-foreground">
-                  Aurelle Events
-                </h1>
+                <img 
+                  src="/lovable-uploads/monograma.png" 
+                  alt="Aurelle Events" 
+                  className={`${logoConfig.mobile.height} w-auto object-contain`}
+                />
               </div>
               <button
                 className={`text-foreground relative w-6 h-6 flex items-center justify-center transition-opacity duration-300 ${
@@ -87,9 +101,11 @@ const Navigation = () => {
 
             {/* Desktop Layout */}
             <div className="hidden md:block">
-              <h1 className="text-2xl font-light tracking-wider text-foreground">
-                Aurelle Events
-              </h1>
+              <img 
+                src="/lovable-uploads/monograma.png" 
+                alt="Aurelle Events" 
+                className={`${logoConfig.desktop.height} w-auto object-contain`}
+              />
             </div>
 
             {/* Desktop Navigation - Centered */}
