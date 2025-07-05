@@ -9,6 +9,25 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { currentLanguage, setLanguage, t } = useLanguage();
 
+  // Logo size configuration - easily adjustable
+  const logoConfig = {
+    desktop: {
+      height: 'h-10', // Tailwind class for desktop
+      maxHeight: 'max-h-12' // Maximum height constraint
+    },
+    mobile: {
+      height: 'h-8', // Tailwind class for mobile
+      maxHeight: 'max-h-10' // Maximum height constraint
+    }
+  };
+
+  // Dynamic header height based on logo size
+  const getHeaderHeight = () => {
+    const baseHeight = 16; // base h-16 = 4rem = 64px
+    // You can adjust this logic if you need more dynamic sizing
+    return `h-${baseHeight}`;
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -49,7 +68,7 @@ const Navigation = () => {
           : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16 md:justify-between">
+          <div className={`flex justify-between items-center ${getHeaderHeight()} md:justify-between`}>
             {/* Mobile Layout - Center aligned logo and hamburger */}
             <div className="flex md:hidden items-center justify-between w-full">
               <div></div> {/* Empty spacer */}
@@ -57,7 +76,7 @@ const Navigation = () => {
                 <img 
                   src="/lovable-uploads/228f7ab9-d7a6-48d2-9e1b-f388fbf94320.png" 
                   alt="Aurelle Events" 
-                  className="h-8"
+                  className={`${logoConfig.mobile.height} ${logoConfig.mobile.maxHeight} w-auto object-contain`}
                 />
               </div>
               <button
@@ -92,7 +111,7 @@ const Navigation = () => {
               <img 
                 src="/lovable-uploads/228f7ab9-d7a6-48d2-9e1b-f388fbf94320.png" 
                 alt="Aurelle Events" 
-                className="h-10"
+                className={`${logoConfig.desktop.height} ${logoConfig.desktop.maxHeight} w-auto object-contain`}
               />
             </div>
 
