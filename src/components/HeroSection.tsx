@@ -1,19 +1,20 @@
-
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  imagePadding?: string; // Tailwind spacing class for padding below the image
+}
+
+const HeroSection = ({ imagePadding = 'mb-8' }: HeroSectionProps) => {
   const { t } = useLanguage();
 
   // Logo size configuration - easily adjustable
   const logoConfig = {
     desktop: {
-      height: 'h-32', // Tailwind class for desktop
-      maxHeight: 'max-h-40' // Maximum height constraint
+      height: 'h-50' // Tailwind class for desktop
     },
     mobile: {
-      height: 'h-24', // Tailwind class for mobile
-      maxHeight: 'max-h-32' // Maximum height constraint
+      height: 'h-24' // Tailwind class for mobile
     }
   };
 
@@ -43,11 +44,11 @@ const HeroSection = () => {
       {/* Hero Content */}
       <div className="relative z-20 text-center max-w-4xl mx-auto px-4 animate-fade-in-up">
         {/* Logo */}
-        <div className="mb-8">
+        <div className={imagePadding}>
           <img 
-            src="/lovable-uploads/logo-horizontal.png" 
+            src="/lovable-uploads/logo-horizontal-cut.png" 
             alt="Aurelle Events" 
-            className={`${logoConfig.desktop.height} ${logoConfig.desktop.maxHeight} md:${logoConfig.desktop.height} md:${logoConfig.desktop.maxHeight} ${logoConfig.mobile.height} ${logoConfig.mobile.maxHeight} w-auto object-contain mx-auto drop-shadow-2xl`}
+            className={`${logoConfig.desktop.height} md:${logoConfig.desktop.height} md:${logoConfig.mobile.height} w-auto object-contain mx-auto drop-shadow-2xl`}
           />
         </div>
         <p className="text-xl md:text-2xl text-white/90 font-light max-w-2xl mx-auto leading-relaxed drop-shadow-lg mb-8">
