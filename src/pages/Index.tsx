@@ -2,8 +2,6 @@
 import React, { useEffect, useRef } from 'react';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
-import EventsSection from '@/components/EventsSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
 import MottosSection from '@/components/MottosSection';
 import MissionSection from '@/components/MissionSection';
 import FAQSection from '@/components/FAQSection';

@@ -28,8 +28,6 @@ const Navigation = () => {
 
   const navigationItems = [
     { name: t.navigation.home, id: 'hero' },
-    { name: t.navigation.events, id: 'events' },
-    { name: t.navigation.testimonials, id: 'testimonials' },
     { name: t.navigation.about, id: 'mottos' },
     { name: t.navigation.mission, id: 'mission' },
     { name: t.navigation.faq, id: 'faq' },
