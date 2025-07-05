@@ -50,11 +50,15 @@ const Navigation = () => {
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 md:justify-between">
-            {/* Mobile Layout - Center aligned title and hamburger */}
+            {/* Mobile Layout - Center aligned logo and hamburger */}
             <div className="flex md:hidden items-center justify-between w-full">
               <div></div> {/* Empty spacer */}
-              <div className="text-2xl font-medium tracking-tight text-foreground">
-                Aurelle Events
+              <div className="flex items-center">
+                <img 
+                  src="/lovable-uploads/228f7ab9-d7a6-48d2-9e1b-f388fbf94320.png" 
+                  alt="Aurelle Events" 
+                  className="h-8"
+                />
               </div>
               <button
                 className={`text-foreground relative w-6 h-6 flex items-center justify-center transition-opacity duration-300 ${
@@ -84,8 +88,12 @@ const Navigation = () => {
             </div>
 
             {/* Desktop Layout */}
-            <div className="hidden md:block text-2xl font-medium tracking-tight text-foreground">
-              Aurelle Events
+            <div className="hidden md:block">
+              <img 
+                src="/lovable-uploads/228f7ab9-d7a6-48d2-9e1b-f388fbf94320.png" 
+                alt="Aurelle Events" 
+                className="h-10"
+              />
             </div>
 
             {/* Desktop Navigation - Centered */}
