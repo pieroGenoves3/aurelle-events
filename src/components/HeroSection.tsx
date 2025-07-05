@@ -5,6 +5,18 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const HeroSection = () => {
   const { t } = useLanguage();
 
+  // Logo size configuration - easily adjustable
+  const logoConfig = {
+    desktop: {
+      height: 'h-32', // Tailwind class for desktop
+      maxHeight: 'max-h-40' // Maximum height constraint
+    },
+    mobile: {
+      height: 'h-24', // Tailwind class for mobile
+      maxHeight: 'max-h-32' // Maximum height constraint
+    }
+  };
+
   const scrollToEvents = () => {
     const element = document.getElementById('events');
     if (element) {
@@ -30,9 +42,14 @@ const HeroSection = () => {
 
       {/* Hero Content */}
       <div className="relative z-20 text-center max-w-4xl mx-auto px-4 animate-fade-in-up">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tighter text-white mb-6 drop-shadow-2xl">
-          {t.hero.title}
-        </h1>
+        {/* Logo */}
+        <div className="mb-8">
+          <img 
+            src="/lovable-uploads/228f7ab9-d7a6-48d2-9e1b-f388fbf94320.png" 
+            alt="Aurelle Events" 
+            className={`${logoConfig.desktop.height} ${logoConfig.desktop.maxHeight} md:${logoConfig.desktop.height} md:${logoConfig.desktop.maxHeight} ${logoConfig.mobile.height} ${logoConfig.mobile.maxHeight} w-auto object-contain mx-auto drop-shadow-2xl`}
+          />
+        </div>
         <p className="text-xl md:text-2xl text-white/90 font-light max-w-2xl mx-auto leading-relaxed drop-shadow-lg mb-8">
           {t.hero.subtitle}
         </p>
