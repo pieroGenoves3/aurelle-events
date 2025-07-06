@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -20,6 +19,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
+				'tenez': ['tenez', 'serif'], // For titles and headings
+				'gantari': ['gantari', 'sans-serif'], // For body text and descriptions
 				'inter': ['Inter', 'sans-serif'],
 			},
 			colors: {
