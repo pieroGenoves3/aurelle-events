@@ -6,13 +6,13 @@ const MissionSection = () => {
     <section 
       id="mission" 
       className="py-24 px-4"
-      style={{ backgroundColor: 'rgb(248, 248, 248)' }}
+      style={{ backgroundColor: '#A394B8' }}
     >
       <div className="max-w-4xl mx-auto text-center scroll-reveal">
-        <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-8">
+        <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-8 text-cream">
           Our Mission
         </h2>
-        <div className="space-y-8 text-lg md:text-xl leading-relaxed text-foreground/80">
+        <div className="space-y-8 text-lg md:text-xl leading-relaxed text-cream/90">
           <p>
             At Aurelle Events, we believe that life's most precious moments deserve to be celebrated 
             with unparalleled beauty and sophistication. Our mission is to transform your dreams into 
@@ -25,7 +25,7 @@ const MissionSection = () => {
             our hearts into every detail, ensuring that each moment is infused with elegance, 
             emotion, and excellence.
           </p>
-          <p className="text-2xl font-light text-foreground italic">
+          <p className="text-2xl font-light text-cream italic">
             "We don't just plan events—we create timeless experiences that celebrate the art of living beautifully."
           </p>
         </div>

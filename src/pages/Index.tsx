@@ -50,8 +50,8 @@ const Index = () => {
         ref={pageRef} 
         className="min-h-screen luxury-gradient"
         style={{ 
-          backgroundColor: '#ffffff',
-          background: '#ffffff'
+          backgroundColor: '#EDE5D6',
+          background: '#EDE5D6'
         }}
       >
         <Navigation />

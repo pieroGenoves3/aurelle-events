@@ -25,7 +25,7 @@ const MottosSection = () => {
     <section 
       id="mottos" 
       className="py-24 px-4"
-      style={{ backgroundColor: 'rgb(255, 255, 255)' }}
+      style={{ backgroundColor: '#EDE5D6' }}
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 scroll-reveal">
@@ -41,7 +41,7 @@ const MottosSection = () => {
           {mottos.map((motto, index) => (
             <div
               key={index}
-              className="text-center scroll-reveal glass-card p-8 hover:scale-105 transition-all duration-500"
+              className="text-center scroll-reveal glass-card p-8 hover:scale-105 transition-all duration-500 bg-cream/80 backdrop-blur-sm border border-olive-green/20"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-primary/10 to-primary/5 mb-6">

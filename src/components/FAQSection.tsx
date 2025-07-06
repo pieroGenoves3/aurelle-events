@@ -35,7 +35,7 @@ const FAQSection = () => {
     <section 
       id="faq" 
       className="py-24 px-4"
-      style={{ backgroundColor: 'rgb(255, 255, 255)' }}
+      style={{ backgroundColor: '#EDE5D6' }}
     >
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16 scroll-reveal">
@@ -47,7 +47,7 @@ const FAQSection = () => {
           </p>
         </div>
 
-        <div className="scroll-reveal glass-card p-8">
+        <div className="scroll-reveal glass-card p-8 bg-cream/80 backdrop-blur-sm border border-olive-green/20">
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`}>

@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,87 +7,90 @@
 
 @layer base {
   :root {
-    --background: 255 255 255;
-    --foreground: 41 37 36;
+    --background: 237 229 214; /* #EDE5D6 */
+    --foreground: 41 38 41; /* #292629 */
 
-    --card: 255 255 255;
-    --card-foreground: 41 37 36;
+    --card: 237 229 214; /* #EDE5D6 */
+    --card-foreground: 41 38 41; /* #292629 */
 
-    --popover: 255 255 255;
-    --popover-foreground: 41 37 36;
+    --popover: 237 229 214; /* #EDE5D6 */
+    --popover-foreground: 41 38 41; /* #292629 */
 
-    --primary: 41 37 36;
-    --primary-foreground: 255 255 255;
+    --primary: 41 38 41; /* #292629 */
+    --primary-foreground: 237 229 214; /* #EDE5D6 */
 
-    --secondary: 254 251 235;
-    --secondary-foreground: 41 37 36;
+    --secondary: 163 148 184; /* #A394B8 */
+    --secondary-foreground: 41 38 41; /* #292629 */
 
-    --muted: 252 248 227;
-    --muted-foreground: 120 113 108;
+    --muted: 122 122 69; /* #7A7A45 */
+    --muted-foreground: 56 61 51; /* #383D33 */
 
-    --accent: 250 244 211;
-    --accent-foreground: 41 37 36;
+    --accent: 166 122 64; /* #A67A40 */
+    --accent-foreground: 237 229 214; /* #EDE5D6 */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 245 235 204;
-    --input: 245 235 204;
-    --ring: 180 83% 9%;
+    --border: 122 122 69; /* #7A7A45 */
+    --input: 122 122 69; /* #7A7A45 */
+    --ring: 41 38 41; /* #292629 */
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 237 229 214; /* #EDE5D6 */
+    --sidebar-foreground: 41 38 41; /* #292629 */
+    --sidebar-primary: 41 38 41; /* #292629 */
+    --sidebar-primary-foreground: 237 229 214; /* #EDE5D6 */
+    --sidebar-accent: 163 148 184; /* #A394B8 */
+    --sidebar-accent-foreground: 41 38 41; /* #292629 */
+    --sidebar-border: 122 122 69; /* #7A7A45 */
+    --sidebar-ring: 166 122 64; /* #A67A40 */
 
-    /* Luxury gradient colors */
-    --luxury-white: 255 255 255;
-    --luxury-gold-light: 254 252 232;
-    --luxury-gold-medium: 251 243 189;
+    /* Custom color palette variables */
+    --dark-purple: 41 38 41; /* #292629 */
+    --dark-green: 56 61 51; /* #383D33 */
+    --olive-green: 122 122 69; /* #7A7A45 */
+    --lavender: 163 148 184; /* #A394B8 */
+    --golden-brown: 166 122 64; /* #A67A40 */
+    --cream: 237 229 214; /* #EDE5D6 */
   }
 
   .dark {
-    --background: 41 37 36;
-    --foreground: 252 252 250;
+    --background: 41 38 41; /* #292629 */
+    --foreground: 237 229 214; /* #EDE5D6 */
 
-    --card: 50 45 44;
-    --card-foreground: 252 252 250;
+    --card: 56 61 51; /* #383D33 */
+    --card-foreground: 237 229 214; /* #EDE5D6 */
 
-    --popover: 50 45 44;
-    --popover-foreground: 252 252 250;
+    --popover: 56 61 51; /* #383D33 */
+    --popover-foreground: 237 229 214; /* #EDE5D6 */
 
-    --primary: 252 252 250;
-    --primary-foreground: 41 37 36;
+    --primary: 237 229 214; /* #EDE5D6 */
+    --primary-foreground: 41 38 41; /* #292629 */
 
-    --secondary: 60 54 51;
-    --secondary-foreground: 252 252 250;
+    --secondary: 122 122 69; /* #7A7A45 */
+    --secondary-foreground: 237 229 214; /* #EDE5D6 */
 
-    --muted: 60 54 51;
-    --muted-foreground: 180 172 164;
+    --muted: 56 61 51; /* #383D33 */
+    --muted-foreground: 163 148 184; /* #A394B8 */
 
-    --accent: 70 63 58;
-    --accent-foreground: 252 252 250;
+    --accent: 166 122 64; /* #A67A40 */
+    --accent-foreground: 237 229 214; /* #EDE5D6 */
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 70 63 58;
-    --input: 70 63 58;
-    --ring: 252 252 250;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 122 122 69; /* #7A7A45 */
+    --input: 122 122 69; /* #7A7A45 */
+    --ring: 237 229 214; /* #EDE5D6 */
+    --sidebar-background: 41 38 41; /* #292629 */
+    --sidebar-foreground: 237 229 214; /* #EDE5D6 */
+    --sidebar-primary: 166 122 64; /* #A67A40 */
+    --sidebar-primary-foreground: 237 229 214; /* #EDE5D6 */
+    --sidebar-accent: 56 61 51; /* #383D33 */
+    --sidebar-accent-foreground: 237 229 214; /* #EDE5D6 */
+    --sidebar-border: 122 122 69; /* #7A7A45 */
+    --sidebar-ring: 166 122 64; /* #A67A40 */
   }
 }
 
@@ -96,15 +100,15 @@
   }
 
   html {
-    background: #ffffff;
-    background-color: #ffffff;
+    background: #EDE5D6;
+    background-color: #EDE5D6;
   }
 
   body {
     @apply font-gantari;
-    background: #ffffff !important;
-    background-color: #ffffff !important;
-    color: rgb(41, 37, 36);
+    background: #EDE5D6 !important;
+    background-color: #EDE5D6 !important;
+    color: #292629;
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -113,8 +117,8 @@
   }
 
   #root {
-    background: #ffffff;
-    background-color: #ffffff;
+    background: #EDE5D6;
+    background-color: #EDE5D6;
     min-height: 100vh;
     width: 100%;
   }
@@ -130,24 +134,24 @@
   /* Mobile-specific fixes */
   @media screen and (max-width: 768px) {
     body {
-      background: #ffffff !important;
-      background-color: #ffffff !important;
+      background: #EDE5D6 !important;
+      background-color: #EDE5D6 !important;
       -webkit-background-size: cover;
       background-size: cover;
       background-attachment: scroll;
     }
     
     #root {
-      background: #ffffff !important;
-      background-color: #ffffff !important;
+      background: #EDE5D6 !important;
+      background-color: #EDE5D6 !important;
     }
   }
 }
 
 @layer components {
   .luxury-gradient {
-    background: #ffffff;
-    background-color: #ffffff;
+    background: #EDE5D6;
+    background-color: #EDE5D6;
     min-height: 100vh;
     width: 100%;
   }
@@ -157,20 +161,22 @@
   }
 
   .neumorphic-btn {
-    @apply bg-gradient-to-br from-white/95 to-amber-50/90 border border-amber-100/50 rounded-xl px-8 py-3 text-foreground font-gantari font-medium transition-all duration-300 shadow-lg relative overflow-hidden;
+    @apply bg-gradient-to-br from-cream/95 to-lavender/90 border border-olive-green/50 rounded-xl px-8 py-3 text-foreground font-gantari font-medium transition-all duration-300 shadow-lg relative overflow-hidden;
+    background: linear-gradient(135deg, rgba(237, 229, 214, 0.95), rgba(163, 148, 184, 0.9));
+    border-color: rgba(122, 122, 69, 0.5);
     box-shadow: 
-      inset 0 1px 0 rgba(255, 255, 255, 0.8),
-      inset 0 -1px 0 rgba(217, 119, 6, 0.1),
-      0 4px 15px rgba(217, 119, 6, 0.1);
+      inset 0 1px 0 rgba(237, 229, 214, 0.8),
+      inset 0 -1px 0 rgba(166, 122, 64, 0.1),
+      0 4px 15px rgba(166, 122, 64, 0.1);
   }
 
   .neumorphic-btn:hover {
     @apply shadow-xl scale-105;
     box-shadow: 
-      inset 0 1px 0 rgba(255, 255, 255, 0.9),
-      inset 0 -1px 0 rgba(217, 119, 6, 0.15),
-      0 8px 25px rgba(217, 119, 6, 0.2),
-      0 0 30px rgba(255, 255, 255, 0.6);
+      inset 0 1px 0 rgba(237, 229, 214, 0.9),
+      inset 0 -1px 0 rgba(166, 122, 64, 0.15),
+      0 8px 25px rgba(166, 122, 64, 0.2),
+      0 0 30px rgba(163, 148, 184, 0.6);
   }
 
   .sparkle-btn {
@@ -184,7 +190,7 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    background: linear-gradient(90deg, transparent, rgba(237, 229, 214, 0.6), transparent);
     transition: left 0.5s;
   }
 
@@ -198,7 +204,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    color: rgba(255, 215, 0, 0.8);
+    color: rgba(166, 122, 64, 0.8);
     font-size: 1.2em;
     transition: transform 0.3s ease;
     pointer-events: none;
