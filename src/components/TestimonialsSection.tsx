@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useContent } from '@/hooks/useContent';
 
 interface TestimonialsContent {
@@ -58,15 +58,6 @@ const TestimonialsSection = () => {
     return null;
   }
 
-  const renderStars = (rating: number) => {
-    return Array.from({ length: 5 }, (_, i) => (
-      <Star
-        key={i}
-        size={20}
-        className={`${i < rating ? 'text-golden-brown fill-golden-brown' : 'text-cream/30'}`}
-      />
-    ));
-  };
 
   const currentTestimonial = content.items[currentIndex];
 
@@ -134,10 +125,6 @@ const TestimonialsSection = () => {
               </p>
             </div>
 
-            {/* Star Rating */}
-            <div className="flex justify-center items-center mb-8">
-              {renderStars(currentTestimonial.rating)}
-            </div>
 
             {/* Testimonial Quote */}
             <blockquote className="text-xl md:text-2xl text-foreground/80 italic leading-relaxed max-w-3xl mx-auto">

@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { MapPin, Phone, Mail, Clock, ExternalLink } from 'lucide-react';
 import { useContent } from '@/hooks/useContent';
 
@@ -20,7 +20,6 @@ interface LocationContent {
 
 const LocationSection = () => {
   const content = useContent<LocationContent>('location');
-  const [mapboxToken, setMapboxToken] = useState('');
 
   if (!content || !content.enabled) {
     return null;
@@ -51,35 +50,16 @@ const LocationSection = () => {
           {/* Map Section */}
           <div className="scroll-reveal">
             <div className="relative bg-cream/10 backdrop-blur-sm border border-cream/20 rounded-lg overflow-hidden h-96">
-              {!mapboxToken ? (
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
-                  <MapPin size={48} className="text-golden-brown mb-4" />
-                  <h3 className="text-xl font-light text-cream mb-4">Interactive Map</h3>
-                  <p className="text-cream/70 mb-6 text-sm">
-                    To view the interactive map, please enter your Mapbox public token:
-                  </p>
-                  <input
-                    type="text"
-                    placeholder="Enter your Mapbox token"
-                    value={mapboxToken}
-                    onChange={(e) => setMapboxToken(e.target.value)}
-                    className="w-full max-w-sm px-4 py-2 rounded-lg bg-cream/20 border border-cream/30 text-cream placeholder-cream/50 focus:outline-none focus:ring-2 focus:ring-golden-brown/50"
-                  />
-                  <p className="text-xs text-cream/50 mt-2">
-                    Get your token at{' '}
-                    <a href="https://mapbox.com/" target="_blank" rel="noopener noreferrer" className="text-golden-brown hover:underline">
-                      mapbox.com
-                    </a>
-                  </p>
-                </div>
-              ) : (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-cream">
-                    <MapPin size={48} className="text-golden-brown mx-auto mb-4" />
-                    <p className="text-sm">Map would load here with Mapbox integration</p>
-                  </div>
-                </div>
-              )}
+              <iframe
+                src={`https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=${content.latitude},${content.longitude}&zoom=15`}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+              />
               
               <button
                 onClick={openInMaps}
