@@ -3,5 +3,9 @@
   "enabled": true,
   "subtitle": "Luxury event planning for weddings, corporate events, and high-end fashion events",
   "cta": "Discover Our Services",
-  "imagePadding": "mb-8"
+  "imagePadding": "mb-8",
+  "backgroundImage": "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+  "logoImage": "/lovable-uploads/logo-horizontal-cut.png",
+  "logoHeightDesktop": "h-50",
+  "logoHeightMobile": "h-24"
 }

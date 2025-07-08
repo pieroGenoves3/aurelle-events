@@ -18,6 +18,10 @@ collections:
           - { label: "Subtitle", name: "subtitle", widget: "text" }
           - { label: "Call to Action", name: "cta", widget: "string" }
           - { label: "Image Padding", name: "imagePadding", widget: "string", default: "mb-8" }
+          - { label: "Background Image", name: "backgroundImage", widget: "image", required: false, hint: "Upload a background image for the hero section" }
+          - { label: "Logo Image", name: "logoImage", widget: "image", required: false, hint: "Upload a logo image for the hero section" }
+          - { label: "Logo Height Desktop", name: "logoHeightDesktop", widget: "string", default: "h-50", hint: "Tailwind class for desktop logo height" }
+          - { label: "Logo Height Mobile", name: "logoHeightMobile", widget: "string", default: "h-24", hint: "Tailwind class for mobile logo height" }
       
       - label: "Philosophy Section"
         name: "mottos"

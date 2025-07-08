@@ -8,6 +8,10 @@ interface HeroContent {
   subtitle: string;
   cta: string;
   imagePadding: string;
+  backgroundImage?: string;
+  logoImage?: string;
+  logoHeightDesktop?: string;
+  logoHeightMobile?: string;
 }
 
 const HeroSection = () => {
@@ -19,15 +23,21 @@ const HeroSection = () => {
     return null;
   }
 
-  // Logo size configuration - easily adjustable
+  // Logo configuration with CMS values or fallbacks
   const logoConfig = {
     desktop: {
-      height: 'h-50' // Tailwind class for desktop
+      height: content.logoHeightDesktop || 'h-50'
     },
     mobile: {
-      height: 'h-24' // Tailwind class for mobile
+      height: content.logoHeightMobile || 'h-24'
     }
   };
+
+  // Background image with CMS value or fallback
+  const backgroundImage = content.backgroundImage || "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80";
+
+  // Logo image with CMS value or fallback
+  const logoImage = content.logoImage || "/lovable-uploads/logo-horizontal-cut.png";
 
   const scrollToEvents = () => {
     const element = document.getElementById('events');
@@ -42,12 +52,12 @@ const HeroSection = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{ backgroundColor: '#EDE5D6' }}
     >
-      {/* Luxury Wedding Photo Background */}
+      {/* Background Image */}
       <div className="absolute inset-0 w-full h-full">
         <div className="absolute inset-0 bg-gradient-to-br from-dark-purple/60 via-lavender/70 to-golden-brown/80 z-10" />
         <img
-          src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
-          alt="Luxury Wedding"
+          src={backgroundImage}
+          alt="Hero Background"
           className="w-full h-full object-cover opacity-30"
         />
       </div>
@@ -57,7 +67,7 @@ const HeroSection = () => {
         {/* Logo */}
         <div className={content.imagePadding}>
           <img 
-            src="/lovable-uploads/logo-horizontal-cut.png" 
+            src={logoImage}
             alt="Aurelle Events" 
             className={`${logoConfig.desktop.height} md:${logoConfig.desktop.height} md:${logoConfig.mobile.height} w-auto object-contain mx-auto drop-shadow-2xl filter brightness-110 contrast-110`}
           />
