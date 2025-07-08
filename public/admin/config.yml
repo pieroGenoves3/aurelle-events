@@ -63,7 +63,8 @@ collections:
           - { label: "Enabled", name: "enabled", widget: "boolean", default: true }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Subtitle", name: "subtitle", widget: "text" }
-          - { label: "Navigation Padding", name: "navigationPadding", widget: "string", default: "mt-8", hint: "Padding between content and navigation buttons (e.g., mt-8, mt-12)" }
+          - { label: "Show Navigation", name: "showNavigation", widget: "boolean", default: true }
+          - { label: "Selector Padding", name: "selectorPadding", widget: "string", default: "mt-12", hint: "Padding between content and selector dots (e.g., mt-8, mt-12)" }
           - label: "Testimonials"
             name: "items"
             widget: "list"
@@ -101,7 +102,8 @@ collections:
           - { label: "Enabled", name: "enabled", widget: "boolean", default: true }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Subtitle", name: "subtitle", widget: "text" }
-          - { label: "Navigation Padding", name: "navigationPadding", widget: "string", default: "mt-8", hint: "Padding between content and navigation buttons (e.g., mt-8, mt-12)" }
+          - { label: "Show Navigation", name: "showNavigation", widget: "boolean", default: true }
+          - { label: "Selector Padding", name: "selectorPadding", widget: "string", default: "mt-12", hint: "Padding between content and selector dots (e.g., mt-8, mt-12)" }
           - label: "Events"
             name: "items"
             widget: "list"

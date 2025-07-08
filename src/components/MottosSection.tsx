@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Sparkles, Heart, Star } from 'lucide-react';
+import { icons } from 'lucide-react';
 import { useContent } from '@/hooks/useContent';
 
 interface MottosContent {
@@ -22,12 +22,6 @@ const MottosSection = () => {
     return null;
   }
 
-  const iconMap = {
-    Sparkles,
-    Heart,
-    Star
-  };
-
   return (
     <section 
       id="mottos" 
@@ -46,7 +40,7 @@ const MottosSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {content.items.map((motto, index) => {
-            const IconComponent = iconMap[motto.icon as keyof typeof iconMap];
+            const IconComponent = icons[motto.icon as keyof typeof icons];
             return (
               <div
                 key={index}

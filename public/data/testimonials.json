@@ -3,6 +3,8 @@
   "enabled": true,
   "title": "Client Stories",
   "subtitle": "What our distinguished clients say about their experiences with Aurelle Events",
+  "showNavigation": true,
+  "selectorPadding": "mt-12",
   "items": [
     {
       "quote": "Aurelle Events transformed our wedding into a fairytale beyond our wildest dreams. Every detail was perfection.",

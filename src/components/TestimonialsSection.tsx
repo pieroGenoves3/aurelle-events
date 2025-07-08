@@ -7,6 +7,8 @@ interface TestimonialsContent {
   enabled: boolean;
   title: string;
   subtitle: string;
+  showNavigation?: boolean;
+  selectorPadding?: string;
   items: Array<{
     quote: string;
     author: string;
@@ -80,21 +82,25 @@ const TestimonialsSection = () => {
 
         <div className="relative">
           {/* Navigation Buttons */}
-          <button
-            onClick={prevTestimonial}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-10 bg-cream/80 hover:bg-cream border border-olive-green/20 rounded-full p-3 transition-all duration-300 hover:scale-110"
-            aria-label="Previous testimonial"
-          >
-            <ChevronLeft size={20} className="text-foreground" />
-          </button>
+          {content.showNavigation && content.items.length > 1 && (
+            <>
+              <button
+                onClick={prevTestimonial}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-10 bg-cream/80 hover:bg-cream border border-olive-green/20 rounded-full p-3 transition-all duration-300 hover:scale-110"
+                aria-label="Previous testimonial"
+              >
+                <ChevronLeft size={20} className="text-foreground" />
+              </button>
 
-          <button
-            onClick={nextTestimonial}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-10 bg-cream/80 hover:bg-cream border border-olive-green/20 rounded-full p-3 transition-all duration-300 hover:scale-110"
-            aria-label="Next testimonial"
-          >
-            <ChevronRight size={20} className="text-foreground" />
-          </button>
+              <button
+                onClick={nextTestimonial}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-10 bg-cream/80 hover:bg-cream border border-olive-green/20 rounded-full p-3 transition-all duration-300 hover:scale-110"
+                aria-label="Next testimonial"
+              >
+                <ChevronRight size={20} className="text-foreground" />
+              </button>
+            </>
+          )}
 
           {/* Main Testimonial Card */}
           <div 
@@ -134,20 +140,22 @@ const TestimonialsSection = () => {
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center mt-12 space-x-3">
-            {content.items.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => handleTransition(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex 
-                    ? 'bg-golden-brown scale-125' 
-                    : 'bg-olive-green/30 hover:bg-olive-green/50'
-                }`}
-                aria-label={`Go to testimonial ${index + 1}`}
-              />
-            ))}
-          </div>
+          {content.items.length > 1 && (
+            <div className={`flex justify-center space-x-3 ${content.selectorPadding || 'mt-12'}`}>
+              {content.items.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleTransition(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentIndex 
+                      ? 'bg-golden-brown scale-125' 
+                      : 'bg-olive-green/30 hover:bg-olive-green/50'
+                  }`}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>
