@@ -53,8 +53,8 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
               - { label: "Features", name: "features", widget: "list", field: { label: "Feature", name: "feature", widget: "string" } }
-               - { label: "Price Range", name: "priceRange", widget: "string", required: false }
-               - { label: "Status", name: "status", widget: "select", options: ["active", "development"], default: "active", hint: "Set to 'development' to show 'Under Development' message" }
+              - { label: "Price Range", name: "priceRange", widget: "string", required: false }
+              - { label: "Status", name: "status", widget: "select", options: ["active", "development"], default: "active", hint: "Set to 'development' to show 'Under Development' message" }
       
       - label: "Testimonials Section"
         name: "testimonials"
