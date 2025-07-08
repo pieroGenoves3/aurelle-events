@@ -1,28 +1,21 @@
 
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useContent } from '@/hooks/useContent';
 
 interface HeroSectionProps {
-  imagePadding?: string;
+  imagePadding?: string; // Tailwind spacing class for padding below the image
 }
 
 const HeroSection = ({ imagePadding = 'mb-8' }: HeroSectionProps) => {
   const { t } = useLanguage();
-  const { content, loading } = useContent('hero');
-
-  // Don't render if content is disabled or loading
-  if (loading || !content?.enabled) {
-    return null;
-  }
 
   // Logo size configuration - easily adjustable
   const logoConfig = {
     desktop: {
-      height: 'h-50'
+      height: 'h-50' // Tailwind class for desktop
     },
     mobile: {
-      height: 'h-24'
+      height: 'h-24' // Tailwind class for mobile
     }
   };
 
@@ -43,7 +36,7 @@ const HeroSection = ({ imagePadding = 'mb-8' }: HeroSectionProps) => {
       <div className="absolute inset-0 w-full h-full">
         <div className="absolute inset-0 bg-gradient-to-br from-dark-purple/60 via-lavender/70 to-golden-brown/80 z-10" />
         <img
-          src={content.backgroundImage || "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"}
+          src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
           alt="Luxury Wedding"
           className="w-full h-full object-cover opacity-30"
         />
@@ -54,19 +47,19 @@ const HeroSection = ({ imagePadding = 'mb-8' }: HeroSectionProps) => {
         {/* Logo */}
         <div className={imagePadding}>
           <img 
-            src={content.logo || "/lovable-uploads/logo-horizontal-cut.png"} 
-            alt={content.title || "Aurelle Events"} 
+            src="/lovable-uploads/logo-horizontal-cut.png" 
+            alt="Aurelle Events" 
             className={`${logoConfig.desktop.height} md:${logoConfig.desktop.height} md:${logoConfig.mobile.height} w-auto object-contain mx-auto drop-shadow-2xl filter brightness-110 contrast-110`}
           />
         </div>
         <p className="text-xl md:text-2xl text-cream font-light max-w-2xl mx-auto leading-relaxed drop-shadow-2xl mb-8 filter brightness-110">
-          {content.subtitle || t.hero.subtitle}
+          {t.hero.subtitle}
         </p>
         <button
           onClick={scrollToEvents}
           className="neumorphic-btn sparkle-btn text-lg shadow-2xl"
         >
-          {content.ctaText || t.hero.cta}
+          {t.hero.cta}
         </button>
       </div>
 
