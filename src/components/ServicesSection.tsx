@@ -81,11 +81,11 @@ const ServicesSection = () => {
                     <h3 className="text-2xl font-light tracking-tight mb-3 text-cream group-hover:text-golden-brown transition-colors">
                       {service.title}
                     </h3>
-                    {service.priceRange && !isUnderDevelopment && (
+                    {/*{service.priceRange && !isUnderDevelopment && (
                       <p className="text-golden-brown font-medium mb-3">
                         {service.priceRange}
                       </p>
-                    )}
+                    )}*/}
                   </div>
                 </div>
                 
