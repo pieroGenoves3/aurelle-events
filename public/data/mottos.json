@@ -1,11 +1,10 @@
-
 {
   "enabled": true,
   "title": "Our Philosophy",
   "subtitle": "The principles that guide every extraordinary event we create",
   "items": [
     {
-      "icon": "Sparkles",
+      "icon": "bird",
       "title": "Elegance",
       "description": "We believe that true luxury lies in the perfect harmony of sophistication and refinement, creating moments that transcend the ordinary."
     },
