@@ -6,35 +6,11 @@
   "selectorPadding": "mt-12",
   "items": [
     {
-      "quote": "Aurelle Events transformed our wedding into a fairytale beyond our wildest dreams. Every detail was perfection.",
-      "author": "Sofia Benedetti",
-      "position": "Bride",
-      "company": "Villa San Martino Wedding",
-      "image": "/images/profile_meli.png",
-      "rating": 5
-    },
-    {
       "quote": "The attention to detail and seamless execution made our product launch unforgettable. Truly exceptional service.",
       "author": "Charlotte Dubois",
       "position": "CEO",
       "company": "Maison Lumière",
       "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&h=150&q=80",
-      "rating": 5
-    },
-    {
-      "quote": "Every element was perfect. Our guests are still talking about the evening months later. Simply extraordinary.",
-      "author": "Lord James Wellington",
-      "position": "Patron",
-      "company": "Wellington Foundation",
-      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&h=150&q=80",
-      "rating": 5
-    },
-    {
-      "quote": "Aurelle Events elevated our brand's presence to new heights of sophistication and elegance. Remarkable work.",
-      "author": "Isabella Rodriguez",
-      "position": "Fashion Director",
-      "company": "Milano Fashion House",
-      "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&h=150&q=80",
       "rating": 5
     }
   ],
