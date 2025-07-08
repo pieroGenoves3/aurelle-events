@@ -1,0 +1,16 @@
+
+{
+  "enabled": true,
+  "title": "Frequently Asked Questions",
+  "subtitle": "Everything you need to know about working with us",
+  "items": [
+    {
+      "question": "What types of events do you specialize in?",
+      "answer": "We specialize in luxury weddings, corporate events, fashion shows, galas, product launches, and private celebrations. Our expertise spans intimate gatherings to grand events with thousands of guests."
+    },
+    {
+      "question": "How far in advance should I book your services?",
+      "answer": "For luxury weddings and large-scale events, we recommend booking 12-18 months in advance. Corporate events and smaller celebrations can typically be planned 3-6 months ahead."
+    }
+  ]
+}

@@ -7,10 +7,15 @@ export const useContent = <T>(fileName: string): T | null => {
   useEffect(() => {
     const fetchContent = async () => {
       try {
-        const response = await fetch(`/src/data/content/${fileName}.json`);
+        console.log(`Fetching content for: ${fileName}`);
+        const response = await fetch(`/data/${fileName}.json`);
+        console.log(`Response status for ${fileName}:`, response.status);
         if (response.ok) {
           const data = await response.json();
+          console.log(`Content loaded for ${fileName}:`, data);
           setContent(data);
+        } else {
+          console.error(`Failed to fetch ${fileName}: ${response.status}`);
         }
       } catch (error) {
         console.error(`Error loading ${fileName} content:`, error);
