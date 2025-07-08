@@ -1,7 +1,6 @@
-
 {
   "enabled": true,
-  "title": "Past Events",
+  "title": "Events we made",
   "subtitle": "A showcase of our most memorable events and celebrations",
   "items": [
     {
@@ -13,36 +12,7 @@
       "image": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&h=600&q=80",
       "client": "The Benedetti Family",
       "guests": 300
-    },
-    {
-      "title": "Maison Lumière Launch",
-      "description": "An exclusive product launch for luxury fashion brand featuring immersive experiences, celebrity guests, and international media coverage.",
-      "date": "October 2024",
-      "location": "Paris, France",
-      "category": "Fashion",
-      "image": "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=800&h=600&q=80",
-      "client": "Maison Lumière",
-      "guests": 200
-    },
-    {
-      "title": "Wellington Charity Gala",
-      "description": "Annual black-tie charity gala raising funds for education initiatives, featuring live auction, gourmet dining, and entertainment.",
-      "date": "November 2024",
-      "location": "London, UK",
-      "category": "Corporate",
-      "image": "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&h=600&q=80",
-      "client": "Wellington Foundation",
-      "guests": 400
-    },
-    {
-      "title": "Milano Fashion Week Afterparty",
-      "description": "Exclusive afterparty celebrating emerging designers with installations, performances, and networking opportunities for industry professionals.",
-      "date": "February 2024",
-      "location": "Milan, Italy",
-      "category": "Fashion",
-      "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?auto=format&fit=crop&w=800&h=600&q=80",
-      "client": "Milano Fashion Collective",
-      "guests": 250
     }
-  ]
+  ],
+  "navigationPadding": "mt-12"
 }
