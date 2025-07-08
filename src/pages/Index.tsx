@@ -8,7 +8,7 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import LocationSection from '@/components/LocationSection';
 import PastEventsSection from '@/components/PastEventsSection';
 import MissionSection from '@/components/MissionSection';
-import FAQSection from '@/components/FAQSection';
+import ContactFormSection from '@/components/ContactFormSection';
 import Footer from '@/components/Footer';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 
@@ -71,7 +71,7 @@ const Index = () => {
         <LocationSection />
         <PastEventsSection />
         <MissionSection />
-        <FAQSection />
+        <ContactFormSection />
         <Footer />
       </div>
     </LanguageProvider>
