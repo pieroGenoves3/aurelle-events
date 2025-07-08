@@ -1,4 +1,3 @@
-
 {
   "enabled": true,
   "title": "Frequently Asked Questions",
@@ -11,18 +10,6 @@
     {
       "question": "How far in advance should I book your services?",
       "answer": "For luxury weddings and large-scale events, we recommend booking 12-18 months in advance. Corporate events and smaller celebrations can typically be planned 3-6 months ahead."
-    },
-    {
-      "question": "Do you provide services internationally?",
-      "answer": "Yes, we provide full-service event planning throughout Europe and select international destinations. Our network of trusted partners ensures seamless execution anywhere in the world."
-    },
-    {
-      "question": "What is included in your event planning services?",
-      "answer": "Our comprehensive services include venue selection, design and décor, catering coordination, entertainment booking, logistics management, vendor coordination, and day-of event management."
-    },
-    {
-      "question": "How do you ensure the privacy of high-profile clients?",
-      "answer": "Discretion and confidentiality are paramount to our service. All team members sign comprehensive NDAs, and we implement strict security protocols for every event we manage."
     }
   ]
 }
