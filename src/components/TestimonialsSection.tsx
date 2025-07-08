@@ -134,7 +134,7 @@ const TestimonialsSection = () => {
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center mt-8 space-x-3">
+          <div className="flex justify-center mt-12 space-x-3">
             {content.items.map((_, index) => (
               <button
                 key={index}

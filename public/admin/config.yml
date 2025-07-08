@@ -34,7 +34,7 @@ collections:
             name: "items"
             widget: "list"
             fields:
-              - { label: "Icon", name: "icon", widget: "select", options: ["Sparkles", "Heart", "Star"] }
+              - { label: "Icon (Lucide React)", name: "icon", widget: "string", hint: "Enter a Lucide React icon name (e.g., Sparkles, Heart, Star, Crown, Users, Calendar, etc.)" }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
       
@@ -53,7 +53,8 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
               - { label: "Features", name: "features", widget: "list", field: { label: "Feature", name: "feature", widget: "string" } }
-              - { label: "Price Range", name: "priceRange", widget: "string", required: false }
+               - { label: "Price Range", name: "priceRange", widget: "string", required: false }
+               - { label: "Status", name: "status", widget: "select", options: ["active", "development"], default: "active", hint: "Set to 'development' to show 'Under Development' message" }
       
       - label: "Testimonials Section"
         name: "testimonials"
@@ -61,7 +62,8 @@ collections:
         fields:
           - { label: "Enabled", name: "enabled", widget: "boolean", default: true }
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Subtitle", name: "subtitle", widget: "text" }
+           - { label: "Subtitle", name: "subtitle", widget: "text" }
+           - { label: "Navigation Padding", name: "navigationPadding", widget: "string", default: "mt-8", hint: "Padding between content and navigation buttons (e.g., mt-8, mt-12)" }
           - label: "Testimonials"
             name: "items"
             widget: "list"
@@ -98,7 +100,8 @@ collections:
         fields:
           - { label: "Enabled", name: "enabled", widget: "boolean", default: true }
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Subtitle", name: "subtitle", widget: "text" }
+           - { label: "Subtitle", name: "subtitle", widget: "text" }
+           - { label: "Navigation Padding", name: "navigationPadding", widget: "string", default: "mt-8", hint: "Padding between content and navigation buttons (e.g., mt-8, mt-12)" }
           - label: "Events"
             name: "items"
             widget: "list"

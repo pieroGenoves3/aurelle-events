@@ -14,7 +14,8 @@
         "Timeline management",
         "Day-of coordination"
       ],
-      "priceRange": "From €15,000"
+      "priceRange": "From €15,000",
+      "status": "active"
     },
     {
       "icon": "Users",
@@ -26,7 +27,8 @@
         "Team building events",
         "Award ceremonies"
       ],
-      "priceRange": "From €8,000"
+      "priceRange": "From €8,000",
+      "status": "development"
     },
     {
       "icon": "Sparkles",
@@ -38,7 +40,8 @@
         "Brand launches",
         "VIP experiences"
       ],
-      "priceRange": "From €20,000"
+      "priceRange": "From €20,000",
+      "status": "development"
     },
     {
       "icon": "Heart",
@@ -50,7 +53,8 @@
         "Holiday parties",
         "Family gatherings"
       ],
-      "priceRange": "From €5,000"
+      "priceRange": "From €5,000",
+      "status": "development"
     }
   ]
 }

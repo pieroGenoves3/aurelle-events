@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Crown, Users, Sparkles, Heart, Star, Calendar, Check } from 'lucide-react';
+import { Crown, Users, Sparkles, Heart, Star, Calendar, Check, Construction } from 'lucide-react';
 import { useContent } from '@/hooks/useContent';
 
 interface ServicesContent {
@@ -13,6 +13,7 @@ interface ServicesContent {
     description: string;
     features: string[];
     priceRange?: string;
+    status?: string;
   }>;
 }
 
@@ -51,12 +52,25 @@ const ServicesSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {content.items.map((service, index) => {
             const IconComponent = iconMap[service.icon as keyof typeof iconMap];
+            const isUnderDevelopment = service.status === 'development';
+            
             return (
               <div
                 key={index}
-                className="scroll-reveal glass-card p-8 bg-cream/10 backdrop-blur-sm border border-cream/20 hover:bg-cream/15 transition-all duration-500 group"
+                className={`scroll-reveal glass-card p-8 bg-cream/10 backdrop-blur-sm border border-cream/20 transition-all duration-500 group ${
+                  isUnderDevelopment ? 'opacity-60' : 'hover:bg-cream/15'
+                }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
+                {isUnderDevelopment && (
+                  <div className="flex items-center justify-center mb-4">
+                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-golden-brown/20 border border-golden-brown/30">
+                      <Construction size={14} className="text-golden-brown mr-2" />
+                      <span className="text-golden-brown text-sm font-medium">Under Development</span>
+                    </div>
+                  </div>
+                )}
+                
                 <div className="flex items-start space-x-4 mb-6">
                   <div className="flex-shrink-0">
                     <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-golden-brown/20 to-lavender/20">
@@ -67,7 +81,7 @@ const ServicesSection = () => {
                     <h3 className="text-2xl font-light tracking-tight mb-3 text-cream group-hover:text-golden-brown transition-colors">
                       {service.title}
                     </h3>
-                    {service.priceRange && (
+                    {service.priceRange && !isUnderDevelopment && (
                       <p className="text-golden-brown font-medium mb-3">
                         {service.priceRange}
                       </p>
@@ -76,17 +90,22 @@ const ServicesSection = () => {
                 </div>
                 
                 <p className="text-cream/80 leading-relaxed mb-6">
-                  {service.description}
+                  {isUnderDevelopment 
+                    ? "We're currently developing this service to bring you exceptional experiences. Stay tuned for exciting updates!"
+                    : service.description
+                  }
                 </p>
                 
-                <ul className="space-y-2">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center space-x-3 text-cream/70">
-                      <Check size={16} className="text-golden-brown flex-shrink-0" />
-                      <span className="text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+                {!isUnderDevelopment && (
+                  <ul className="space-y-2">
+                    {service.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center space-x-3 text-cream/70">
+                        <Check size={16} className="text-golden-brown flex-shrink-0" />
+                        <span className="text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             );
           })}
