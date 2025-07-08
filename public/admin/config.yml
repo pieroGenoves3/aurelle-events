@@ -1,0 +1,75 @@
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/images
+public_folder: /images
+
+collections:
+  - name: "content"
+    label: "Content"
+    files:
+      - label: "Hero Section"
+        name: "hero"
+        file: "src/data/content/hero.json"
+        fields:
+          - { label: "Enabled", name: "enabled", widget: "boolean", default: true }
+          - { label: "Subtitle", name: "subtitle", widget: "text" }
+          - { label: "Call to Action", name: "cta", widget: "string" }
+          - { label: "Image Padding", name: "imagePadding", widget: "string", default: "mb-8" }
+      
+      - label: "Philosophy Section"
+        name: "mottos"
+        file: "src/data/content/mottos.json"
+        fields:
+          - { label: "Enabled", name: "enabled", widget: "boolean", default: true }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "text" }
+          - label: "Mottos"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Icon", name: "icon", widget: "select", options: ["Sparkles", "Heart", "Star"] }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+      
+      - label: "Mission Section"
+        name: "mission"
+        file: "src/data/content/mission.json"
+        fields:
+          - { label: "Enabled", name: "enabled", widget: "boolean", default: true }
+          - { label: "Title", name: "title", widget: "string" }
+          - label: "Paragraphs"
+            name: "paragraphs"
+            widget: "list"
+            field: { label: "Paragraph", name: "text", widget: "text" }
+          - { label: "Quote", name: "quote", widget: "text" }
+      
+      - label: "FAQ Section"
+        name: "faq"
+        file: "src/data/content/faq.json"
+        fields:
+          - { label: "Enabled", name: "enabled", widget: "boolean", default: true }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "text" }
+          - label: "FAQs"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer", name: "answer", widget: "text" }
+      
+      - label: "Footer Section"
+        name: "footer"
+        file: "src/data/content/footer.json"
+        fields:
+          - { label: "Enabled", name: "enabled", widget: "boolean", default: true }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Button Text", name: "buttonText", widget: "string" }
+          - { label: "Contact Title", name: "contactTitle", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Locations", name: "locations", widget: "string" }
+          - { label: "Copyright", name: "copyright", widget: "text" }

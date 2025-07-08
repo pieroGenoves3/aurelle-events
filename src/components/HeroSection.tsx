@@ -1,13 +1,22 @@
-
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useContent } from '@/hooks/useContent';
 
-interface HeroSectionProps {
-  imagePadding?: string; // Tailwind spacing class for padding below the image
+interface HeroContent {
+  enabled: boolean;
+  subtitle: string;
+  cta: string;
+  imagePadding: string;
 }
 
-const HeroSection = ({ imagePadding = 'mb-8' }: HeroSectionProps) => {
+const HeroSection = () => {
   const { t } = useLanguage();
+  const content = useContent<HeroContent>('hero');
+
+  // Don't render if content is disabled or not loaded
+  if (!content || !content.enabled) {
+    return null;
+  }
 
   // Logo size configuration - easily adjustable
   const logoConfig = {
@@ -45,7 +54,7 @@ const HeroSection = ({ imagePadding = 'mb-8' }: HeroSectionProps) => {
       {/* Hero Content */}
       <div className="relative z-20 text-center max-w-4xl mx-auto px-4 animate-fade-in-up">
         {/* Logo */}
-        <div className={imagePadding}>
+        <div className={content.imagePadding}>
           <img 
             src="/lovable-uploads/logo-horizontal-cut.png" 
             alt="Aurelle Events" 
@@ -53,13 +62,13 @@ const HeroSection = ({ imagePadding = 'mb-8' }: HeroSectionProps) => {
           />
         </div>
         <p className="text-xl md:text-2xl text-cream font-light max-w-2xl mx-auto leading-relaxed drop-shadow-2xl mb-8 filter brightness-110">
-          {t.hero.subtitle}
+          {content.subtitle}
         </p>
         <button
           onClick={scrollToEvents}
           className="neumorphic-btn sparkle-btn text-lg shadow-2xl"
         >
-          {t.hero.cta}
+          {content.cta}
         </button>
       </div>
 
