@@ -47,11 +47,12 @@ const TestimonialsSection = () => {
     if (!content?.items?.length) return;
     
     const interval = setInterval(() => {
-      setCurrentIndex(prevIndex => (prevIndex + 1) % content.items.length);
+      const nextIndex = (currentIndex + 1) % content.items.length;
+      handleTransition(nextIndex);
     }, 6000);
     
     return () => clearInterval(interval);
-  }, [content?.items?.length]);
+  }, [currentIndex, content?.items?.length, handleTransition]);
 
   // Early return after all hooks are called
   if (!content || !content.enabled || !content.items.length) {
