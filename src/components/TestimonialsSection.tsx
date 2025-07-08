@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useContent } from '@/hooks/useContent';
 
@@ -26,29 +26,29 @@ const TestimonialsSection = () => {
     return null;
   }
 
-  const handleTransition = (newIndex: number) => {
+  const handleTransition = useCallback((newIndex: number) => {
     setIsTransitioning(true);
     setTimeout(() => {
       setCurrentIndex(newIndex);
       setIsTransitioning(false);
     }, 150);
-  };
+  }, []);
 
-  const nextTestimonial = () => {
+  const nextTestimonial = useCallback(() => {
     const nextIndex = (currentIndex + 1) % content.items.length;
     handleTransition(nextIndex);
-  };
+  }, [currentIndex, content.items.length, handleTransition]);
 
-  const prevTestimonial = () => {
+  const prevTestimonial = useCallback(() => {
     const prevIndex = (currentIndex - 1 + content.items.length) % content.items.length;
     handleTransition(prevIndex);
-  };
+  }, [currentIndex, content.items.length, handleTransition]);
 
   // Auto-advance testimonials every 6 seconds
   useEffect(() => {
     const interval = setInterval(nextTestimonial, 6000);
     return () => clearInterval(interval);
-  }, [currentIndex]);
+  }, [nextTestimonial]);
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
