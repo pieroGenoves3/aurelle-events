@@ -14,19 +14,24 @@ const Index = () => {
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      rootMargin: '0px 0px -100px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('revealed');
+          entry.target.classList.remove('scroll-hidden');
         }
       });
     }, observerOptions);
 
+    // Apply initial hidden state and observe elements
     const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
-    scrollRevealElements.forEach((el) => observer.observe(el));
+    scrollRevealElements.forEach((el) => {
+      el.classList.add('scroll-hidden');
+      observer.observe(el);
+    });
 
     // Page entrance animation
     if (pageRef.current) {
