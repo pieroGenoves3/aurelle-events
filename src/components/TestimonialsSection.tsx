@@ -1,100 +1,94 @@
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
+import { Star, Quote } from 'lucide-react';
+import { useContent } from '@/hooks/useContent';
+
+interface TestimonialsContent {
+  enabled: boolean;
+  title: string;
+  subtitle: string;
+  items: Array<{
+    quote: string;
+    author: string;
+    position: string;
+    company?: string;
+    image?: string;
+    rating: number;
+  }>;
+}
 
 const TestimonialsSection = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const content = useContent<TestimonialsContent>('testimonials');
 
-  const testimonials = [
-    {
-      quote: "Aurelle Events transformed our wedding into a fairytale beyond our wildest dreams. Every detail was perfection.",
-      author: "Sofia & Alessandro Benedetti",
-      result: "300 guests, Villa San Martino, Tuscany",
-      image: "https://images.unsplash.com/photo-1494790108755-2616c7e18b2a?auto=format&fit=crop&w=150&h=150&q=80"
-    },
-    {
-      quote: "The attention to detail and seamless execution made our product launch unforgettable. Truly exceptional service.",
-      author: "Charlotte Dubois, CEO Maison Lumière",
-      result: "€2.5M in pre-orders within 48 hours",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&h=150&q=80"
-    },
-    {
-      quote: "Every element was perfect. Our guests are still talking about the evening months later. Simply extraordinary.",
-      author: "Lord James Wellington",
-      result: "Annual charity gala, £850K raised",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&h=150&q=80"
-    },
-    {
-      quote: "Aurelle Events elevated our brand's presence to new heights of sophistication and elegance. Remarkable work.",
-      author: "Isabella Rodriguez, Fashion Director",
-      result: "Paris Fashion Week afterparty, 400 VIP guests",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&h=150&q=80"
-    }
-  ];
+  if (!content || !content.enabled) {
+    return null;
+  }
 
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
-
-    let scrollAmount = 0;
-    const scrollStep = 1;
-    const scrollDelay = 50;
-
-    const autoScroll = () => {
-      scrollAmount += scrollStep;
-      if (scrollAmount >= scrollContainer.scrollWidth / 2) {
-        scrollAmount = 0;
-      }
-      scrollContainer.scrollLeft = scrollAmount;
-    };
-
-    const interval = setInterval(autoScroll, scrollDelay);
-
-    return () => clearInterval(interval);
-  }, []);
+  const renderStars = (rating: number) => {
+    return Array.from({ length: 5 }, (_, i) => (
+      <Star
+        key={i}
+        size={16}
+        className={`${i < rating ? 'text-golden-brown fill-golden-brown' : 'text-cream/30'}`}
+      />
+    ));
+  };
 
   return (
     <section 
       id="testimonials" 
-      className="py-24"
-      style={{ backgroundColor: 'rgb(248, 248, 248)' }}
+      className="py-24 px-4"
+      style={{ backgroundColor: '#EDE5D6' }}
     >
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 scroll-reveal">
-          <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6">
-            Client Stories
+          <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6 text-foreground">
+            {content.title}
           </h2>
           <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
-            Testimonials from our distinguished clientele
+            {content.subtitle}
           </p>
         </div>
 
-        <div
-          ref={scrollRef}
-          className="flex space-x-6 overflow-x-hidden scroll-reveal"
-          style={{
-            width: '100%',
-            scrollBehavior: 'smooth'
-          }}
-        >
-          {[...testimonials, ...testimonials].map((testimonial, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {content.items.map((testimonial, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-96 glass-card p-8"
+              className="scroll-reveal glass-card p-8 bg-cream/60 backdrop-blur-sm border border-olive-green/20 hover:shadow-lg transition-all duration-500 relative"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="flex items-center mb-6">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.author}
-                  className="w-16 h-16 rounded-full object-cover mr-4"
-                />
-                <div>
-                  <h4 className="font-medium text-foreground">{testimonial.author}</h4>
-                  <p className="text-sm text-foreground/70">{testimonial.result}</p>
+              <div className="absolute top-4 left-4 opacity-10">
+                <Quote size={40} className="text-golden-brown" />
+              </div>
+              
+              <div className="relative">
+                <div className="flex items-center mb-4">
+                  {renderStars(testimonial.rating)}
+                </div>
+                
+                <blockquote className="text-lg text-foreground/80 italic leading-relaxed mb-6">
+                  "{testimonial.quote}"
+                </blockquote>
+                
+                <div className="flex items-center space-x-4">
+                  {testimonial.image && (
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.author}
+                      className="w-12 h-12 rounded-full object-cover border-2 border-golden-brown/20"
+                    />
+                  )}
+                  <div>
+                    <h4 className="font-medium text-foreground">{testimonial.author}</h4>
+                    <p className="text-sm text-foreground/60">
+                      {testimonial.position}
+                      {testimonial.company && (
+                        <span className="text-golden-brown"> • {testimonial.company}</span>
+                      )}
+                    </p>
+                  </div>
                 </div>
               </div>
-              <blockquote className="text-lg italic text-foreground/70">
-                "{testimonial.quote}"
-              </blockquote>
             </div>
           ))}
         </div>

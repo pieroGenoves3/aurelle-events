@@ -1,0 +1,56 @@
+
+{
+  "enabled": true,
+  "title": "Our Services",
+  "subtitle": "Exceptional event planning services tailored to create unforgettable experiences",
+  "items": [
+    {
+      "icon": "Crown",
+      "title": "Luxury Weddings",
+      "description": "Exquisite wedding planning with attention to every detail, from intimate ceremonies to grand celebrations.",
+      "features": [
+        "Venue selection and design",
+        "Vendor coordination",
+        "Timeline management",
+        "Day-of coordination"
+      ],
+      "priceRange": "From €15,000"
+    },
+    {
+      "icon": "Users",
+      "title": "Corporate Events",
+      "description": "Professional corporate event planning that reflects your brand and achieves your business objectives.",
+      "features": [
+        "Conference planning",
+        "Product launches",
+        "Team building events",
+        "Award ceremonies"
+      ],
+      "priceRange": "From €8,000"
+    },
+    {
+      "icon": "Sparkles",
+      "title": "Fashion Events",
+      "description": "Haute couture fashion shows and exclusive fashion events that showcase style and sophistication.",
+      "features": [
+        "Runway shows",
+        "Fashion week events",
+        "Brand launches",
+        "VIP experiences"
+      ],
+      "priceRange": "From €20,000"
+    },
+    {
+      "icon": "Heart",
+      "title": "Social Celebrations",
+      "description": "Memorable social events and milestone celebrations designed to bring people together.",
+      "features": [
+        "Birthday parties",
+        "Anniversary celebrations",
+        "Holiday parties",
+        "Family gatherings"
+      ],
+      "priceRange": "From €5,000"
+    }
+  ]
+}
