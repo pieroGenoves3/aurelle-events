@@ -5,6 +5,8 @@ import { useContent } from '@/hooks/useContent';
 interface MissionContent {
   enabled: boolean;
   title: string;
+  backgroundImage?: string;
+  headerTitle?: string;
   paragraphs: string[];
   quote: string;
 }
@@ -17,13 +19,27 @@ const MissionSection = () => {
     return null;
   }
 
+  const backgroundImage = content.backgroundImage;
+
   return (
     <section 
       id="mission" 
-      className="py-24 px-4"
+      className="py-24 px-4 relative"
       style={{ backgroundColor: '#A394B8' }}
     >
-      <div className="max-w-4xl mx-auto text-center scroll-reveal">
+      {backgroundImage && (
+        <>
+          <div 
+            className="absolute inset-0 bg-fixed bg-cover bg-center"
+            style={{ 
+              backgroundImage: `url(${backgroundImage})`,
+              transform: 'translateZ(0)'
+            }}
+          />
+          <div className="absolute inset-0 bg-lavender/80" />
+        </>
+      )}
+      <div className="max-w-4xl mx-auto text-center scroll-reveal relative z-10">
         <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-8 text-cream opacity-100">
           {content.title}
         </h2>

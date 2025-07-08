@@ -1,8 +1,9 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useContent } from '@/hooks/useContent';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,13 +39,86 @@ const Navigation = () => {
     }
   };
 
-  const navigationItems = [
-    { name: t.navigation.home, id: 'hero' },
-    { name: t.navigation.about, id: 'mottos' },
-    { name: t.navigation.mission, id: 'mission' },
-    { name: t.navigation.faq, id: 'faq' },
-    { name: t.navigation.contact, id: 'contact' }
-  ];
+  // Get all content sections to build dynamic navigation
+  const heroContent = useContent('hero');
+  const mottosContent = useContent('mottos');
+  const servicesContent = useContent('services');
+  const testimonialsContent = useContent('testimonials');
+  const eventsContent = useContent('events');
+  const missionContent = useContent('mission');
+  const contactContent = useContent('contact');
+
+  // Build navigation items dynamically based on enabled sections
+  const navigationItems = useMemo(() => {
+    const items = [];
+    
+    if ((heroContent as any)?.enabled) {
+      items.push({ 
+        name: (heroContent as any)?.headerTitle || t.navigation.home, 
+        id: 'hero',
+        order: 0
+      });
+    }
+    
+    if ((mottosContent as any)?.enabled) {
+      items.push({ 
+        name: (mottosContent as any)?.headerTitle || t.navigation.about, 
+        id: 'mottos',
+        order: 1
+      });
+    }
+    
+    if ((servicesContent as any)?.enabled) {
+      items.push({ 
+        name: (servicesContent as any)?.headerTitle || 'Services', 
+        id: 'services',
+        order: 2
+      });
+    }
+    
+    if ((testimonialsContent as any)?.enabled) {
+      items.push({ 
+        name: (testimonialsContent as any)?.headerTitle || 'Testimonials', 
+        id: 'testimonials',
+        order: 3
+      });
+    }
+    
+    if ((eventsContent as any)?.enabled) {
+      items.push({ 
+        name: (eventsContent as any)?.headerTitle || 'Events', 
+        id: 'events',
+        order: 4
+      });
+    }
+    
+    if ((missionContent as any)?.enabled) {
+      items.push({ 
+        name: (missionContent as any)?.headerTitle || t.navigation.mission, 
+        id: 'mission',
+        order: 5
+      });
+    }
+    
+    if ((contactContent as any)?.enabled) {
+      items.push({ 
+        name: (contactContent as any)?.headerTitle || t.navigation.contact, 
+        id: 'contact',
+        order: 6
+      });
+    }
+    
+    return items.sort((a, b) => a.order - b.order);
+  }, [
+    heroContent, 
+    mottosContent, 
+    servicesContent, 
+    testimonialsContent, 
+    eventsContent, 
+    missionContent, 
+    contactContent, 
+    t.navigation
+  ]);
 
   const languages = [
     { code: 'en', label: 'English', flag: '🇺🇸' },

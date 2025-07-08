@@ -77,7 +77,7 @@ const HeroSection = () => {
         </p>
         <button
           onClick={scrollToEvents}
-          className="neumorphic-btn sparkle-btn text-lg shadow-2xl opacity-100"
+          className="neumorphic-btn text-lg shadow-2xl opacity-100"
         >
           {content.cta}
         </button>

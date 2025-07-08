@@ -2,6 +2,8 @@
   "enabled": true,
   "title": "Events we made",
   "subtitle": "A showcase of our most memorable events and celebrations",
+  "backgroundImage": "",
+  "headerTitle": "Events",
   "showNavigation": true,
   "selectorPadding": "mt-12",
   "items": [

@@ -7,6 +7,8 @@ interface EventsContent {
   enabled: boolean;
   title: string;
   subtitle: string;
+  backgroundImage?: string;
+  headerTitle?: string;
   showNavigation?: boolean;
   selectorPadding?: string;
   items: Array<{
@@ -80,13 +82,28 @@ const PastEventsSection = () => {
 
   const currentEvent = content.items[currentIndex];
 
+  const backgroundImage = content.backgroundImage;
+  const hasMultipleItems = content.items.length > 1;
+
   return (
     <section 
       id="events" 
-      className="py-24 px-4"
+      className="py-24 px-4 relative"
       style={{ backgroundColor: '#7A7A45' }}
     >
-      <div className="max-w-5xl mx-auto">
+      {backgroundImage && (
+        <>
+          <div 
+            className="absolute inset-0 bg-fixed bg-cover bg-center"
+            style={{ 
+              backgroundImage: `url(${backgroundImage})`,
+              transform: 'translateZ(0)'
+            }}
+          />
+          <div className="absolute inset-0 bg-olive-green/80" />
+        </>
+      )}
+      <div className="max-w-5xl mx-auto relative z-10">
         <div className="text-center mb-16 scroll-reveal">
           <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6 text-cream">
             {content.title}
@@ -98,7 +115,7 @@ const PastEventsSection = () => {
 
         <div className="relative">
           {/* Navigation Buttons */}
-          {content.showNavigation && content.items.length > 1 && (
+          {content.showNavigation && hasMultipleItems && (
             <>
               <button
                 onClick={prevEvent}
@@ -120,8 +137,8 @@ const PastEventsSection = () => {
 
           {/* Main Event Card */}
           <div 
-            className={`glass-card bg-cream/10 backdrop-blur-sm border border-cream/20 overflow-hidden transition-all duration-300 ${
-              isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
+            className={`glass-card bg-cream/10 backdrop-blur-sm border border-cream/20 overflow-hidden ${
+              hasMultipleItems ? `transition-all duration-300 ${isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}` : ''
             }`}
           >
             <div className="relative h-80 overflow-hidden">
@@ -178,7 +195,7 @@ const PastEventsSection = () => {
           </div>
 
           {/* Dots Indicator */}
-          {content.items.length > 1 && (
+          {hasMultipleItems && (
             <div className={`flex justify-center space-x-3 ${content.selectorPadding || 'mt-12'}`}>
               {content.items.map((_, index) => (
                 <button

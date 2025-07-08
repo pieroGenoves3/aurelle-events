@@ -2,6 +2,8 @@
   "enabled": true,
   "title": "Client Stories",
   "subtitle": "What our distinguished clients say about their experiences with Aurelle Events",
+  "backgroundImage": "",
+  "headerTitle": "Testimonials",
   "showNavigation": true,
   "selectorPadding": "mt-12",
   "items": [

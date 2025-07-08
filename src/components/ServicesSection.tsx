@@ -1,12 +1,15 @@
 
 import React from 'react';
-import { Crown, Users, Sparkles, Heart, Star, Calendar, Check, Construction } from 'lucide-react';
+import { icons } from 'lucide-react';
+import { Check, Construction } from 'lucide-react';
 import { useContent } from '@/hooks/useContent';
 
 interface ServicesContent {
   enabled: boolean;
   title: string;
   subtitle: string;
+  backgroundImage?: string;
+  headerTitle?: string;
   items: Array<{
     icon: string;
     title: string;
@@ -24,22 +27,27 @@ const ServicesSection = () => {
     return null;
   }
 
-  const iconMap = {
-    Crown,
-    Users,
-    Sparkles,
-    Heart,
-    Star,
-    Calendar
-  };
+  const backgroundImage = content.backgroundImage;
 
   return (
     <section 
       id="services" 
-      className="py-24 px-4"
+      className="py-24 px-4 relative"
       style={{ backgroundColor: '#383D33' }}
     >
-      <div className="max-w-7xl mx-auto">
+      {backgroundImage && (
+        <>
+          <div 
+            className="absolute inset-0 bg-fixed bg-cover bg-center"
+            style={{ 
+              backgroundImage: `url(${backgroundImage})`,
+              transform: 'translateZ(0)'
+            }}
+          />
+          <div className="absolute inset-0 bg-dark-green/80" />
+        </>
+      )}
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16 scroll-reveal">
           <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6 text-cream">
             {content.title}
@@ -51,7 +59,7 @@ const ServicesSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {content.items.map((service, index) => {
-            const IconComponent = iconMap[service.icon as keyof typeof iconMap];
+            const IconComponent = icons[service.icon as keyof typeof icons];
             const isUnderDevelopment = service.status === 'development';
             
             return (

@@ -3,6 +3,8 @@
   "enabled": true,
   "title": "Our Services",
   "subtitle": "Exceptional event planning services tailored to create unforgettable experiences",
+  "backgroundImage": "",
+  "headerTitle": "Services",
   "items": [
     {
       "icon": "Crown",

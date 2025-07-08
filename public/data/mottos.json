@@ -2,6 +2,8 @@
   "enabled": true,
   "title": "Our Philosophy",
   "subtitle": "The principles that guide every extraordinary event we create",
+  "backgroundImage": "",
+  "headerTitle": "About",
   "items": [
     {
       "icon": "Sparkles",

@@ -3,21 +3,51 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { useContent } from '@/hooks/useContent';
+
+interface ContactContent {
+  enabled: boolean;
+  title: string;
+  subtitle: string;
+  backgroundImage?: string;
+  headerTitle?: string;
+}
 
 const ContactFormSection = () => {
+  const content = useContent<ContactContent>('contact');
+
+  // Don't render if content is disabled or not loaded
+  if (!content || !content.enabled) {
+    return null;
+  }
+
+  const backgroundImage = content.backgroundImage;
+
   return (
     <section 
       id="contact" 
-      className="py-24 px-4"
+      className="py-24 px-4 relative"
       style={{ backgroundColor: '#EDE5D6' }}
     >
-      <div className="max-w-4xl mx-auto">
+      {backgroundImage && (
+        <>
+          <div 
+            className="absolute inset-0 bg-fixed bg-cover bg-center"
+            style={{ 
+              backgroundImage: `url(${backgroundImage})`,
+              transform: 'translateZ(0)'
+            }}
+          />
+          <div className="absolute inset-0 bg-cream/80" />
+        </>
+      )}
+      <div className="max-w-4xl mx-auto relative z-10">
         <div className="text-center mb-16 scroll-reveal">
           <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6 text-foreground">
-            Get In Touch
+            {content.title}
           </h2>
           <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
-            Ready to create something extraordinary? Let's discuss your vision and bring it to life.
+            {content.subtitle}
           </p>
         </div>
 
@@ -136,7 +166,7 @@ const ContactFormSection = () => {
 
             <Button 
               type="submit"
-              className="w-full bg-golden-brown hover:bg-golden-brown/90 text-cream font-medium py-3 px-8 rounded-lg transition-all duration-300 hover:scale-105"
+              className="w-full neumorphic-btn text-foreground font-medium py-3 px-8 transition-all duration-300"
             >
               Send Message
             </Button>
