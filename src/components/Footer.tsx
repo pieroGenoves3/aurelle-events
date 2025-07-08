@@ -32,31 +32,31 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
           <div className="scroll-reveal">
-            <h3 className="text-3xl font-light tracking-tighter mb-6 text-cream">
+            <h3 className="text-3xl font-light tracking-tighter mb-6 text-cream opacity-100">
               {content.title}
             </h3>
-            <p className="text-lg text-cream/80 mb-8 leading-relaxed">
+            <p className="text-lg text-cream mb-8 leading-relaxed opacity-100">
               {content.description}
             </p>
-            <button className="neumorphic-btn">
+            <button className="neumorphic-btn opacity-100">
               {content.buttonText}
             </button>
           </div>
 
           <div className="scroll-reveal">
-            <h4 className="text-2xl font-light tracking-tight mb-6 text-cream">
+            <h4 className="text-2xl font-light tracking-tight mb-6 text-cream opacity-100">
               {content.contactTitle}
             </h4>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <Mail size={20} className="text-golden-brown" strokeWidth={1} />
-                <span className="text-cream/70">{content.email}</span>
+                <Mail size={20} className="text-golden-brown opacity-100" strokeWidth={1} />
+                <span className="text-cream opacity-100">{content.email}</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone size={20} className="text-golden-brown" strokeWidth={1} />
-                <span className="text-cream/70">{content.phone}</span>
+                <Phone size={20} className="text-golden-brown opacity-100" strokeWidth={1} />
+                <span className="text-cream opacity-100">{content.phone}</span>
               </div>
-              <div className="text-cream/70">
+              <div className="text-cream opacity-100">
                 <p>{content.locations}</p>
               </div>
             </div>
@@ -64,7 +64,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-olive-green/20 pt-8 text-center">
-          <p className="text-cream/70">
+          <p className="text-cream opacity-100">
             {content.copyright}
           </p>
         </div>

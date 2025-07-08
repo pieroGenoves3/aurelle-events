@@ -36,10 +36,10 @@ const MottosSection = () => {
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 scroll-reveal">
-          <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6">
+          <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6 text-foreground opacity-100">
             {content.title}
           </h2>
-          <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
+          <p className="text-xl text-foreground max-w-2xl mx-auto opacity-100">
             {content.subtitle}
           </p>
         </div>
@@ -54,12 +54,12 @@ const MottosSection = () => {
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-primary/10 to-primary/5 mb-6">
-                  <IconComponent size={32} className="text-primary" strokeWidth={1} />
+                  <IconComponent size={32} className="text-primary opacity-100" strokeWidth={1} />
                 </div>
-                <h3 className="text-2xl font-light tracking-tight mb-4">
+                <h3 className="text-2xl font-light tracking-tight mb-4 text-foreground opacity-100">
                   {motto.title}
                 </h3>
-                <p className="text-foreground/70 leading-relaxed">
+                <p className="text-foreground leading-relaxed opacity-100">
                   {motto.description}
                 </p>
               </div>

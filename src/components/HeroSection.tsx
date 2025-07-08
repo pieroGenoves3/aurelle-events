@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useContent } from '@/hooks/useContent';
@@ -61,12 +62,12 @@ const HeroSection = () => {
             className={`${logoConfig.desktop.height} md:${logoConfig.desktop.height} md:${logoConfig.mobile.height} w-auto object-contain mx-auto drop-shadow-2xl filter brightness-110 contrast-110`}
           />
         </div>
-        <p className="text-xl md:text-2xl text-cream font-light max-w-2xl mx-auto leading-relaxed drop-shadow-2xl mb-8 filter brightness-110">
+        <p className="text-xl md:text-2xl text-cream font-light max-w-2xl mx-auto leading-relaxed drop-shadow-2xl mb-8 filter brightness-110 opacity-100">
           {content.subtitle}
         </p>
         <button
           onClick={scrollToEvents}
-          className="neumorphic-btn sparkle-btn text-lg shadow-2xl"
+          className="neumorphic-btn sparkle-btn text-lg shadow-2xl opacity-100"
         >
           {content.cta}
         </button>

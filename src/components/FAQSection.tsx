@@ -34,10 +34,10 @@ const FAQSection = () => {
     >
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16 scroll-reveal">
-          <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6">
+          <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6 text-foreground opacity-100">
             {content.title}
           </h2>
-          <p className="text-xl text-foreground/80">
+          <p className="text-xl text-foreground opacity-100">
             {content.subtitle}
           </p>
         </div>
@@ -46,10 +46,10 @@ const FAQSection = () => {
           <Accordion type="single" collapsible className="space-y-4">
             {content.items.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-left text-lg font-light tracking-tight hover:text-primary transition-colors">
+                <AccordionTrigger className="text-left text-lg font-light tracking-tight hover:text-primary transition-colors text-foreground opacity-100">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-foreground/70 pt-4 leading-relaxed">
+                <AccordionContent className="text-foreground pt-4 leading-relaxed opacity-100">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

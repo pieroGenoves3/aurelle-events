@@ -24,14 +24,14 @@ const MissionSection = () => {
       style={{ backgroundColor: '#A394B8' }}
     >
       <div className="max-w-4xl mx-auto text-center scroll-reveal">
-        <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-8 text-cream">
+        <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-8 text-cream opacity-100">
           {content.title}
         </h2>
-        <div className="space-y-8 text-lg md:text-xl leading-relaxed text-cream/90">
+        <div className="space-y-8 text-lg md:text-xl leading-relaxed text-cream">
           {content.paragraphs.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
+            <p key={index} className="opacity-100">{paragraph}</p>
           ))}
-          <p className="text-2xl font-light text-cream italic">
+          <p className="text-2xl font-light text-cream italic opacity-100">
             "{content.quote}"
           </p>
         </div>
