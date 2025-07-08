@@ -22,10 +22,6 @@ const TestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  if (!content || !content.enabled || !content.items.length) {
-    return null;
-  }
-
   const handleTransition = useCallback((newIndex: number) => {
     setIsTransitioning(true);
     setTimeout(() => {
@@ -56,6 +52,11 @@ const TestimonialsSection = () => {
     
     return () => clearInterval(interval);
   }, [content?.items?.length]);
+
+  // Early return after all hooks are called
+  if (!content || !content.enabled || !content.items.length) {
+    return null;
+  }
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
