@@ -35,20 +35,27 @@ const TestimonialsSection = () => {
   }, []);
 
   const nextTestimonial = useCallback(() => {
+    if (!content?.items?.length) return;
     const nextIndex = (currentIndex + 1) % content.items.length;
     handleTransition(nextIndex);
-  }, [currentIndex, content.items.length, handleTransition]);
+  }, [currentIndex, content?.items?.length, handleTransition]);
 
   const prevTestimonial = useCallback(() => {
+    if (!content?.items?.length) return;
     const prevIndex = (currentIndex - 1 + content.items.length) % content.items.length;
     handleTransition(prevIndex);
-  }, [currentIndex, content.items.length, handleTransition]);
+  }, [currentIndex, content?.items?.length, handleTransition]);
 
   // Auto-advance testimonials every 6 seconds
   useEffect(() => {
-    const interval = setInterval(nextTestimonial, 6000);
+    if (!content?.items?.length) return;
+    
+    const interval = setInterval(() => {
+      setCurrentIndex(prevIndex => (prevIndex + 1) % content.items.length);
+    }, 6000);
+    
     return () => clearInterval(interval);
-  }, [nextTestimonial]);
+  }, [content?.items?.length]);
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
