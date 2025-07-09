@@ -127,12 +127,12 @@
 
   h1, h2, h3, h4, h5, h6 {
     @apply tracking-tight font-tenez;
-    color: hsl(var(--foreground));
+    color: hsl(var(--black));
   }
 
   p, span, div {
     @apply font-gantari;
-    color: hsl(var(--foreground));
+    color: hsl(var(--dark-green));
   }
 
   /* Mobile-specific fixes */
