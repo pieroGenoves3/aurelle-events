@@ -29,27 +29,14 @@ const MottosSection = () => {
   return (
     <section 
       id="mottos" 
-      className="py-24 px-4 relative"
-      style={{ backgroundColor: '#EDE5D6' }}
+      className="minimal-section bg-white"
     >
-      {backgroundImage && (
-        <>
-          <div 
-            className="absolute inset-0 bg-fixed bg-cover bg-center"
-            style={{ 
-              backgroundImage: `url(${backgroundImage})`,
-              transform: 'translateZ(0)'
-            }}
-          />
-          <div className="absolute inset-0 bg-cream/80" />
-        </>
-      )}
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-16 scroll-reveal">
-          <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6 text-foreground opacity-100">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16 minimal-reveal">
+          <h2 className="text-4xl md:text-6xl font-light tracking-tight mb-6 simple-gradient-text">
             {content.title}
           </h2>
-          <p className="text-xl text-foreground max-w-2xl mx-auto opacity-100">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             {content.subtitle}
           </p>
         </div>
@@ -60,16 +47,16 @@ const MottosSection = () => {
             return (
               <div
                 key={index}
-                className="text-center scroll-reveal glass-card p-8 hover:scale-105 transition-all duration-500 bg-cream/80 backdrop-blur-sm border border-olive-green/20"
-                style={{ animationDelay: `${index * 0.2}s` }}
+                className="text-center minimalist-card p-8 minimal-reveal"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-primary/10 to-primary/5 mb-6">
-                  <IconComponent size={32} className="text-primary opacity-100" strokeWidth={1} />
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-6">
+                  <IconComponent size={28} className="text-lilac" strokeWidth={1} />
                 </div>
-                <h3 className="text-2xl font-light tracking-tight mb-4 text-foreground opacity-100">
+                <h3 className="text-2xl font-light tracking-tight mb-4 text-black">
                   {motto.title}
                 </h3>
-                <p className="text-foreground leading-relaxed opacity-100">
+                <p className="text-gray-600 leading-relaxed">
                   {motto.description}
                 </p>
               </div>

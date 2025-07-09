@@ -49,79 +49,42 @@ const HeroSection = () => {
   return (
     <section 
       id="hero" 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{ background: 'linear-gradient(135deg, #292629 0%, #383d33 100%)' }}
+      className="minimal-hero relative overflow-hidden"
     >
-      {/* Background Image with Luxury Overlay */}
-      <div className="absolute inset-0 w-full h-full">
-        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-transparent z-10" />
-        <img
-          src={backgroundImage}
-          alt="Luxury Event Background"
-          className="w-full h-full object-cover opacity-40"
-        />
-        {/* Luxury overlay pattern */}
-        <div className="absolute inset-0 z-5 opacity-10" 
-             style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(163,148,184,0.3) 1px, transparent 0)', backgroundSize: '50px 50px' }} />
-      </div>
-
-      {/* Elegant Hero Content */}
-      <div className="relative z-20 text-center max-w-6xl mx-auto px-6 animate-fade-in-up">
-        {/* Luxury Logo Container */}
-        <div className={`${content.imagePadding} relative`}>
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent rounded-3xl blur-xl" />
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-5" 
+           style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(163,148,184,0.1) 1px, transparent 0)', backgroundSize: '30px 30px' }} />
+      
+      {/* Minimalist Hero Content */}
+      <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
+        {/* Clean Logo */}
+        <div className={`${content.imagePadding} mb-12`}>
           <img 
             src={logoImage}
-            alt="Aurelle Events - Luxury Event Planning" 
-            className={`relative ${logoConfig.desktop.height} md:${logoConfig.desktop.height} sm:${logoConfig.mobile.height} w-auto object-contain mx-auto filter brightness-110 contrast-110`}
-            style={{ 
-              filter: 'drop-shadow(0 10px 30px rgba(163,148,184,0.3)) brightness(1.1) contrast(1.1)',
-              maxHeight: '280px'
-            }}
+            alt="Aurelle Events" 
+            className={`${logoConfig.desktop.height} md:${logoConfig.desktop.height} sm:${logoConfig.mobile.height} w-auto object-contain mx-auto animate-gentle-float`}
+            style={{ maxHeight: '200px' }}
           />
         </div>
 
-        {/* Elegant Subtitle */}
-        <div className="relative mt-8 mb-12">
-          <p className="text-xl md:text-3xl lg:text-4xl text-white font-light max-w-4xl mx-auto leading-relaxed tracking-wide mb-12"
-             style={{ 
-               textShadow: '0 4px 20px rgba(0,0,0,0.3), 0 0 40px rgba(163,148,184,0.2)',
-               lineHeight: '1.4'
-             }}>
-            {content.subtitle}
-          </p>
-          
-          {/* Luxury Call-to-Action */}
-          <div className="relative inline-block">
-            <button
-              onClick={scrollToEvents}
-              className="luxury-button text-lg px-12 py-4 sparkle-btn relative overflow-hidden group"
-              style={{ 
-                background: 'linear-gradient(135deg, #a394b8, #a67a40)',
-                boxShadow: '0 15px 35px rgba(163,148,184,0.4), 0 5px 15px rgba(0,0,0,0.1)',
-                border: '1px solid rgba(255,255,255,0.2)'
-              }}
-            >
-              <span className="relative z-10 font-semibold tracking-wide">{content.cta}</span>
-            </button>
-          </div>
+        {/* Elegant Typography */}
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-light tracking-tight mb-8 text-black leading-tight">
+          {content.subtitle}
+        </h1>
+        
+        {/* Minimalist CTA */}
+        <button
+          onClick={scrollToEvents}
+          className="luxury-minimal-button text-base px-12 py-4 mb-16"
+        >
+          {content.cta}
+        </button>
+
+        {/* Simple scroll indicator */}
+        <div className="animate-gentle-float">
+          <div className="w-px h-16 bg-gradient-to-b from-transparent via-lilac to-transparent mx-auto" />
         </div>
       </div>
-
-      {/* Elegant Scroll Indicator */}
-      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="animate-luxury-float">
-          <div className="w-8 h-14 border-2 border-white/60 rounded-full flex justify-center relative"
-               style={{ boxShadow: '0 0 20px rgba(255,255,255,0.2)' }}>
-            <div className="w-1.5 h-4 bg-gradient-to-b from-white to-white/60 rounded-full mt-3 animate-pulse" />
-          </div>
-        </div>
-      </div>
-
-      {/* Luxury floating elements */}
-      <div className="absolute top-20 left-10 w-3 h-3 bg-yellow rounded-full opacity-30 animate-luxury-float" style={{ animationDelay: '0s' }} />
-      <div className="absolute top-40 right-20 w-2 h-2 bg-lilac rounded-full opacity-40 animate-luxury-float" style={{ animationDelay: '2s' }} />
-      <div className="absolute bottom-40 left-20 w-4 h-4 bg-white rounded-full opacity-20 animate-luxury-float" style={{ animationDelay: '4s' }} />
     </section>
   );
 };
