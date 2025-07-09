@@ -24,17 +24,30 @@ const MissionSection = () => {
   return (
     <section 
       id="mission" 
-      className="minimal-section bg-gray-50"
+      className="py-24 px-4 relative"
+      style={{ backgroundColor: '#A394B8' }}
     >
-      <div className="max-w-4xl mx-auto text-center minimal-reveal">
-        <h2 className="text-4xl md:text-6xl font-light tracking-tight mb-8 simple-gradient-text">
+      {backgroundImage && (
+        <>
+          <div 
+            className="absolute inset-0 bg-fixed bg-cover bg-center"
+            style={{ 
+              backgroundImage: `url(${backgroundImage})`,
+              transform: 'translateZ(0)'
+            }}
+          />
+          <div className="absolute inset-0 bg-lavender/80" />
+        </>
+      )}
+      <div className="max-w-4xl mx-auto text-center scroll-reveal relative z-10">
+        <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-8 text-cream opacity-100">
           {content.title}
         </h2>
-        <div className="space-y-6 text-lg md:text-xl leading-relaxed text-gray-700">
+        <div className="space-y-8 text-lg md:text-xl leading-relaxed text-cream">
           {content.paragraphs.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
+            <p key={index} className="opacity-100">{paragraph}</p>
           ))}
-          <p className="text-2xl font-light text-lilac italic mt-8">
+          <p className="text-2xl font-light text-cream italic opacity-100">
             "{content.quote}"
           </p>
         </div>

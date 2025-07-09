@@ -32,49 +32,48 @@ const EventsSection = () => {
   return (
     <section 
       id="events" 
-      className="minimal-section bg-white"
+      className="py-24 px-4 max-w-7xl mx-auto"
+      style={{ backgroundColor: 'rgb(255, 255, 255)' }}
     >
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-20 minimal-reveal">
-          <h2 className="text-4xl md:text-6xl font-light tracking-tight mb-6 simple-gradient-text">
-            Signature Events
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            A curated selection of our most memorable experiences
-          </p>
-        </div>
+      <div className="text-center mb-16 scroll-reveal">
+        <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6">
+          Signature Events
+        </h2>
+        <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
+          A curated selection of our most memorable luxury experiences
+        </p>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {events.map((event, index) => (
-            <div
-              key={index}
-              className="minimal-card p-0 overflow-hidden minimal-reveal"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="relative h-64 overflow-hidden">
-                <img
-                  src={event.image}
-                  alt={event.title}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                />
-                <div className="absolute top-4 right-4">
-                  <span className="bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 text-sm rounded-full">
-                    {event.category}
-                  </span>
-                </div>
-              </div>
-              
-              <div className="p-8">
-                <h3 className="text-2xl font-light tracking-tight mb-4 text-black">
-                  {event.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {event.description}
-                </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {events.map((event, index) => (
+          <div
+            key={index}
+            className="group scroll-reveal glass-card overflow-hidden hover:scale-105 transition-all duration-500"
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
+            <div className="relative h-64 overflow-hidden">
+              <img
+                src={event.image}
+                alt={event.title}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute top-4 right-4">
+                <span className="glass-card px-3 py-1 text-sm text-white">
+                  {event.category}
+                </span>
               </div>
             </div>
-          ))}
-        </div>
+            <div className="p-6">
+              <h3 className="text-2xl font-light tracking-tight mb-3">
+                {event.title}
+              </h3>
+              <p className="text-foreground/70">
+                {event.description}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

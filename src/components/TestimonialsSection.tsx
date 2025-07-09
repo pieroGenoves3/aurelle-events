@@ -72,43 +72,56 @@ const TestimonialsSection = () => {
   return (
     <section 
       id="testimonials" 
-      className="minimal-section bg-white"
+      className="py-24 px-4 relative"
+      style={{ backgroundColor: '#EDE5D6' }}
     >
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16 minimal-reveal">
-          <h2 className="text-4xl md:text-6xl font-light tracking-tight mb-6 simple-gradient-text">
+      {backgroundImage && (
+        <>
+          <div 
+            className="absolute inset-0 bg-fixed bg-cover bg-center"
+            style={{ 
+              backgroundImage: `url(${backgroundImage})`,
+              transform: 'translateZ(0)'
+            }}
+          />
+          <div className="absolute inset-0 bg-cream/80" />
+        </>
+      )}
+      <div className="max-w-4xl mx-auto relative z-10">
+        <div className="text-center mb-16 scroll-reveal">
+          <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6 text-foreground">
             {content.title}
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
             {content.subtitle}
           </p>
         </div>
 
         <div className="relative">
-          {/* Simple Navigation Buttons */}
+          {/* Navigation Buttons */}
           {content.showNavigation && hasMultipleItems && (
             <>
               <button
                 onClick={prevTestimonial}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-10 minimalist-card w-12 h-12 rounded-full flex items-center justify-center hover:shadow-md transition-all duration-300"
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-10 bg-cream/80 hover:bg-cream border border-olive-green/20 rounded-full p-3 transition-all duration-300 hover:scale-110"
                 aria-label="Previous testimonial"
               >
-                <ChevronLeft size={20} className="text-gray-600" />
+                <ChevronLeft size={20} className="text-foreground" />
               </button>
 
               <button
                 onClick={nextTestimonial}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-10 minimalist-card w-12 h-12 rounded-full flex items-center justify-center hover:shadow-md transition-all duration-300"
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-10 bg-cream/80 hover:bg-cream border border-olive-green/20 rounded-full p-3 transition-all duration-300 hover:scale-110"
                 aria-label="Next testimonial"
               >
-                <ChevronRight size={20} className="text-gray-600" />
+                <ChevronRight size={20} className="text-foreground" />
               </button>
             </>
           )}
 
           {/* Main Testimonial Card */}
           <div 
-            className={`minimalist-card p-12 text-center ${
+            className={`glass-card p-12 bg-cream/60 backdrop-blur-sm border border-olive-green/20 rounded-2xl text-center ${
               hasMultipleItems ? `transition-all duration-300 ${isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}` : ''
             }`}
           >
@@ -118,41 +131,42 @@ const TestimonialsSection = () => {
                 <img
                   src={currentTestimonial.image}
                   alt={currentTestimonial.author}
-                  className="w-20 h-20 rounded-full object-cover mx-auto shadow-sm"
+                  className="w-24 h-24 rounded-full object-cover mx-auto border-4 border-golden-brown/20 shadow-lg"
                 />
               </div>
             )}
 
-            {/* Customer Name and Position */}
+            {/* Customer Name and Event */}
             <div className="mb-8">
-              <h3 className="text-2xl font-medium text-black mb-2">
+              <h3 className="text-2xl font-medium text-foreground mb-2">
                 {currentTestimonial.author}
               </h3>
-              <p className="text-gray-600">
+              <p className="text-foreground/60 text-lg">
                 {currentTestimonial.position}
                 {currentTestimonial.company && (
-                  <span className="text-lilac"> • {currentTestimonial.company}</span>
+                  <span className="text-golden-brown"> • {currentTestimonial.company}</span>
                 )}
               </p>
             </div>
 
+
             {/* Testimonial Quote */}
-            <blockquote className="text-xl md:text-2xl text-gray-700 italic leading-relaxed max-w-2xl mx-auto">
+            <blockquote className="text-xl md:text-2xl text-foreground/80 italic leading-relaxed max-w-3xl mx-auto">
               "{currentTestimonial.quote}"
             </blockquote>
           </div>
 
-          {/* Simple Dots Indicator */}
+          {/* Dots Indicator */}
           {hasMultipleItems && (
-            <div className={`flex justify-center space-x-2 ${content.selectorPadding || 'mt-8'}`}>
+            <div className={`flex justify-center space-x-3 ${content.selectorPadding || 'mt-12'}`}>
               {content.items.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => handleTransition(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     index === currentIndex 
-                      ? 'bg-lilac scale-125' 
-                      : 'bg-gray-300 hover:bg-gray-400'
+                      ? 'bg-golden-brown scale-125' 
+                      : 'bg-olive-green/30 hover:bg-olive-green/50'
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />

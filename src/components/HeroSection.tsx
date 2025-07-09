@@ -49,40 +49,46 @@ const HeroSection = () => {
   return (
     <section 
       id="hero" 
-      className="minimal-hero relative overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      style={{ backgroundColor: '#EDE5D6' }}
     >
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-5" 
-           style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(163,148,184,0.1) 1px, transparent 0)', backgroundSize: '30px 30px' }} />
-      
-      {/* Minimalist Hero Content */}
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
-        {/* Clean Logo */}
-        <div className={`${content.imagePadding} mb-12`}>
+      {/* Background Image */}
+      <div className="absolute inset-0 w-full h-full">
+        <div className="absolute inset-0 bg-gradient-to-br from-dark-purple/60 via-lavender/70 to-golden-brown/80 z-10" />
+        <img
+          src={backgroundImage}
+          alt="Hero Background"
+          className="w-full h-full object-cover opacity-30"
+        />
+      </div>
+
+      {/* Hero Content */}
+      <div className="relative z-20 text-center max-w-4xl mx-auto px-4 animate-fade-in-up">
+        {/* Logo */}
+        <div className={content.imagePadding}>
           <img 
             src={logoImage}
             alt="Aurelle Events" 
-            className={`${logoConfig.desktop.height} md:${logoConfig.desktop.height} sm:${logoConfig.mobile.height} w-auto object-contain mx-auto animate-gentle-float`}
-            style={{ maxHeight: '200px' }}
+            className={`${logoConfig.desktop.height} md:${logoConfig.desktop.height} md:${logoConfig.mobile.height} w-auto object-contain mx-auto drop-shadow-2xl filter brightness-110 contrast-110`}
           />
         </div>
-
-        {/* Elegant Typography */}
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-light tracking-tight mb-8 text-black leading-tight">
+        <p className="text-xl md:text-2xl text-cream font-light max-w-2xl mx-auto leading-relaxed drop-shadow-2xl mb-8 filter brightness-110 opacity-100">
           {content.subtitle}
-        </h1>
-        
-        {/* Minimalist CTA */}
+        </p>
         <button
           onClick={scrollToEvents}
-          className="luxury-minimal-button text-base px-12 py-4 mb-16"
+          className="neumorphic-btn text-lg shadow-2xl opacity-100"
         >
           {content.cta}
         </button>
+      </div>
 
-        {/* Simple scroll indicator */}
-        <div className="animate-gentle-float">
-          <div className="w-px h-16 bg-gradient-to-b from-transparent via-lilac to-transparent mx-auto" />
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+        <div className="animate-bounce">
+          <div className="w-6 h-10 border-2 border-cream rounded-full flex justify-center drop-shadow-lg">
+            <div className="w-1 h-3 bg-cream rounded-full mt-2 animate-pulse" />
+          </div>
         </div>
       </div>
     </section>
