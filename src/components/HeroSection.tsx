@@ -54,7 +54,7 @@ const HeroSection = () => {
     >
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full">
-        <div className="absolute inset-0 bg-gradient-to-br from-dark-purple/60 via-lavender/70 to-golden-brown/80 z-10" />
+        <div className="absolute inset-0 bg-cream/40 z-10" />
         <img
           src={backgroundImage}
           alt="Hero Background"
