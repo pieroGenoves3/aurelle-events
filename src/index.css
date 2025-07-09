@@ -162,15 +162,9 @@
   }
 
   .neumorphic-btn {
-    @apply bg-lilac text-champagne rounded-xl px-8 py-3 font-gantari font-medium transition-all duration-300;
+    @apply bg-lilac text-champagne rounded-xl px-8 py-3 font-gantari font-medium;
     background: hsl(var(--lilac));
     color: hsl(var(--champagne));
-  }
-
-  .neumorphic-btn:hover {
-    @apply scale-105;
-    background: hsl(var(--yellow));
-    color: hsl(var(--black));
   }
 
   .sparkle-btn {
