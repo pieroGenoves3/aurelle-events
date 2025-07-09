@@ -50,15 +50,17 @@ const HeroSection = () => {
     <section 
       id="hero" 
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{ backgroundColor: '#EDE5D6' }}
+      style={{ 
+        background: 'linear-gradient(135deg, #ffffff 0%, #EDE5D6 30%, #ffffff 70%, #EDE5D6 100%)'
+      }}
     >
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full">
-        <div className="absolute inset-0 bg-gradient-to-br from-dark-purple/60 via-lavender/70 to-golden-brown/80 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-cream/30 to-white/40 z-10" />
         <img
           src={backgroundImage}
           alt="Hero Background"
-          className="w-full h-full object-cover opacity-30"
+          className="w-full h-full object-cover opacity-20"
         />
       </div>
 
