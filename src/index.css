@@ -10,56 +10,60 @@
     --background: 237 229 214; /* #EDE5D6 - Champagne */
     --foreground: 41 38 41; /* #292629 - Black */
 
-    --card: 237 229 214; /* #EDE5D6 - Champagne */
+    --card: 255 255 255; /* White for better contrast */
     --card-foreground: 41 38 41; /* #292629 - Black */
 
-    --popover: 237 229 214; /* #EDE5D6 - Champagne */
+    --popover: 255 255 255; /* White */
     --popover-foreground: 41 38 41; /* #292629 - Black */
 
     --primary: 163 148 184; /* #A394B8 - Lilac */
-    --primary-foreground: 237 229 214; /* #EDE5D6 - Champagne */
+    --primary-foreground: 255 255 255; /* White text on primary */
 
     --secondary: 56 61 51; /* #383D33 - Dark Green */
-    --secondary-foreground: 237 229 214; /* #EDE5D6 - Champagne */
+    --secondary-foreground: 255 255 255; /* White text on secondary */
 
-    --muted: 122 122 69; /* #7A7A45 - Light Green */
-    --muted-foreground: 56 61 51; /* #383D33 - Dark Green */
+    --muted: 245 245 245; /* Light gray for muted elements */
+    --muted-foreground: 122 122 69; /* #7A7A45 - Light Green */
 
     --accent: 166 122 64; /* #A67A40 - Yellow */
-    --accent-foreground: 41 38 41; /* #292629 - Black */
+    --accent-foreground: 255 255 255; /* White text on accent */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 239 68 68; /* Red */
+    --destructive-foreground: 255 255 255; /* White */
 
-    --border: 122 122 69; /* #7A7A45 - Light Green */
-    --input: 122 122 69; /* #7A7A45 - Light Green */
+    --border: 163 148 184; /* #A394B8 - Lilac for borders */
+    --input: 255 255 255; /* White input background */
     --ring: 163 148 184; /* #A394B8 - Lilac */
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 237 229 214; /* #EDE5D6 - Champagne */
     --sidebar-foreground: 41 38 41; /* #292629 - Black */
     --sidebar-primary: 163 148 184; /* #A394B8 - Lilac */
-    --sidebar-primary-foreground: 237 229 214; /* #EDE5D6 - Champagne */
+    --sidebar-primary-foreground: 255 255 255; /* White */
     --sidebar-accent: 166 122 64; /* #A67A40 - Yellow */
-    --sidebar-accent-foreground: 41 38 41; /* #292629 - Black */
-    --sidebar-border: 122 122 69; /* #7A7A45 - Light Green */
+    --sidebar-accent-foreground: 255 255 255; /* White */
+    --sidebar-border: 163 148 184; /* #A394B8 - Lilac */
     --sidebar-ring: 163 148 184; /* #A394B8 - Lilac */
 
-    /* Custom color palette variables - New naming scheme */
-    --black: 41 38 41; /* #292629 - Black (Primary Background) */
-    --champagne: 237 229 214; /* #EDE5D6 - Champagne (Section Background) */
-    --lilac: 163 148 184; /* #A394B8 - Lilac (Accent 1) */
-    --yellow: 166 122 64; /* #A67A40 - Yellow (Accent 2) */
-    --dark-green: 56 61 51; /* #383D33 - Dark Green (Accent 3) */
-    --light-green: 122 122 69; /* #7A7A45 - Light Green (Accent 4) */
+    /* Custom luxury color palette */
+    --black: 41 38 41; /* #292629 - Rich Black */
+    --champagne: 237 229 214; /* #EDE5D6 - Warm Champagne */
+    --lilac: 163 148 184; /* #A394B8 - Elegant Lilac */
+    --yellow: 166 122 64; /* #A67A40 - Luxury Gold */
+    --dark-green: 56 61 51; /* #383D33 - Forest Green */
+    --light-green: 122 122 69; /* #7A7A45 - Sage Green */
 
-    /* Legacy color names for backwards compatibility */
-    --dark-purple: 41 38 41; /* #292629 - Black */
-    --olive-green: 122 122 69; /* #7A7A45 - Light Green */
-    --lavender: 163 148 184; /* #A394B8 - Lilac */
-    --golden-brown: 166 122 64; /* #A67A40 - Yellow */
-    --cream: 237 229 214; /* #EDE5D6 - Champagne */
+    /* Luxury gradients */
+    --gradient-luxury: linear-gradient(135deg, hsl(var(--lilac)), hsl(var(--yellow)));
+    --gradient-elegant: linear-gradient(180deg, hsl(var(--champagne)), hsl(var(--lilac) / 0.1));
+    --gradient-gold: linear-gradient(45deg, hsl(var(--yellow)), hsl(var(--yellow) / 0.7));
+
+    /* Luxury shadows */
+    --shadow-luxury: 0 20px 40px -10px hsl(var(--black) / 0.15);
+    --shadow-elegant: 0 10px 30px -5px hsl(var(--lilac) / 0.2);
+    --shadow-gold: 0 8px 25px -5px hsl(var(--yellow) / 0.3);
+  }
   }
 
   .dark {
@@ -152,19 +156,79 @@
 
 @layer components {
   .luxury-gradient {
-    background-color: hsl(var(--champagne));
+    background: var(--gradient-elegant);
     min-height: 100vh;
     width: 100%;
   }
 
+  .luxury-card {
+    @apply bg-white backdrop-blur-lg border border-lilac/20 rounded-xl shadow-2xl;
+    box-shadow: var(--shadow-luxury);
+  }
+
   .glass-card {
-    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-lg;
+    @apply bg-white/90 backdrop-blur-lg border border-lilac/30 rounded-xl;
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .elegant-card {
+    @apply bg-white/95 backdrop-blur-sm border border-lilac/25 rounded-2xl;
+    box-shadow: var(--shadow-elegant);
+    transition: all 0.3s ease;
+  }
+
+  .elegant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-luxury);
+  }
+
+  .luxury-button {
+    @apply rounded-xl px-8 py-4 font-gantari font-semibold text-white transition-all duration-300;
+    background: var(--gradient-luxury);
+    box-shadow: var(--shadow-gold);
+    border: 1px solid hsl(var(--lilac) / 0.3);
+  }
+
+  .luxury-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-luxury);
+  }
+
+  .elegant-button {
+    @apply rounded-xl px-6 py-3 font-gantari font-medium border-2 transition-all duration-300;
+    background-color: transparent;
+    border-color: hsl(var(--lilac));
+    color: hsl(var(--lilac));
+  }
+
+  .elegant-button:hover {
+    background-color: hsl(var(--lilac));
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-elegant);
   }
 
   .neumorphic-btn {
-    @apply rounded-xl px-8 py-3 font-gantari font-medium;
-    background-color: #a394b8;
-    color: hsl(var(--champagne));
+    @apply rounded-xl px-8 py-4 font-gantari font-semibold text-white transition-all duration-300;
+    background: var(--gradient-luxury);
+    box-shadow: var(--shadow-gold);
+    border: none;
+  }
+
+  .neumorphic-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-luxury);
+  }
+
+  .luxury-text-gradient {
+    background: var(--gradient-luxury);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .elegant-border {
+    border-image: var(--gradient-luxury) 1;
   }
 
   .sparkle-btn {
@@ -178,7 +242,7 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, hsl(var(--champagne) / 0.6), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
     transition: left 0.5s;
   }
 
@@ -192,7 +256,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    color: hsl(var(--yellow) / 0.8);
+    color: rgba(255,255,255,0.8);
     font-size: 1.2em;
     transition: transform 0.3s ease;
     pointer-events: none;
@@ -209,11 +273,11 @@
   }
 
   @keyframes fade-in {
-    0% { opacity: 0; transform: translateY(20px); }
+    0% { opacity: 0; transform: translateY(30px); }
     100% { opacity: 1; transform: translateY(0); }
   }
 
-  @keyframes slide-up {
+  @keyframes fade-in-up {
     0% { 
       opacity: 0; 
       transform: translateY(40px) scale(0.95);
@@ -224,26 +288,50 @@
     }
   }
 
+  @keyframes slide-up {
+    0% { 
+      opacity: 0; 
+      transform: translateY(60px) scale(0.9);
+    }
+    100% { 
+      opacity: 1; 
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes luxury-float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
   .animate-fade-in {
-    animation: fade-in 1s ease-out;
+    animation: fade-in 1.2s ease-out;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 1s ease-out;
+  }
+
+  .animate-luxury-float {
+    animation: luxury-float 6s ease-in-out infinite;
   }
 
   .scroll-reveal {
-    @apply transition-all duration-700 ease-out;
+    @apply transition-all duration-1000 ease-out;
   }
 
   .scroll-reveal.scroll-hidden {
     @apply opacity-0;
-    transform: translateY(40px) scale(0.95);
+    transform: translateY(60px) scale(0.9);
   }
 
   .scroll-reveal.revealed {
     @apply opacity-100;
     transform: translateY(0) scale(1);
-    animation: slide-up 0.8s ease-out;
+    animation: slide-up 1s ease-out;
   }
 
-  /* Staggered animation delays for child elements */
+  /* Luxury staggered animations */
   .scroll-reveal.revealed > *:nth-child(1) {
     animation-delay: 0.1s;
   }
@@ -258,5 +346,47 @@
 
   .scroll-reveal.revealed > *:nth-child(4) {
     animation-delay: 0.4s;
+  }
+
+  .scroll-reveal.revealed > *:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+
+  .scroll-reveal.revealed > *:nth-child(6) {
+    animation-delay: 0.6s;
+  }
+
+  /* Luxury typography */
+  .luxury-heading {
+    @apply font-tenez tracking-tight;
+    color: hsl(var(--black));
+    text-shadow: 0 2px 4px hsl(var(--black) / 0.1);
+  }
+
+  .elegant-text {
+    @apply font-gantari leading-relaxed;
+    color: hsl(var(--dark-green));
+  }
+
+  .luxury-accent {
+    color: hsl(var(--lilac));
+    text-shadow: 0 2px 8px hsl(var(--lilac) / 0.3);
+  }
+
+  /* Luxury section backgrounds */
+  .section-champagne {
+    background: linear-gradient(180deg, hsl(var(--champagne)), hsl(var(--champagne) / 0.9));
+  }
+
+  .section-lilac {
+    background: linear-gradient(135deg, hsl(var(--lilac)), hsl(var(--lilac) / 0.9));
+  }
+
+  .section-dark {
+    background: linear-gradient(135deg, hsl(var(--black)), hsl(var(--dark-green) / 0.8));
+  }
+
+  .section-white {
+    background: linear-gradient(180deg, #ffffff, hsl(var(--champagne) / 0.3));
   }
 }

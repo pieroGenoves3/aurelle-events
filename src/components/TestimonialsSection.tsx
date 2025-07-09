@@ -72,7 +72,7 @@ const TestimonialsSection = () => {
   return (
     <section 
       id="testimonials" 
-      className="py-24 px-4 relative bg-champagne"
+      className="py-32 px-6 section-champagne relative overflow-hidden"
     >
       {backgroundImage && (
         <>
@@ -83,15 +83,21 @@ const TestimonialsSection = () => {
               transform: 'translateZ(0)'
             }}
           />
-          <div className="absolute inset-0 bg-cream/80" />
+          <div className="absolute inset-0 bg-gradient-to-br from-champagne/90 to-champagne/95" />
         </>
       )}
-      <div className="max-w-4xl mx-auto relative z-10">
-        <div className="text-center mb-16 scroll-reveal">
-          <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6 text-lilac">
+      
+      {/* Elegant pattern */}
+      <div className="absolute inset-0 opacity-5" 
+           style={{ backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 2px, hsl(var(--lilac)) 2px, hsl(var(--lilac)) 4px)', backgroundSize: '40px 40px' }} />
+      
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className="text-center mb-20 scroll-reveal">
+          <h2 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tighter mb-8 luxury-heading luxury-text-gradient">
             {content.title}
           </h2>
-          <p className="text-xl text-black/80 max-w-2xl mx-auto">
+          <div className="w-28 h-1 bg-gradient-to-r from-lilac via-yellow to-lilac mx-auto mb-8 rounded-full" />
+          <p className="text-2xl md:text-3xl elegant-text max-w-3xl mx-auto font-light leading-relaxed">
             {content.subtitle}
           </p>
         </div>
@@ -102,76 +108,109 @@ const TestimonialsSection = () => {
             <>
               <button
                 onClick={prevTestimonial}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-10 bg-cream/80 hover:bg-cream border border-olive-green/20 rounded-full p-3 transition-all duration-300 hover:scale-110"
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 z-10 luxury-card w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 hover:-translate-y-1/2 hover:-translate-x-16 hover:scale-110"
                 aria-label="Previous testimonial"
               >
-                <ChevronLeft size={20} className="text-foreground" />
+                <ChevronLeft size={24} className="text-lilac" />
               </button>
 
               <button
                 onClick={nextTestimonial}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-10 bg-cream/80 hover:bg-cream border border-olive-green/20 rounded-full p-3 transition-all duration-300 hover:scale-110"
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 z-10 luxury-card w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 hover:-translate-y-1/2 hover:translate-x-16 hover:scale-110"
                 aria-label="Next testimonial"
               >
-                <ChevronRight size={20} className="text-foreground" />
+                <ChevronRight size={24} className="text-lilac" />
               </button>
             </>
           )}
 
           {/* Main Testimonial Card */}
           <div 
-            className={`glass-card p-12 bg-cream/60 backdrop-blur-sm border border-olive-green/20 rounded-2xl text-center ${
-              hasMultipleItems ? `transition-all duration-300 ${isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}` : ''
+            className={`luxury-card p-12 lg:p-16 text-center relative overflow-hidden ${
+              hasMultipleItems ? `transition-all duration-500 ${isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}` : ''
             }`}
+            style={{
+              background: 'linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.98))',
+              backdropFilter: 'blur(20px)'
+            }}
           >
+            {/* Luxury accent corners */}
+            <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-lilac/10 to-transparent" />
+            <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-yellow/10 to-transparent" />
+            
             {/* Customer Image */}
             {currentTestimonial.image && (
-              <div className="mb-8">
-                <img
-                  src={currentTestimonial.image}
-                  alt={currentTestimonial.author}
-                  className="w-24 h-24 rounded-full object-cover mx-auto border-4 border-golden-brown/20 shadow-lg"
-                />
+              <div className="mb-10">
+                <div className="relative inline-block">
+                  <img
+                    src={currentTestimonial.image}
+                    alt={currentTestimonial.author}
+                    className="w-32 h-32 rounded-full object-cover mx-auto shadow-2xl"
+                    style={{ boxShadow: '0 20px 40px rgba(163,148,184,0.3)' }}
+                  />
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-t from-lilac/20 to-transparent" />
+                </div>
               </div>
             )}
 
             {/* Customer Name and Event */}
-            <div className="mb-8">
-              <h3 className="text-2xl font-medium text-foreground mb-2">
+            <div className="mb-12">
+              <h3 className="text-3xl lg:text-4xl font-medium luxury-heading mb-4">
                 {currentTestimonial.author}
               </h3>
-              <p className="text-foreground/60 text-lg">
+              <p className="text-xl text-lilac font-light">
                 {currentTestimonial.position}
                 {currentTestimonial.company && (
-                  <span className="text-golden-brown"> • {currentTestimonial.company}</span>
+                  <span className="text-yellow"> • {currentTestimonial.company}</span>
                 )}
               </p>
             </div>
 
+            {/* Luxury quote decoration */}
+            <div className="relative mb-8">
+              <div className="absolute -top-6 -left-4 text-6xl text-lilac/20 font-serif">"</div>
+              <div className="absolute -bottom-6 -right-4 text-6xl text-yellow/20 font-serif">"</div>
+            </div>
 
             {/* Testimonial Quote */}
-            <blockquote className="text-xl md:text-2xl text-foreground/80 italic leading-relaxed max-w-3xl mx-auto">
-              "{currentTestimonial.quote}"
+            <blockquote className="text-2xl md:text-3xl lg:text-4xl elegant-text italic leading-relaxed max-w-4xl mx-auto font-light relative z-10">
+              {currentTestimonial.quote}
             </blockquote>
+
+            {/* Elegant bottom decoration */}
+            <div className="mt-12 flex justify-center">
+              <div className="w-24 h-1 bg-gradient-to-r from-lilac to-yellow rounded-full" />
+            </div>
           </div>
 
           {/* Dots Indicator */}
           {hasMultipleItems && (
-            <div className={`flex justify-center space-x-3 ${content.selectorPadding || 'mt-12'}`}>
+            <div className={`flex justify-center space-x-4 ${content.selectorPadding || 'mt-16'}`}>
               {content.items.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => handleTransition(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`w-4 h-4 rounded-full transition-all duration-500 ${
                     index === currentIndex 
-                      ? 'bg-golden-brown scale-125' 
-                      : 'bg-olive-green/30 hover:bg-olive-green/50'
+                      ? 'bg-gradient-to-r from-lilac to-yellow scale-125 shadow-lg' 
+                      : 'bg-lilac/30 hover:bg-lilac/50 hover:scale-110'
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
               ))}
             </div>
           )}
+        </div>
+
+        {/* Luxury footer decoration */}
+        <div className="mt-20 text-center">
+          <div className="inline-flex items-center space-x-4">
+            <div className="w-8 h-px bg-gradient-to-r from-transparent to-lilac/40" />
+            <div className="w-3 h-3 bg-lilac rounded-full" />
+            <div className="w-16 h-px bg-gradient-to-r from-lilac to-yellow" />
+            <div className="w-3 h-3 bg-yellow rounded-full" />
+            <div className="w-8 h-px bg-gradient-to-r from-yellow/40 to-transparent" />
+          </div>
         </div>
       </div>
     </section>
