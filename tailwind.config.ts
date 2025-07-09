@@ -68,9 +68,16 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom color palette
-				'dark-purple': 'hsl(var(--dark-purple))',
+				// Custom color palette - New naming scheme
+				'black': 'hsl(var(--black))',
+				'champagne': 'hsl(var(--champagne))',
+				'lilac': 'hsl(var(--lilac))',
+				'yellow': 'hsl(var(--yellow))',
 				'dark-green': 'hsl(var(--dark-green))',
+				'light-green': 'hsl(var(--light-green))',
+				
+				// Legacy color names for backwards compatibility
+				'dark-purple': 'hsl(var(--dark-purple))',
 				'olive-green': 'hsl(var(--olive-green))',
 				'lavender': 'hsl(var(--lavender))',
 				'golden-brown': 'hsl(var(--golden-brown))',
