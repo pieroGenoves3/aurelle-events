@@ -162,8 +162,8 @@
   }
 
   .neumorphic-btn {
-    @apply bg-lilac text-champagne rounded-xl px-8 py-3 font-gantari font-medium;
-    background: hsl(var(--lilac));
+    @apply rounded-xl px-8 py-3 font-gantari font-medium;
+    background-color: #a394b8;
     color: hsl(var(--champagne));
   }
 
