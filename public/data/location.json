@@ -1,13 +1,9 @@
-
 {
-  "enabled": true,
-  "title": "Visit Our Studio",
-  "subtitle": "Located in the heart of the city, our studio is where dreams become reality",
-  "address": "123 Luxury Avenue, Fashion District, Milan, Italy 20121",
-  "phone": "+39 02 1234 5678",
-  "email": "hello@aurelleevents.com",
+  "enabled": false,
+  "headerTitle": "Location",
   "latitude": 45.4642,
-  "longitude": 9.1900,
+  "phone": "+39 02 1234 5678",
+  "longitude": 9.19,
   "hours": [
     {
       "day": "Monday - Friday",
@@ -21,5 +17,9 @@
       "day": "Sunday",
       "time": "By Appointment Only"
     }
-  ]
+  ],
+  "address": "123 Luxury Avenue, Fashion District, Milan, Italy 20121",
+  "subtitle": "Located in the heart of the city, our studio is where dreams become reality",
+  "title": "Visit Our Studio",
+  "email": "hello@aurelleevents.com"
 }
