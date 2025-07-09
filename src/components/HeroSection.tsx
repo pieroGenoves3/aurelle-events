@@ -74,7 +74,7 @@ const HeroSection = () => {
             className={`${logoConfig.desktop.height} md:${logoConfig.desktop.height} md:${logoConfig.mobile.height} w-auto object-contain mx-auto drop-shadow-2xl filter brightness-110 contrast-110`}
           />
         </div>
-        <p className="text-xl md:text-2xl text-cream font-light max-w-2xl mx-auto leading-relaxed drop-shadow-2xl mb-8 filter brightness-110 opacity-100">
+        <p className="text-xl md:text-2xl text-foreground font-light max-w-2xl mx-auto leading-relaxed drop-shadow-2xl mb-8 filter brightness-110 opacity-100">
           {content.subtitle}
         </p>
         <button
@@ -88,8 +88,8 @@ const HeroSection = () => {
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
         <div className="animate-bounce">
-          <div className="w-6 h-10 border-2 border-cream rounded-full flex justify-center drop-shadow-lg">
-            <div className="w-1 h-3 bg-cream rounded-full mt-2 animate-pulse" />
+          <div className="w-6 h-10 border-2 border-foreground rounded-full flex justify-center drop-shadow-lg">
+            <div className="w-1 h-3 bg-foreground rounded-full mt-2 animate-pulse" />
           </div>
         </div>
       </div>
