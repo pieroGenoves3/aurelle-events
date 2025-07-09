@@ -49,12 +49,11 @@ const HeroSection = () => {
   return (
     <section 
       id="hero" 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{ backgroundColor: '#EDE5D6' }}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
     >
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full">
-        <div className="absolute inset-0 bg-cream/40 z-10" />
+        <div className="absolute inset-0 bg-black/40 z-10" />
         <img
           src={backgroundImage}
           alt="Hero Background"
@@ -72,7 +71,7 @@ const HeroSection = () => {
             className={`${logoConfig.desktop.height} md:${logoConfig.desktop.height} md:${logoConfig.mobile.height} w-auto object-contain mx-auto drop-shadow-2xl filter brightness-110 contrast-110`}
           />
         </div>
-        <p className="text-xl md:text-2xl text-cream font-light max-w-2xl mx-auto leading-relaxed drop-shadow-2xl mb-8 filter brightness-110 opacity-100">
+        <p className="text-xl md:text-2xl text-champagne font-light max-w-2xl mx-auto leading-relaxed drop-shadow-2xl mb-8 filter brightness-110 opacity-100">
           {content.subtitle}
         </p>
         <button
@@ -86,8 +85,8 @@ const HeroSection = () => {
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
         <div className="animate-bounce">
-          <div className="w-6 h-10 border-2 border-cream rounded-full flex justify-center drop-shadow-lg">
-            <div className="w-1 h-3 bg-cream rounded-full mt-2 animate-pulse" />
+          <div className="w-6 h-10 border-2 border-champagne rounded-full flex justify-center drop-shadow-lg">
+            <div className="w-1 h-3 bg-champagne rounded-full mt-2 animate-pulse" />
           </div>
         </div>
       </div>

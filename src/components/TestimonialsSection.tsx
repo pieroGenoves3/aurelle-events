@@ -72,8 +72,7 @@ const TestimonialsSection = () => {
   return (
     <section 
       id="testimonials" 
-      className="py-24 px-4 relative"
-      style={{ backgroundColor: '#EDE5D6' }}
+      className="py-24 px-4 relative bg-champagne"
     >
       {backgroundImage && (
         <>
@@ -89,10 +88,10 @@ const TestimonialsSection = () => {
       )}
       <div className="max-w-4xl mx-auto relative z-10">
         <div className="text-center mb-16 scroll-reveal">
-          <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6 text-foreground">
+          <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6 text-lilac">
             {content.title}
           </h2>
-          <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
+          <p className="text-xl text-black/80 max-w-2xl mx-auto">
             {content.subtitle}
           </p>
         </div>

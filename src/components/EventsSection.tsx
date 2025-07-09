@@ -32,11 +32,10 @@ const EventsSection = () => {
   return (
     <section 
       id="events" 
-      className="py-24 px-4 max-w-7xl mx-auto"
-      style={{ backgroundColor: 'rgb(255, 255, 255)' }}
+      className="py-24 px-4 max-w-7xl mx-auto bg-champagne"
     >
       <div className="text-center mb-16 scroll-reveal">
-        <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6">
+        <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6 text-lilac">
           Signature Events
         </h2>
         <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
@@ -65,7 +64,7 @@ const EventsSection = () => {
               </div>
             </div>
             <div className="p-6">
-              <h3 className="text-2xl font-light tracking-tight mb-3">
+              <h3 className="text-2xl font-light tracking-tight mb-3 text-lilac">
                 {event.title}
               </h3>
               <p className="text-foreground/70">
