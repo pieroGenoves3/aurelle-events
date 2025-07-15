@@ -66,18 +66,7 @@ const PastEventsSection = () => {
   }
 
   const getCategoryColor = (category: string) => {
-    switch (category.toLowerCase()) {
-      case 'wedding':
-        return 'bg-pink-100 text-pink-800 border-pink-200';
-      case 'corporate':
-        return 'bg-blue-100 text-blue-800 border-blue-200';
-      case 'fashion':
-        return 'bg-purple-100 text-purple-800 border-purple-200';
-      case 'social':
-        return 'bg-green-100 text-green-800 border-green-200';
-      default:
-        return 'bg-gray-100 text-gray-800 border-gray-200';
-    }
+    return 'bg-aurelle-champagne text-aurelle-lignt-green border border-aurelle-champagne';
   };
 
   const currentEvent = content.items[currentIndex];
@@ -89,7 +78,7 @@ const PastEventsSection = () => {
     <section 
       id="events" 
       className="py-24 px-4 relative"
-      style={{ backgroundColor: '#383d33' }}
+      style={{ backgroundColor: 'hsl(var(--aurelle-dark-green))' }}
     >
       {backgroundImage && (
         <>
@@ -100,15 +89,15 @@ const PastEventsSection = () => {
               transform: 'translateZ(0)'
             }}
           />
-          <div className="absolute inset-0 bg-olive-green/80" />
+          <div className="absolute inset-0" />
         </>
       )}
       <div className="max-w-5xl mx-auto relative z-10">
-        <div className="text-center mb-16 scroll-reveal">
-          <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6 text-cream">
+        <div className="text-center mb-10 scroll-reveal">
+          <h2 className="text-4xl md:text-6xl font-light mb-6 text-aurelle-champagne">
             {content.title}
           </h2>
-          <p className="text-xl text-cream/90 max-w-2xl mx-auto">
+          <p className="text-xl text-aurelle-champagne/60 max-w-2xl mx-auto">
             {content.subtitle}
           </p>
         </div>
@@ -137,7 +126,7 @@ const PastEventsSection = () => {
 
           {/* Main Event Card */}
           <div 
-            className={`bg-olive-green/10 border border-dark-green/0 overflow-hidden ${
+            className={`bg-aurelle-light-green/20 border border-aurelle-dark-green/10 overflow-hidden ${
               hasMultipleItems ? `transition-all duration-300 ${isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}` : ''
             }`}
           >
@@ -147,7 +136,7 @@ const PastEventsSection = () => {
                 alt={currentEvent.title}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-dark-purple/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-aurelle-champagne/30" />
               <div className="absolute top-4 left-4">
                 <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border ${getCategoryColor(currentEvent.category)}`}>
                   <Tag size={12} className="mr-1" />
@@ -157,37 +146,37 @@ const PastEventsSection = () => {
             </div>
 
             <div className="p-8">
-              <h3 className="text-3xl font-light tracking-tight mb-4 text-cream">
+              <h3 className="text-3xl font-light tracking-tight mb-4 text-aurelle-champagne/60">
                 {currentEvent.title}
               </h3>
               
-              <p className="text-cream/80 leading-relaxed mb-6 text-lg">
+              <p className="leading-relaxed mb-6 text-lg text-aurelle-champagne/40">
                 {currentEvent.description}
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                <div className="flex items-center space-x-3 text-cream/70">
-                  <Calendar size={18} className="text-cream" />
-                  <span>{currentEvent.date}</span>
+                <div className="flex items-center space-x-3">
+                  <Calendar size={18} className="text-aurelle-brown" />
+                  <span className="text-aurelle-champagne/50">{currentEvent.date}</span>
                 </div>
                 
-                <div className="flex items-center space-x-3 text-cream/70">
-                  <MapPin size={18} className="text-cream" />
-                  <span>{currentEvent.location}</span>
+                <div className="flex items-center space-x-3">
+                  <MapPin size={18} className="text-aurelle-brown" />
+                  <span className="text-aurelle-champagne/50">{currentEvent.location}</span>
                 </div>
                 
                 {currentEvent.guests && (
-                  <div className="flex items-center space-x-3 text-cream/70">
-                    <Users size={18} className="text-cream" />
-                    <span>{currentEvent.guests} guests</span>
+                  <div className="flex items-center space-x-3">
+                    <Users size={18} className="text-aurelle-brown" />
+                    <span className="text-aurelle-champagne/50">{currentEvent.guests} guests</span>
                   </div>
                 )}
               </div>
 
               {currentEvent.client && (
-                <div className="border-t border-cream/20 pt-4">
-                  <p className="text-cream/60">
-                    Client: <span className="text-dark-purple font-medium">{currentEvent.client}</span>
+                <div className="border-t border-aurelle-champagne/20 pt-4">
+                  <p className="text-aurelle-brown">
+                    Client: <span className="text-aurelle-champagne font-medium">{currentEvent.client}</span>
                   </p>
                 </div>
               )}

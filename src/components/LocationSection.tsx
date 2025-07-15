@@ -78,7 +78,7 @@ const LocationSection = () => {
               <div className="flex items-start space-x-4 mb-6">
                 <MapPin size={24} className="flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="text-xl font-light mb-2">Address</h3>
+                  <h3 className="text-xl font-light mb-2 text-aurelle-dark-green">Address</h3>
                   <p className="leading-relaxed text-aurelle-light-green">{content.address}</p>
                 </div>
               </div>
@@ -86,7 +86,7 @@ const LocationSection = () => {
               <div className="flex items-start space-x-4 mb-6">
                 <Phone size={24} className="flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="text-xl font-light mb-2">Phone</h3>
+                  <h3 className="text-xl font-light mb-2 text-aurelle-dark-green">Phone</h3>
                   <a href={`tel:${content.phone}`} className="text-aurelle-light-green hover:text-aurelle-dark-green transition-colors">
                     {content.phone}
                   </a>
@@ -96,7 +96,7 @@ const LocationSection = () => {
               <div className="flex items-start space-x-4 mb-6">
                 <Mail size={24} className="flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="text-xl font-light mb-2">Email</h3>
+                  <h3 className="text-xl font-light mb-2 text-aurelle-dark-green">Email</h3>
                   <a href={`mailto:${content.email}`} className="text-aurelle-light-green hover:text-aurelle-dark-green transition-colors">
                     {content.email}
                   </a>
