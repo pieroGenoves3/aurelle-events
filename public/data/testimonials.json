@@ -1,17 +1,17 @@
 {
   "enabled": true,
   "title": "Client Stories",
-  "subtitle": "What our distinguished clients say about their experiences with Aurelle Events",
+  "subtitle": "What our clients say about their experiences with Aurelle Events",
   "backgroundImage": "",
   "headerTitle": "Testimonials",
   "showNavigation": true,
   "selectorPadding": "mt-12",
   "items": [
     {
-      "quote": "The attention to detail and seamless execution made our product launch unforgettable. Truly exceptional service.",
+      "quote": "The attention to detail and seamless execution made our wedding unforgettable. Truly exceptional service.",
       "author": "Charlotte Dubois",
-      "position": "CEO",
-      "company": "Maison Lumière",
+      "position": "Wedding",
+      "company": "Charlotte & Mark",
       "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&h=150&q=80",
       "rating": 5
     }

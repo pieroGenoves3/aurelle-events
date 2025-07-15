@@ -89,10 +89,10 @@ const TestimonialsSection = () => {
       )}
       <div className="max-w-4xl mx-auto relative z-10">
         <div className="text-center mb-16 scroll-reveal">
-          <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6 text-foreground">
+          <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6 text-aurelle-brown">
             {content.title}
           </h2>
-          <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
+          <p className="text-xl text-aurelle-brown/80 max-w-2xl mx-auto">
             {content.subtitle}
           </p>
         </div>
@@ -121,37 +121,37 @@ const TestimonialsSection = () => {
 
           {/* Main Testimonial Card */}
           <div 
-            className={`glass-card p-12 bg-cream/60 backdrop-blur-sm border border-olive-green/20 rounded-2xl text-center ${
+            className={`glass-card p-12 bg-aurelle-brown/20 backdrop-blur-md border border-aurelle-brown/20 rounded-2xl text-center ${
               hasMultipleItems ? `transition-all duration-300 ${isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}` : ''
             }`}
           >
             {/* Customer Image */}
             {currentTestimonial.image && (
-              <div className="mb-8">
+              <div className="mb-3">
                 <img
                   src={currentTestimonial.image}
                   alt={currentTestimonial.author}
-                  className="w-24 h-24 rounded-full object-cover mx-auto border-4 border-golden-brown/20 shadow-lg"
+                  className="w-24 h-24 rounded-full object-cover mx-auto border-4 border-aurelle-champagne/80 shadow-lg"
                 />
               </div>
             )}
 
             {/* Customer Name and Event */}
             <div className="mb-8">
-              <h3 className="text-2xl font-medium text-foreground mb-2">
+              <h3 className="text-2xl font-medium text-aurelle-lavender mb-1">
                 {currentTestimonial.author}
               </h3>
-              <p className="text-foreground/60 text-lg">
+              <p className="text-aurelle-black/20 text-lg">
                 {currentTestimonial.position}
                 {currentTestimonial.company && (
-                  <span className=""> • {currentTestimonial.company}</span>
+                  <span className="text-aurelle-brown"> • {currentTestimonial.company}</span>
                 )}
               </p>
             </div>
 
 
             {/* Testimonial Quote */}
-            <blockquote className="text-xl md:text-2xl text-foreground/80 italic leading-relaxed max-w-3xl mx-auto">
+            <blockquote className="text-xl md:text-2xl text-aurelle-dark-green/80 italic leading-relaxed max-w-3xl mx-auto">
               "{currentTestimonial.quote}"
             </blockquote>
           </div>
