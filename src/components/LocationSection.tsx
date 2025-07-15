@@ -35,14 +35,14 @@ const LocationSection = () => {
     <section 
       id="location" 
       className="py-24 px-4"
-      style={{ backgroundColor: '#ede5d6' }}
+      style={{ backgroundColor: 'hsl(var(--aurelle-champagne))' }}
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 scroll-reveal">
-          <h2 className="text-4xl md:text-6xl  tracking-tighter mb-6">
+          <h2 className="text-4xl md:text-6xl mb-6 text-aurelle-dark-green">
             {content.title}
           </h2>
-          <p className="text-xl max-w-2xl mx-auto">
+          <p className="text-xl max-w-2xl mx-auto text-aurelle-dark-green">
             {content.subtitle}
           </p>
         </div>
@@ -50,7 +50,7 @@ const LocationSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Map Section */}
           <div className="scroll-reveal">
-            <div className="relative bg-cream/10 backdrop-blur-sm border border-cream/20 rounded-lg overflow-hidden h-96">
+            <div className="relative border border-aurelle-light-green rounded-lg overflow-hidden h-96">
               <iframe
                 src={content.mapEmbed || `https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=${content.latitude},${content.longitude}&zoom=15`}
                 width="100%"
@@ -64,22 +64,22 @@ const LocationSection = () => {
               
               <button
                 onClick={openInMaps}
-                className="absolute bottom-4 right-4 flex items-center space-x-2 bg-dark-green text-cream px-4 py-2 rounded-lg hover:bg-dark-green/90 transition-colors"
+                className="absolute bottom-4 right-4 flex items-center space-x-2 text-aurelle-black hover:text-aurelle-champagne px-4 py-2 rounded-lg bg-aurelle-champagne hover:bg-aurelle-light-green transition-colors"
               >
                 <ExternalLink size={16} />
-                <span className="text-sm">Open in Maps</span>
+                <span className="text-sm text-aurelle-black hover:text-aurelle-champagne">Open in Maps</span>
               </button>
             </div>
           </div>
 
           {/* Contact Information */}
           <div className="scroll-reveal space-y-8">
-            <div className="glass-card p-8 bg-cream/90 backdrop-blur-sm border border-cream/90">
+            <div className="glass-card p-8 bg-aurelle-brown/20 backdrop-blur-md border border-aurelle-brown/20">
               <div className="flex items-start space-x-4 mb-6">
                 <MapPin size={24} className="flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="text-xl font-light mb-2">Address</h3>
-                  <p className="leading-relaxed">{content.address}</p>
+                  <p className="leading-relaxed text-aurelle-light-green">{content.address}</p>
                 </div>
               </div>
 
@@ -87,7 +87,7 @@ const LocationSection = () => {
                 <Phone size={24} className="flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="text-xl font-light mb-2">Phone</h3>
-                  <a href={`tel:${content.phone}`} className="hover:text-dark-green transition-colors">
+                  <a href={`tel:${content.phone}`} className="text-aurelle-light-green hover:text-aurelle-dark-green transition-colors">
                     {content.phone}
                   </a>
                 </div>
@@ -97,7 +97,7 @@ const LocationSection = () => {
                 <Mail size={24} className="flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="text-xl font-light mb-2">Email</h3>
-                  <a href={`mailto:${content.email}`} className="hover:text-dark-green transition-colors">
+                  <a href={`mailto:${content.email}`} className="text-aurelle-light-green hover:text-aurelle-dark-green transition-colors">
                     {content.email}
                   </a>
                 </div>

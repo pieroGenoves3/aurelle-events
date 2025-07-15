@@ -38,7 +38,7 @@ const Footer = () => {
             <p className="text-lg mb-8 leading-relaxed opacity-100" style={{ color: 'hsl(var(--aurelle-champagne))'}}>
               {content.description}
             </p>
-            <button className="neumorphic-btn text-aurelle-champagne hover:text-aurelle-light-green border border-aurelle-light-green bg-aurelle-light-green">
+            <button className="neumorphic-btn">
               {content.buttonText}
             </button>
           </div>

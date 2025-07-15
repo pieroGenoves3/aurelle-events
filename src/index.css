@@ -47,12 +47,13 @@
     --sidebar-ring: 166 122 64; /* #A67A40 */
 
     /* Aurelle Correct Colors using HSL */
-    --aurelle-black: 300, 4%, 15%;
-    --aurelle-dark-green: 90, 9%, 22%;
-    --aurelle-light-green: 60, 28%, 37%;
-    --aurelle-lavender: 265, 20%, 65%;
-    --aurelle-brown: 34, 44%, 45%;
-    --aurelle-champagne: 39, 39%, 88%;
+    --aurelle-black: 300 4% 15%;
+    --aurelle-dark-green: 90 9% 22%;
+    --aurelle-light-green: 60 28% 37%;
+    --aurelle-lavender: 265 20% 65%;
+    --aurelle-brown: 34 44% 45%;
+    --aurelle-champagne: 39 39% 88%;
+  
   }
 
   * {
@@ -113,20 +114,19 @@
   }
 
   .glass-card {
-    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-lg;
+    @apply bg-aurelle-brown/100 backdrop-blur-md border border-aurelle-brown/100 rounded-lg;
   }
 
   .neumorphic-btn {
-    @apply hover:bg-aurelle-champagne rounded-xl px-8 py-3 font-gantari font-medium transition-all duration-200 shadow-lg relative overflow-hidden;
-    background: linear-gradient(135deg, hsl(var(--aurelle-champagne) / 0.95), hsl(var(--aurelle-lavender) / 0.9));
-    border-color: hsl(var(--aurelle-light-green) / 0.9);
-    box-shadow: 
-      inset 0 1px 0 hsl(var(--aurelle-champagne) / 0.8),
-      inset 0 -1px 0 hsl(var(--aurelle-brown) / 0.8),
-      0 4px 15px hsl(var(--aurelle-brown) / 0.8);
+    @apply bg-aurelle-light-green hover:bg-aurelle-champagne rounded-xl px-8 py-3 font-gantari font-medium transition-all duration-200 shadow-lg relative overflow-hidden border border-aurelle-light-green text-aurelle-champagne hover:text-aurelle-light-green;
   }
 
-  .neumorphic-btn:hover {
+  .hero-neumorphic-btn {
+    @apply bg-aurelle-champagne hover:bg-aurelle-light-green rounded-xl px-8 py-3 font-gantari font-medium transition-all duration-200 shadow-lg relative overflow-hidden border border-aurelle-champagne text-aurelle-light-green hover:text-aurelle-champagne;
+  }
+
+  .neumorphic-btn:hover,
+  .hero-neumorphic-btn:hover {
     @apply scale-95;
   }
 

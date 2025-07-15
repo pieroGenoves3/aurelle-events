@@ -74,7 +74,7 @@ export default {
 				'aurelle-light-green': 'hsl(var(--aurelle-light-green))',
 				'aurelle-brown': 'hsl(var(--aurelle-brown))',
 				'aurelle-dark-green': 'hsl(var(--aurelle-dark-green))',
-				'aurelle-black': 'hsl(var(--aurelle-black))',
+				'aurelle-black': 'hsl(var(--aurelle-black))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
