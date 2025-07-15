@@ -27,18 +27,18 @@ const Footer = () => {
     <footer 
       id="contact" 
       className="py-16 px-4"
-      style={{ backgroundColor: '#383D33' }}
+      style={{ backgroundColor: 'hsl(var(--aurelle-dark-green))' }}
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
           <div className="scroll-reveal">
-            <h3 className="text-3xl font-light mb-6 text-cream opacity-100">
+            <h3 className="text-3xl font-light mb-6 opacity-100" style={{ color: 'hsl(var(--aurelle-champagne))'}}>
               {content.title}
             </h3>
-            <p className="text-lg text-cream mb-8 leading-relaxed opacity-100">
+            <p className="text-lg mb-8 leading-relaxed opacity-100" style={{ color: 'hsl(var(--aurelle-champagne))'}}>
               {content.description}
             </p>
-            <button className="neumorphic-btn opacity-100">
+            <button className="neumorphic-btn opacity-100" style={{ color: 'hsl(var(--aurelle-champagne))'}}>
               {content.buttonText}
             </button>
           </div>
@@ -63,8 +63,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-olive-green/20 pt-8 text-center">
-          <p className="text-cream opacity-100">
+        <div className="border-t pt-8 text-center" style={{ borderColor: 'hsl(var(--aurelle-light-green))' }}>
+          <p className="opacity-100" style={{ color: 'hsl(var(--aurelle-light-green))' }}>
             {content.copyright}
           </p>
         </div>

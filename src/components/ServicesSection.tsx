@@ -65,7 +65,7 @@ const ServicesSection = () => {
             return (
               <div
                 key={index}
-                className={`scroll-reveal glass-card p-8 bg-cream/10 backdrop-blur-sm border border-cream/20 transition-all duration-500 group ${
+                className={`scroll-reveal glass-card p-8 bg-custom/10 backdrop-blur-sm border border-cream/20 transition-all duration-500 group ${
                   isUnderDevelopment ? 'opacity-60' : 'hover:bg-cream/15'
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
@@ -81,23 +81,18 @@ const ServicesSection = () => {
                 
                 <div className="flex items-start space-x-4 mb-6">
                   <div className="flex-shrink-0">
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-golden-brown/20 to-lavender/20">
-                      <IconComponent size={24} className="text-golden-brown" strokeWidth={1.5} />
+                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-cream/100 to-golden-brown/100">
+                      <IconComponent size={24} strokeWidth={2} />
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-light tracking-tight mb-3 text-cream group-hover:text-golden-brown transition-colors">
+                    <h3 className="text-2xl font-light tracking-tight mb-3 group-hover:text-custom transition-colors">
                       {service.title}
                     </h3>
-                    {/*{service.priceRange && !isUnderDevelopment && (
-                      <p className="text-golden-brown font-medium mb-3">
-                        {service.priceRange}
-                      </p>
-                    )}*/}
                   </div>
                 </div>
                 
-                <p className="text-cream/80 leading-relaxed mb-6">
+                <p className="leading-relaxed mb-6">
                   {isUnderDevelopment 
                     ? "We're currently developing this service to bring you exceptional experiences. Stay tuned for exciting updates!"
                     : service.description
@@ -107,8 +102,8 @@ const ServicesSection = () => {
                 {!isUnderDevelopment && (
                   <ul className="space-y-2">
                     {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center space-x-3 text-cream/70">
-                        <Check size={16} className="text-golden-brown flex-shrink-0" />
+                      <li key={featureIndex} className="flex items-center space-x-3">
+                        <Check size={16} className="text-custom flex-shrink-0" />
                         <span className="text-sm">{feature}</span>
                       </li>
                     ))}
