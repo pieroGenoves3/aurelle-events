@@ -33,7 +33,7 @@ const ServicesSection = () => {
     <section 
       id="services" 
       className="py-24 px-4 relative"
-      style={{ backgroundColor: '#383D33' }}
+      style={{ backgroundColor: '#a394b8' }}
     >
       {backgroundImage && (
         <>
