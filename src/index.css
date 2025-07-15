@@ -55,43 +55,35 @@
     --cream: 237 229 214; /* #EDE5D6 */
   }
 
-  .dark {
-    --background: 41 38 41; /* #292629 */
-    --foreground: 237 229 214; /* #EDE5D6 */
-
-    --card: 56 61 51; /* #383D33 */
-    --card-foreground: 237 229 214; /* #EDE5D6 */
-
-    --popover: 56 61 51; /* #383D33 */
-    --popover-foreground: 237 229 214; /* #EDE5D6 */
-
-    --primary: 237 229 214; /* #EDE5D6 */
-    --primary-foreground: 41 38 41; /* #292629 */
-
-    --secondary: 122 122 69; /* #7A7A45 */
-    --secondary-foreground: 237 229 214; /* #EDE5D6 */
-
-    --muted: 56 61 51; /* #383D33 */
-    --muted-foreground: 163 148 184; /* #A394B8 */
-
-    --accent: 166 122 64; /* #A67A40 */
-    --accent-foreground: 237 229 214; /* #EDE5D6 */
-
+  /*.dark {
+    --background: 41 38 41; 
+    --foreground: 237 229 214; 
+    --card: 56 61 51; 
+    --card-foreground: 237 229 214; 
+    --popover: 56 61 51; 
+    --popover-foreground: 237 229 214; 
+    --primary: 237 229 214; 
+    --primary-foreground: 41 38 41; 
+    --secondary: 122 122 69; 
+    --secondary-foreground: 237 229 214; 
+    --muted: 56 61 51; 
+    --muted-foreground: 163 148 184; 
+    --accent: 166 122 64; 
+    --accent-foreground: 237 229 214; 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-
-    --border: 122 122 69; /* #7A7A45 */
-    --input: 122 122 69; /* #7A7A45 */
-    --ring: 237 229 214; /* #EDE5D6 */
-    --sidebar-background: 41 38 41; /* #292629 */
-    --sidebar-foreground: 237 229 214; /* #EDE5D6 */
-    --sidebar-primary: 166 122 64; /* #A67A40 */
-    --sidebar-primary-foreground: 237 229 214; /* #EDE5D6 */
-    --sidebar-accent: 56 61 51; /* #383D33 */
-    --sidebar-accent-foreground: 237 229 214; /* #EDE5D6 */
-    --sidebar-border: 122 122 69; /* #7A7A45 */
-    --sidebar-ring: 166 122 64; /* #A67A40 */
-  }
+    --border: 122 122 69; 
+    --input: 122 122 69; 
+    --ring: 237 229 214; 
+    --sidebar-background: 41 38 41; 
+    --sidebar-foreground: 237 229 214; 
+    --sidebar-primary: 166 122 64; 
+    --sidebar-primary-foreground: 237 229 214; 
+    --sidebar-accent: 56 61 51; 
+    --sidebar-accent-foreground: 237 229 214; 
+    --sidebar-border: 122 122 69; 
+    --sidebar-ring: 166 122 64; 
+  }*/
 
   * {
     @apply border-border;

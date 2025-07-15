@@ -35,14 +35,14 @@ const LocationSection = () => {
     <section 
       id="location" 
       className="py-24 px-4"
-      style={{ backgroundColor: '#A394B8' }}
+      style={{ backgroundColor: '#ede5d6' }}
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 scroll-reveal">
-          <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6 text-cream">
+          <h2 className="text-4xl md:text-6xl  tracking-tighter mb-6">
             {content.title}
           </h2>
-          <p className="text-xl text-cream/90 max-w-2xl mx-auto">
+          <p className="text-xl max-w-2xl mx-auto">
             {content.subtitle}
           </p>
         </div>
@@ -64,7 +64,7 @@ const LocationSection = () => {
               
               <button
                 onClick={openInMaps}
-                className="absolute bottom-4 right-4 flex items-center space-x-2 bg-golden-brown text-cream px-4 py-2 rounded-lg hover:bg-golden-brown/90 transition-colors"
+                className="absolute bottom-4 right-4 flex items-center space-x-2 bg-dark-green text-cream px-4 py-2 rounded-lg hover:bg-dark-green/90 transition-colors"
               >
                 <ExternalLink size={16} />
                 <span className="text-sm">Open in Maps</span>
@@ -74,42 +74,42 @@ const LocationSection = () => {
 
           {/* Contact Information */}
           <div className="scroll-reveal space-y-8">
-            <div className="glass-card p-8 bg-cream/10 backdrop-blur-sm border border-cream/20">
+            <div className="glass-card p-8 bg-cream/90 backdrop-blur-sm border border-cream/90">
               <div className="flex items-start space-x-4 mb-6">
-                <MapPin size={24} className="text-golden-brown flex-shrink-0 mt-1" />
+                <MapPin size={24} className="flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="text-xl font-light text-cream mb-2">Address</h3>
-                  <p className="text-cream/80 leading-relaxed">{content.address}</p>
+                  <h3 className="text-xl font-light mb-2">Address</h3>
+                  <p className="leading-relaxed">{content.address}</p>
                 </div>
               </div>
 
               <div className="flex items-start space-x-4 mb-6">
-                <Phone size={24} className="text-golden-brown flex-shrink-0 mt-1" />
+                <Phone size={24} className="flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="text-xl font-light text-cream mb-2">Phone</h3>
-                  <a href={`tel:${content.phone}`} className="text-cream/80 hover:text-golden-brown transition-colors">
+                  <h3 className="text-xl font-light mb-2">Phone</h3>
+                  <a href={`tel:${content.phone}`} className="hover:text-dark-green transition-colors">
                     {content.phone}
                   </a>
                 </div>
               </div>
 
               <div className="flex items-start space-x-4 mb-6">
-                <Mail size={24} className="text-golden-brown flex-shrink-0 mt-1" />
+                <Mail size={24} className="flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="text-xl font-light text-cream mb-2">Email</h3>
-                  <a href={`mailto:${content.email}`} className="text-cream/80 hover:text-golden-brown transition-colors">
+                  <h3 className="text-xl font-light mb-2">Email</h3>
+                  <a href={`mailto:${content.email}`} className="hover:text-dark-green transition-colors">
                     {content.email}
                   </a>
                 </div>
               </div>
 
               <div className="flex items-start space-x-4">
-                <Clock size={24} className="text-golden-brown flex-shrink-0 mt-1" />
+                <Clock size={24} className="flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="text-xl font-light text-cream mb-2">Office Hours</h3>
+                  <h3 className="text-xl font-light mb-2">Office Hours</h3>
                   <div className="space-y-1">
                     {content.hours.map((hour, index) => (
-                      <div key={index} className="flex justify-between text-cream/80">
+                      <div key={index} className="flex justify-between">
                         <span>{hour.day}</span>
                         <span>{hour.time}</span>
                       </div>

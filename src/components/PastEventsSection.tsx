@@ -89,7 +89,7 @@ const PastEventsSection = () => {
     <section 
       id="events" 
       className="py-24 px-4 relative"
-      style={{ backgroundColor: '#7A7A45' }}
+      style={{ backgroundColor: '#383d33' }}
     >
       {backgroundImage && (
         <>
@@ -137,7 +137,7 @@ const PastEventsSection = () => {
 
           {/* Main Event Card */}
           <div 
-            className={`glass-card bg-cream/10 backdrop-blur-sm border border-cream/20 overflow-hidden ${
+            className={`bg-olive-green/10 border border-dark-green/0 overflow-hidden ${
               hasMultipleItems ? `transition-all duration-300 ${isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}` : ''
             }`}
           >
@@ -167,18 +167,18 @@ const PastEventsSection = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <div className="flex items-center space-x-3 text-cream/70">
-                  <Calendar size={18} className="text-golden-brown" />
+                  <Calendar size={18} className="text-cream" />
                   <span>{currentEvent.date}</span>
                 </div>
                 
                 <div className="flex items-center space-x-3 text-cream/70">
-                  <MapPin size={18} className="text-golden-brown" />
+                  <MapPin size={18} className="text-cream" />
                   <span>{currentEvent.location}</span>
                 </div>
                 
                 {currentEvent.guests && (
                   <div className="flex items-center space-x-3 text-cream/70">
-                    <Users size={18} className="text-golden-brown" />
+                    <Users size={18} className="text-cream" />
                     <span>{currentEvent.guests} guests</span>
                   </div>
                 )}
@@ -187,7 +187,7 @@ const PastEventsSection = () => {
               {currentEvent.client && (
                 <div className="border-t border-cream/20 pt-4">
                   <p className="text-cream/60">
-                    Client: <span className="text-golden-brown font-medium">{currentEvent.client}</span>
+                    Client: <span className="text-dark-purple font-medium">{currentEvent.client}</span>
                   </p>
                 </div>
               )}

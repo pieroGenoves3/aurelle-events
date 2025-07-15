@@ -144,7 +144,7 @@ const TestimonialsSection = () => {
               <p className="text-foreground/60 text-lg">
                 {currentTestimonial.position}
                 {currentTestimonial.company && (
-                  <span className="text-golden-brown"> • {currentTestimonial.company}</span>
+                  <span className=""> • {currentTestimonial.company}</span>
                 )}
               </p>
             </div>
