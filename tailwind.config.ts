@@ -69,12 +69,12 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				// Custom color palette
-				'dark-purple': 'hsl(var(--dark-purple))',
-				'dark-green': 'hsl(var(--dark-green))',
-				'olive-green': 'hsl(var(--olive-green))',
-				'lavender': 'hsl(var(--lavender))',
-				'golden-brown': 'hsl(var(--golden-brown))',
-				'cream': 'hsl(var(--cream))'
+				'aurelle-champagne': 'hsl(var(--aurelle-champagne))',
+				'aurelle-lavender': 'hsl(var(--aurelle-lavender))',
+				'aurelle-light-green': 'hsl(var(--aurelle-light-green))',
+				'aurelle-brown': 'hsl(var(--aurelle-brown))',
+				'aurelle-dark-green': 'hsl(var(--aurelle-dark-green))',
+				'aurelle-black': 'hsl(var(--aurelle-black))',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

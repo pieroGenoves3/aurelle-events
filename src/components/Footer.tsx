@@ -38,33 +38,35 @@ const Footer = () => {
             <p className="text-lg mb-8 leading-relaxed opacity-100" style={{ color: 'hsl(var(--aurelle-champagne))'}}>
               {content.description}
             </p>
-            <button className="neumorphic-btn opacity-100" style={{ color: 'hsl(var(--aurelle-champagne))'}}>
+            <button className="neumorphic-btn text-aurelle-champagne hover:text-aurelle-light-green border border-aurelle-light-green bg-aurelle-light-green">
               {content.buttonText}
             </button>
           </div>
 
           <div className="scroll-reveal">
-            <h4 className="text-2xl font-light mb-6 text-cream opacity-100">
+            <h4 className="text-2xl font-light mb-6 text-aurelle-champagne opacity-100">
               {content.contactTitle}
             </h4>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <Mail size={20} className="text-dark-green opacity-100" strokeWidth={1} />
-                <span className="text-cream opacity-100">{content.email}</span>
+                <Mail size={20} className="text-aurelle-light-green opacity-100" strokeWidth={1} />
+                <span className="text-aurelle-champagne opacity-100">{content.email}</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone size={20} className="text-dark-green opacity-100" strokeWidth={1} />
-                <span className="text-cream opacity-100">{content.phone}</span>
+                <Phone size={20} className="text-aurelle-light-green opacity-100" strokeWidth={1} />
+                <span className="text-aurelle-champagne opacity-100">{content.phone}</span>
               </div>
-              <div className="text-cream opacity-100">
-                <p>{content.locations}</p>
+              <div>
+                <p style={{ color: 'hsl(var(--aurelle-champagne))'}}>
+                  {content.locations}
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t pt-8 text-center" style={{ borderColor: 'hsl(var(--aurelle-light-green))' }}>
-          <p className="opacity-100" style={{ color: 'hsl(var(--aurelle-light-green))' }}>
+        <div className="border-t pt-8 text-center border-aurelle-light-green">
+          <p className="opacity-100 text-aurelle-light-green">
             {content.copyright}
           </p>
         </div>

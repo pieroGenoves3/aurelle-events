@@ -117,7 +117,7 @@
   }
 
   .neumorphic-btn {
-    @apply bg-gradient-to-br from-cream/90 to-cream/90 rounded-xl px-8 py-3 text-foreground font-gantari font-medium transition-all duration-300 shadow-lg relative overflow-hidden;
+    @apply hover:bg-aurelle-champagne rounded-xl px-8 py-3 font-gantari font-medium transition-all duration-200 shadow-lg relative overflow-hidden;
     background: linear-gradient(135deg, hsl(var(--aurelle-champagne) / 0.95), hsl(var(--aurelle-lavender) / 0.9));
     border-color: hsl(var(--aurelle-light-green) / 0.9);
     box-shadow: 
