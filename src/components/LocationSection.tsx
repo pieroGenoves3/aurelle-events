@@ -12,6 +12,7 @@ interface LocationContent {
   email: string;
   latitude: number;
   longitude: number;
+  mapEmbed?: string;
   hours: Array<{
     day: string;
     time: string;
@@ -51,7 +52,7 @@ const LocationSection = () => {
           <div className="scroll-reveal">
             <div className="relative bg-cream/10 backdrop-blur-sm border border-cream/20 rounded-lg overflow-hidden h-96">
               <iframe
-                src={`https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=${content.latitude},${content.longitude}&zoom=15`}
+                src={content.mapEmbed || `https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=${content.latitude},${content.longitude}&zoom=15`}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
