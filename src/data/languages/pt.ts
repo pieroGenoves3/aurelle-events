@@ -7,7 +7,8 @@ export const pt = {
     about: "Sobre Nós",
     mission: "Missão", 
     faq: "FAQ",
-    contact: "Contato"
+    contact: "Contato",
+    services: "Serviços"
   },
   hero: {
     title: "Aurelle Events",

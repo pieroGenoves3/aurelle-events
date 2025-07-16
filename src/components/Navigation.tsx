@@ -70,7 +70,7 @@ const Navigation = () => {
     
     if ((servicesContent as any)?.enabled) {
       items.push({ 
-        name: (servicesContent as any)?.headerTitle || 'Services', 
+        name: (servicesContent as any)?.headerTitle || t.navigation.services, 
         id: 'services',
         order: 2
       });
@@ -78,7 +78,7 @@ const Navigation = () => {
     
     if ((testimonialsContent as any)?.enabled) {
       items.push({ 
-        name: (testimonialsContent as any)?.headerTitle || 'Testimonials', 
+        name: (testimonialsContent as any)?.headerTitle || t.navigation.testimonials, 
         id: 'testimonials',
         order: 3
       });
@@ -86,7 +86,7 @@ const Navigation = () => {
     
     if ((eventsContent as any)?.enabled) {
       items.push({ 
-        name: (eventsContent as any)?.headerTitle || 'Events', 
+        name: (eventsContent as any)?.headerTitle || t.navigation.events, 
         id: 'events',
         order: 4
       });

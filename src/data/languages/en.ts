@@ -7,7 +7,8 @@ export const en = {
     about: "About",
     mission: "Mission",
     faq: "FAQ",
-    contact: "Contact"
+    contact: "Contact",
+    services: "Services"
   },
   hero: {
     title: "Aurelle Events",

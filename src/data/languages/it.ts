@@ -7,7 +7,8 @@ export const it = {
     about: "Chi Siamo",
     mission: "Missione",
     faq: "FAQ",
-    contact: "Contatti"
+    contact: "Contatti",
+    services: "Servizi"
   },
   hero: {
     title: "Aurelle Events",
