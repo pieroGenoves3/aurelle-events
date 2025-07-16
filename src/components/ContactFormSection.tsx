@@ -4,10 +4,12 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const ContactFormSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const { t } = useLanguage();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -24,7 +26,7 @@ const ContactFormSection = () => {
 
       if (response.ok) {
         toast({
-          title: "Message sent successfully!",
+          title: t.contact.success,
           description: "We'll get back to you as soon as possible.",
         });
         (e.target as HTMLFormElement).reset();
@@ -33,7 +35,7 @@ const ContactFormSection = () => {
       }
     } catch (error) {
       toast({
-        title: "Error sending message",
+        title: t.contact.error,
         description: "Please try again later or contact us directly.",
         variant: "destructive",
       });
@@ -51,10 +53,10 @@ const ContactFormSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 scroll-reveal">
           <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6 text-aurelle-champagne">
-            Get in Touch
+            {t.contact.title}
           </h2>
           <p className="text-xl text-aurelle-champagne/80 max-w-2xl mx-auto">
-            Ready to start your journey? Contact us today and let's discuss how we can help you achieve your goals.
+            {t.contact.subtitle}
           </p>
         </div>
 
@@ -123,7 +125,7 @@ const ContactFormSection = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-aurelle-champagne/80 mb-2">
-                      Name *
+                      {t.contact.name} *
                     </label>
                     <Input
                       id="name"
@@ -131,12 +133,12 @@ const ContactFormSection = () => {
                       type="text"
                       required
                       className="bg-aurelle-champagne/20 border-aurelle-champagne/30 text-aurelle-champagne placeholder:text-aurelle-champagne/50 focus:border-aurelle-champagne"
-                      placeholder="Your name"
+                      placeholder={t.contact.name}
                     />
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-aurelle-champagne/80 mb-2">
-                      Email *
+                      {t.contact.email} *
                     </label>
                     <Input
                       id="email"
@@ -144,7 +146,7 @@ const ContactFormSection = () => {
                       type="email"
                       required
                       className="bg-aurelle-champagne/20 border-aurelle-champagne/30 text-aurelle-champagne placeholder:text-aurelle-champagne/50 focus:border-aurelle-champagne"
-                      placeholder="your@email.com"
+                      placeholder={t.contact.email}
                     />
                   </div>
                 </div>
@@ -164,7 +166,7 @@ const ContactFormSection = () => {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-aurelle-champagne/80 mb-2">
-                    Message *
+                    {t.contact.message} *
                   </label>
                   <Textarea
                     id="message"
@@ -172,7 +174,7 @@ const ContactFormSection = () => {
                     required
                     rows={5}
                     className="bg-aurelle-champagne/20 border-aurelle-champagne/30 text-aurelle-champagne placeholder:text-aurelle-champagne/50 focus:border-aurelle-champagne resize-none"
-                    placeholder="Tell us more about your project or inquiry..."
+                    placeholder={t.contact.message}
                   />
                 </div>
 
@@ -186,7 +188,7 @@ const ContactFormSection = () => {
                   ) : (
                     <>
                       <Send size={16} className="mr-2" />
-                      Send Message
+                      {t.contact.send}
                     </>
                   )}
                 </Button>
