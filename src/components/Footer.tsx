@@ -26,7 +26,7 @@ const Footer = () => {
   return (
     <footer 
       id="contact" 
-      className="py-16 px-4"
+      className="relative z-30 py-16 px-4"
       style={{ backgroundColor: 'hsl(var(--aurelle-dark-green))' }}
     >
       <div className="max-w-7xl mx-auto">
