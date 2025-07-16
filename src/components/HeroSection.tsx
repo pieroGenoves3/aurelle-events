@@ -39,12 +39,8 @@ const HeroSection = () => {
 
   // Wedding photo carousel images
   const weddingPhotos = [
-    "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-    "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-    "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-    "https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-    "https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
-    "https://images.unsplash.com/photo-1520854221256-17451cc331bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+    "/images/wedding-carousel/wedc-1.jpg",
+    "/images/wedding-carousel/wedc-2.jpg",
   ];
 
   // Auto-scroll carousel
@@ -121,16 +117,6 @@ const HeroSection = () => {
       id="hero" 
       className="relative overflow-hidden"
     >
-      {/* Background Image */}
-      {/* <div className="absolute inset-0 w-full h-full">
-        <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-cream/30 to-white/40 z-10" />
-        <img
-          src={backgroundImage}
-          alt="Hero Background"
-          className="w-full h-full object-cover opacity-20"
-        />
-      </div> */}
-
       {/* Background Wedding Photos Carousel */}
       <div className="fixed inset-0 w-full h-screen overflow-hidden z-0">
         <div className="relative w-full h-full">
