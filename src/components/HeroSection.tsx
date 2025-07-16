@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -34,7 +34,26 @@ const HeroSection = () => {
   const content = useContent<HeroContent>('hero');
   const missionContent = useContent<MissionContent>('mission');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [currentImage, setCurrentImage] = useState(0);
   const { toast } = useToast();
+
+  // Wedding photo carousel images
+  const weddingPhotos = [
+    "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+    "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+    "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+    "https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+    "https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+    "https://images.unsplash.com/photo-1520854221256-17451cc331bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+  ];
+
+  // Auto-scroll carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % weddingPhotos.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [weddingPhotos.length]);
 
   // Don't render if content is disabled or not loaded
   if (!content || !content.enabled) {
@@ -100,11 +119,7 @@ const HeroSection = () => {
   return (
     <section 
       id="hero" 
-      className="relative min-h-[200vh] overflow-hidden"
-      style={{ 
-        // background: 'linear-gradient(135deg, #ffffff 0%, #EDE5D6 30%, #ffffff 70%, #EDE5D6 100%)'
-        background: 'hsl(var(--aurelle-dark-green))'
-      }}
+      className="relative min-h-[300vh] overflow-hidden"
     >
       {/* Background Image */}
       {/* <div className="absolute inset-0 w-full h-full">
@@ -116,10 +131,30 @@ const HeroSection = () => {
         />
       </div> */}
 
+      {/* Background Wedding Photos Carousel */}
+      <div className="fixed inset-0 w-full h-screen overflow-hidden z-0">
+        <div className="relative w-full h-full">
+          {weddingPhotos.map((photo, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
+                index === currentImage ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              <img
+                src={photo}
+                alt={`Wedding photo ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Hero Content */}
       <div className="relative z-20 flex flex-col">
-        {/* Top Hero Section */}
-        <div className="min-h-screen flex items-center justify-center text-center px-4 relative">
+        {/* Top Hero Section with Blurred Background */}
+        <div className="min-h-screen flex items-center justify-center text-center px-4 relative backdrop-blur-md bg-aurelle-dark-green/60">
           {/* Full Screen Logo */}
           <div className="absolute inset-0 flex items-center justify-center">
             <img 
