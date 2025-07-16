@@ -19,10 +19,20 @@ interface HeroContent {
   logoHeightMobile?: string;
 }
 
+interface MissionContent {
+  enabled: boolean;
+  title: string;
+  backgroundImage?: string;
+  headerTitle?: string;
+  paragraphs: string[];
+  quote: string;
+}
+
 
 const HeroSection = () => {
   const { t } = useLanguage();
   const content = useContent<HeroContent>('hero');
+  const missionContent = useContent<MissionContent>('mission');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
@@ -90,7 +100,7 @@ const HeroSection = () => {
   return (
     <section 
       id="hero" 
-      className="relative min-h-screen overflow-hidden"
+      className="relative min-h-[200vh] overflow-hidden"
       style={{ 
         background: 'linear-gradient(135deg, #ffffff 0%, #EDE5D6 30%, #ffffff 70%, #EDE5D6 100%)'
       }}
@@ -130,6 +140,55 @@ const HeroSection = () => {
           </div>
         </div>
 
+        {/* Mission Section */}
+        {missionContent && missionContent.enabled && (
+          <div 
+            className="py-24 px-4 relative"
+            style={{ backgroundColor: '#A394B8' }}
+          >
+            {missionContent.backgroundImage && (
+              <>
+                <div 
+                  className="absolute inset-0 bg-fixed bg-cover bg-center"
+                  style={{ 
+                    backgroundImage: `url(${missionContent.backgroundImage})`,
+                    transform: 'translateZ(0)'
+                  }}
+                />
+                <div className="absolute inset-0 bg-lavender/80" />
+              </>
+            )}
+            <div className="max-w-6xl mx-auto relative z-10">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Mission Text */}
+                <div className="space-y-8 scroll-reveal">
+                  <h2 className="text-4xl md:text-6xl font-light tracking-tighter text-cream opacity-100">
+                    {missionContent.title}
+                  </h2>
+                  <div className="space-y-6 text-lg md:text-xl leading-relaxed text-cream">
+                    {missionContent.paragraphs.map((paragraph, index) => (
+                      <p key={index} className="opacity-100">{paragraph}</p>
+                    ))}
+                    <p className="text-2xl font-light text-cream italic opacity-100">
+                      "{missionContent.quote}"
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Mission Image */}
+                <div className="scroll-reveal">
+                  <div className="aspect-[4/3] rounded-lg overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20">
+                    <img
+                      src="https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+                      alt="Our Mission"
+                      className="w-full h-full object-cover opacity-90"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Contact Form Section */}
         <div id="contact-form" className="py-16 px-4">
