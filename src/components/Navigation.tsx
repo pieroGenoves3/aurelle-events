@@ -198,22 +198,24 @@ const Navigation = () => {
             </div>
 
             {/* Language Selector - Right side */}
-            <div className="hidden md:flex items-center space-x-2">
-              <Select value={currentLanguage} onValueChange={(value) => setLanguage(value as any)}>
-                <SelectTrigger className="w-32 h-8 text-sm border-aurelle-black/0 bg-aurelle-black/0 text-aurelle-brown hover:text-aurelle-dark-green">
-                  <SelectValue/>
-                </SelectTrigger>
-                <SelectContent className="border-none bg-transparent">
-                  {languages.map((lang) => (
-                    <SelectItem key={lang.code} value={lang.code}>
-                      <span className="flex items-center space-x-2 bg-transparent border-none">
-                        <span>{lang.flag}</span>
-                        <span>{lang.label}</span>
-                      </span>
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+            <div className="hidden md:flex items-center space-x-1">
+              {languages.slice(0, 3).map((lang, index) => (
+                <React.Fragment key={lang.code}>
+                  <button
+                    onClick={() => setLanguage(lang.code as any)}
+                    className={`text-sm font-medium tracking-wide transition-all duration-200 hover:scale-105 ${
+                      currentLanguage === lang.code
+                        ? 'text-aurelle-dark-green'
+                        : 'text-aurelle-brown hover:text-aurelle-dark-green'
+                    }`}
+                  >
+                    {lang.code.toUpperCase()}
+                  </button>
+                  {index < 2 && (
+                    <span className="text-aurelle-brown/40">|</span>
+                  )}
+                </React.Fragment>
+              ))}
             </div>
           </div>
         </div>
