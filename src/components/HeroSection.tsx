@@ -119,25 +119,14 @@ const HeroSection = () => {
       {/* Hero Content */}
       <div className="relative z-20 flex flex-col">
         {/* Top Hero Section */}
-        <div className="min-h-screen flex items-center justify-center text-center px-4">
-          <div className="max-w-7xl animate-fade-in-up">
-            {/* Logo */}
-            <div className={content.imagePadding}>
-              <img 
-                src={logoImage}
-                alt="Aurelle Events" 
-                className={`${logoConfig.desktop.height} md:${logoConfig.desktop.height} md:${logoConfig.mobile.height} w-auto object-contain mx-auto drop-shadow-2xl filter brightness-110 contrast-110`}
-              />
-            </div>
-            {/* <p className="text-xl md:text-2xl text-foreground font-light max-w-2xl mx-auto leading-relaxed drop-shadow-2xl mb-8 filter brightness-110 opacity-100">
-              {content.subtitle}
-            </p>
-            <button
-              onClick={scrollToContact}
-              className="hero-neumorphic-btn text-lg shadow-2xl opacity-100"
-            >
-              {content.cta}
-            </button> */}
+        <div className="min-h-screen flex items-center justify-center text-center px-4 relative">
+          {/* Full Screen Logo */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <img 
+              src={logoImage}
+              alt="Aurelle Events" 
+              className="w-full h-full object-contain max-w-none max-h-none p-8 md:p-16 drop-shadow-2xl filter brightness-110 contrast-110"
+            />
           </div>
         </div>
 
