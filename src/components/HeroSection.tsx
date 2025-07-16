@@ -118,7 +118,7 @@ const HeroSection = () => {
       {/* Hero Content */}
       <div className="relative z-20 flex flex-col">
         {/* Top Hero Section */}
-        <div className="min-h-[60vh] flex items-center justify-center text-center px-4">
+        <div className="min-h-screen flex items-center justify-center text-center px-4">
           <div className="max-w-4xl mx-auto animate-fade-in-up">
             {/* Logo */}
             <div className={content.imagePadding}>
