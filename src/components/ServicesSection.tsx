@@ -3,6 +3,7 @@ import React from 'react';
 import { icons } from 'lucide-react';
 import { Check, Construction } from 'lucide-react';
 import { useContent } from '@/hooks/useContent';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface ServicesContent {
   enabled: boolean;
@@ -22,6 +23,7 @@ interface ServicesContent {
 
 const ServicesSection = () => {
   const content = useContent<ServicesContent>('services');
+  const { t } = useLanguage();
 
   if (!content || !content.enabled) {
     return null;
@@ -74,7 +76,7 @@ const ServicesSection = () => {
                   <div className="flex items-center justify-center mb-4">
                     <div className="inline-flex items-center px-3 py-1 rounded-full border border-aurelle-champagne">
                       <Construction size={14} className="text-aurelle-dark-green/80 mr-2" />
-                      <span className="text-aurelle-dark-green/80 text-sm font-medium">Under Development</span>
+                      <span className="text-aurelle-dark-green/80 text-sm font-medium">{t.services.underDevelopment}</span>
                     </div>
                   </div>
                 )}
@@ -94,7 +96,7 @@ const ServicesSection = () => {
                 
                 <p className="leading-relaxed mb-6 text-aurelle-dark-green/80 group-hover:text-aurelle-dark-green">
                   {isUnderDevelopment 
-                    ? "We're currently developing this service to bring you exceptional experiences. Stay tuned for exciting updates!"
+                    ? t.services.underDevelopmentMessage
                     : service.description
                   }
                 </p>

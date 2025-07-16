@@ -2,6 +2,7 @@
 import React from 'react';
 import { Mail, Phone } from 'lucide-react';
 import { useContent } from '@/hooks/useContent';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface FooterContent {
   enabled: boolean;
@@ -17,6 +18,7 @@ interface FooterContent {
 
 const Footer = () => {
   const content = useContent<FooterContent>('footer');
+  const { t } = useLanguage();
 
   // Don't render if content is disabled or not loaded
   if (!content || !content.enabled) {
@@ -45,7 +47,7 @@ const Footer = () => {
 
           <div className="scroll-reveal">
             <h4 className="text-2xl font-light mb-6 text-aurelle-champagne opacity-100">
-              {content.contactTitle}
+              {t.footer.contactTitle}
             </h4>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">

@@ -13,12 +13,32 @@ export const en = {
   hero: {
     title: "Aurelle Events",
     subtitle: "Crafting extraordinary experiences for luxury weddings, corporate events, and haute couture fashion shows",
-    cta: "Discover Our Work"
+    cta: "Discover Our Work",
+    missionQuote: "Creating unforgettable moments that last a lifetime",
+    contactTitle: "Get in Touch",
+    contactSubtitle: "Ready to start your journey? Contact us today and let's discuss how we can help you achieve your goals.",
+    contactInfo: "Contact Information",
+    sendMessage: "Send us a message",
+    nameField: "Name",
+    emailField: "Email",
+    subjectField: "Subject",
+    messageField: "Message",
+    sendButton: "Send Message",
+    sending: "Sending...",
+    nameRequired: "Name *",
+    emailRequired: "Email *",
+    messageRequired: "Message *",
+    namePlaceholder: "Your name",
+    emailPlaceholder: "your@email.com",
+    subjectPlaceholder: "What's this about?",
+    messagePlaceholder: "Tell us more about your project or inquiry..."
   },
-  mission: {
-    title: "Our Mission",
-    subtitle: "Creating unforgettable moments",
-    content: "We specialize in luxury event planning that transforms your vision into reality."
+  services: {
+    underDevelopment: "Under Development",
+    underDevelopmentMessage: "We're currently developing this service to bring you exceptional experiences. Stay tuned for exciting updates!"
+  },
+  footer: {
+    contactTitle: "Contact Information"
   },
   contact: {
     title: "Get in Touch",

@@ -206,10 +206,10 @@ const HeroSection = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 scroll-reveal">
               <h2 className="text-4xl md:text-5xl font-light tracking-tighter mb-6 text-foreground">
-                Get in Touch
+                {t.hero.contactTitle}
               </h2>
               <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-                Ready to start your journey? Contact us today and let's discuss how we can help you achieve your goals.
+                {t.hero.contactSubtitle}
               </p>
             </div>
 
@@ -217,7 +217,7 @@ const HeroSection = () => {
               {/* Contact Information */}
               <div className="space-y-8 scroll-reveal">
                 <div className="bg-white/20 backdrop-blur-sm rounded-lg p-8 border border-white/30">
-                  <h3 className="text-2xl font-light mb-6 text-foreground">Contact Information</h3>
+                  <h3 className="text-2xl font-light mb-6 text-foreground">{t.hero.contactInfo}</h3>
                   
                   <div className="space-y-4">
                     <div className="flex items-center space-x-4">
@@ -272,13 +272,13 @@ const HeroSection = () => {
                     </label>
                   </p>
 
-                  <h3 className="text-2xl font-light mb-6 text-foreground">Send us a message</h3>
+                  <h3 className="text-2xl font-light mb-6 text-foreground">{t.hero.sendMessage}</h3>
                   
                   <div className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-foreground/80 mb-2">
-                          Name *
+                          {t.hero.nameRequired}
                         </label>
                         <Input
                           id="name"
@@ -286,12 +286,12 @@ const HeroSection = () => {
                           type="text"
                           required
                           className="bg-white/30 border-white/40 text-foreground placeholder:text-foreground/50 focus:border-white/60"
-                          placeholder="Your name"
+                          placeholder={t.hero.namePlaceholder}
                         />
                       </div>
                       <div>
                         <label htmlFor="email" className="block text-sm font-medium text-foreground/80 mb-2">
-                          Email *
+                          {t.hero.emailRequired}
                         </label>
                         <Input
                           id="email"
@@ -299,27 +299,27 @@ const HeroSection = () => {
                           type="email"
                           required
                           className="bg-white/30 border-white/40 text-foreground placeholder:text-foreground/50 focus:border-white/60"
-                          placeholder="your@email.com"
+                          placeholder={t.hero.emailPlaceholder}
                         />
                       </div>
                     </div>
 
                     <div>
                       <label htmlFor="subject" className="block text-sm font-medium text-foreground/80 mb-2">
-                        Subject
+                        {t.hero.subjectField}
                       </label>
                       <Input
                         id="subject"
                         name="subject"
                         type="text"
                         className="bg-white/30 border-white/40 text-foreground placeholder:text-foreground/50 focus:border-white/60"
-                        placeholder="What's this about?"
+                        placeholder={t.hero.subjectPlaceholder}
                       />
                     </div>
 
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium text-foreground/80 mb-2">
-                        Message *
+                        {t.hero.messageRequired}
                       </label>
                       <Textarea
                         id="message"
@@ -327,7 +327,7 @@ const HeroSection = () => {
                         required
                         rows={5}
                         className="bg-white/30 border-white/40 text-foreground placeholder:text-foreground/50 focus:border-white/60 resize-none"
-                        placeholder="Tell us more about your project or inquiry..."
+                        placeholder={t.hero.messagePlaceholder}
                       />
                     </div>
 
@@ -337,11 +337,11 @@ const HeroSection = () => {
                       className="w-full bg-foreground text-background hover:bg-foreground/90 py-3 font-medium transition-all duration-200 disabled:opacity-50"
                     >
                       {isSubmitting ? (
-                        "Sending..."
+                        t.hero.sending
                       ) : (
                         <>
                           <Send size={16} className="mr-2" />
-                          Send Message
+                          {t.hero.sendButton}
                         </>
                       )}
                     </Button>
