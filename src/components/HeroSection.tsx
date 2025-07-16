@@ -119,7 +119,7 @@ const HeroSection = () => {
   return (
     <section 
       id="hero" 
-      className="relative min-h-[300vh] overflow-hidden"
+      className="relative overflow-hidden"
     >
       {/* Background Image */}
       {/* <div className="absolute inset-0 w-full h-full">
