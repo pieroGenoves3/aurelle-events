@@ -54,7 +54,7 @@ const Navigation = () => {
     
     if ((heroContent as any)?.enabled) {
       items.push({ 
-        name: (heroContent as any)?.headerTitle || t.navigation.home, 
+        name: t.navigation.home, 
         id: 'hero',
         order: 0
       });
@@ -62,7 +62,7 @@ const Navigation = () => {
     
     if ((mottosContent as any)?.enabled) {
       items.push({ 
-        name: (mottosContent as any)?.headerTitle || t.navigation.about, 
+        name: t.navigation.about, 
         id: 'mottos',
         order: 1
       });
@@ -70,7 +70,7 @@ const Navigation = () => {
     
     if ((servicesContent as any)?.enabled) {
       items.push({ 
-        name: (servicesContent as any)?.headerTitle || t.navigation.services, 
+        name: t.navigation.services, 
         id: 'services',
         order: 2
       });
@@ -78,7 +78,7 @@ const Navigation = () => {
     
     if ((testimonialsContent as any)?.enabled) {
       items.push({ 
-        name: (testimonialsContent as any)?.headerTitle || t.navigation.testimonials, 
+        name: t.navigation.testimonials, 
         id: 'testimonials',
         order: 3
       });
@@ -86,7 +86,7 @@ const Navigation = () => {
     
     if ((eventsContent as any)?.enabled) {
       items.push({ 
-        name: (eventsContent as any)?.headerTitle || t.navigation.events, 
+        name: t.navigation.events, 
         id: 'events',
         order: 4
       });
@@ -94,7 +94,7 @@ const Navigation = () => {
     
     if ((missionContent as any)?.enabled) {
       items.push({ 
-        name: (missionContent as any)?.headerTitle || t.navigation.mission, 
+        name: t.navigation.mission, 
         id: 'mission',
         order: 5
       });
@@ -102,7 +102,7 @@ const Navigation = () => {
     
     if ((contactContent as any)?.enabled) {
       items.push({ 
-        name: (contactContent as any)?.headerTitle || t.navigation.contact, 
+        name: t.navigation.contact, 
         id: 'contact',
         order: 6
       });
