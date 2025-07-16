@@ -122,16 +122,15 @@ const Navigation = () => {
 
   const languages = [
     { code: 'en', label: 'English', flag: '🇺🇸' },
-    { code: 'it', label: 'Italiano', flag: '🇮🇹' },
     { code: 'de', label: 'Deutsch', flag: '🇩🇪' },
-    { code: 'pt', label: 'Português', flag: '🇧🇷' }
+    { code: 'pt', label: 'Português', flag: '🇵🇹' }
   ];
 
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/70 backdrop-blur-lg border-b border-white/20 shadow-lg' 
+          ? 'bg-white/20 backdrop-blur-lg shadow-lg' 
           : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -174,14 +173,6 @@ const Navigation = () => {
             </div>
 
             {/* Desktop Layout */}
-            <div className="hidden md:block">
-              <img 
-                src="/lovable-uploads/monograma.png" 
-                alt="Aurelle Events" 
-                className={`${logoConfig.desktop.height} w-auto object-contain`}
-              />
-            </div>
-
             {/* Desktop Navigation - Centered */}
             <div className="hidden md:flex items-center justify-center flex-1 mx-8">
               <div className="flex items-center space-x-8">
@@ -189,7 +180,7 @@ const Navigation = () => {
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className="text-aurelle-brown hover:text-aurelle-dark-green transition-all duration-200 font-medium tracking-wide hover:scale-105"
+                    className="text-aurelle-brown hover:text-aurelle-light-green transition-all duration-200 font-medium tracking-wide hover:scale-105"
                   >
                     {item.name}
                   </button>
@@ -205,8 +196,8 @@ const Navigation = () => {
                     onClick={() => setLanguage(lang.code as any)}
                     className={`text-sm font-medium tracking-wide transition-all duration-200 hover:scale-105 ${
                       currentLanguage === lang.code
-                        ? 'text-aurelle-dark-green'
-                        : 'text-aurelle-brown hover:text-aurelle-dark-green'
+                        ? 'text-aurelle-champagne'
+                        : 'text-aurelle-brown hover:text-aurelle-light-green'
                     }`}
                   >
                     {lang.code.toUpperCase()}
