@@ -189,7 +189,7 @@ const Navigation = () => {
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className="text-foreground/80 hover:text-foreground transition-all duration-200 font-medium tracking-wide hover:scale-105"
+                    className="text-aurelle-brown hover:text-aurelle-dark-green transition-all duration-200 font-medium tracking-wide hover:scale-105"
                   >
                     {item.name}
                   </button>
@@ -199,15 +199,14 @@ const Navigation = () => {
 
             {/* Language Selector - Right side */}
             <div className="hidden md:flex items-center space-x-2">
-              <Globe size={16} className="text-foreground/60" />
               <Select value={currentLanguage} onValueChange={(value) => setLanguage(value as any)}>
-                <SelectTrigger className="w-32 h-8 text-sm border-none bg-transparent text-foreground/80 hover:text-foreground">
-                  <SelectValue />
+                <SelectTrigger className="w-32 h-8 text-sm border-aurelle-black/0 bg-aurelle-black/0 text-aurelle-brown hover:text-aurelle-dark-green">
+                  <SelectValue/>
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="border-none bg-transparent">
                   {languages.map((lang) => (
                     <SelectItem key={lang.code} value={lang.code}>
-                      <span className="flex items-center space-x-2">
+                      <span className="flex items-center space-x-2 bg-transparent border-none">
                         <span>{lang.flag}</span>
                         <span>{lang.label}</span>
                       </span>
