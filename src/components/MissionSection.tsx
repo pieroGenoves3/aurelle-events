@@ -25,7 +25,7 @@ const MissionSection = () => {
     <section 
       id="mission" 
       className="py-24 px-4 relative"
-      style={{ backgroundColor: '#A394B8' }}
+      style={{ backgroundColor: 'hsl(var(--aurelle-dark-green))' }}
     >
       {backgroundImage && (
         <>

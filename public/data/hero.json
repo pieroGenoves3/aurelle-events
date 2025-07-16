@@ -2,10 +2,10 @@
   "enabled": true,
   "subtitle": "Luxury event planning for weddings",
   "cta": "Discover Our Services",
-  "imagePadding": "mb-8",
+  "imagePadding": "mb-0",
   "backgroundImage": "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
-  "logoImage": "/images/logo-superhorizontal-cut.png",
-  "logoHeightDesktop": "h-50",
+  "logoImage": "/images/logo-principal-gold.png",
+  "logoHeightDesktop": "h-100",
   "logoHeightMobile": "h-24",
   "headerTitle": "Home"
 }

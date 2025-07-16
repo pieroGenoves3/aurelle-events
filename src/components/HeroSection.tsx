@@ -44,7 +44,7 @@ const HeroSection = () => {
   // Logo configuration with CMS values or fallbacks
   const logoConfig = {
     desktop: {
-      height: content.logoHeightDesktop || 'h-50'
+      height: content.logoHeightDesktop || 'h-100'
     },
     mobile: {
       height: content.logoHeightMobile || 'h-24'
@@ -55,7 +55,7 @@ const HeroSection = () => {
   const backgroundImage = content.backgroundImage || "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80";
 
   // Logo image with CMS value or fallback
-  const logoImage = content.logoImage || "/lovable-uploads/logo-horizontal-cut.png";
+  const logoImage = content.logoImage || "/images/logo-principal-gold.png";
 
   const scrollToContact = () => {
     const element = document.getElementById('contact-form');
@@ -102,24 +102,25 @@ const HeroSection = () => {
       id="hero" 
       className="relative min-h-[200vh] overflow-hidden"
       style={{ 
-        background: 'linear-gradient(135deg, #ffffff 0%, #EDE5D6 30%, #ffffff 70%, #EDE5D6 100%)'
+        // background: 'linear-gradient(135deg, #ffffff 0%, #EDE5D6 30%, #ffffff 70%, #EDE5D6 100%)'
+        background: 'hsl(var(--aurelle-dark-green))'
       }}
     >
       {/* Background Image */}
-      <div className="absolute inset-0 w-full h-full">
+      {/* <div className="absolute inset-0 w-full h-full">
         <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-cream/30 to-white/40 z-10" />
         <img
           src={backgroundImage}
           alt="Hero Background"
           className="w-full h-full object-cover opacity-20"
         />
-      </div>
+      </div> */}
 
       {/* Hero Content */}
       <div className="relative z-20 flex flex-col">
         {/* Top Hero Section */}
         <div className="min-h-screen flex items-center justify-center text-center px-4">
-          <div className="max-w-4xl mx-auto animate-fade-in-up">
+          <div className="max-w-7xl animate-fade-in-up">
             {/* Logo */}
             <div className={content.imagePadding}>
               <img 
@@ -128,7 +129,7 @@ const HeroSection = () => {
                 className={`${logoConfig.desktop.height} md:${logoConfig.desktop.height} md:${logoConfig.mobile.height} w-auto object-contain mx-auto drop-shadow-2xl filter brightness-110 contrast-110`}
               />
             </div>
-            <p className="text-xl md:text-2xl text-foreground font-light max-w-2xl mx-auto leading-relaxed drop-shadow-2xl mb-8 filter brightness-110 opacity-100">
+            {/* <p className="text-xl md:text-2xl text-foreground font-light max-w-2xl mx-auto leading-relaxed drop-shadow-2xl mb-8 filter brightness-110 opacity-100">
               {content.subtitle}
             </p>
             <button
@@ -136,7 +137,7 @@ const HeroSection = () => {
               className="hero-neumorphic-btn text-lg shadow-2xl opacity-100"
             >
               {content.cta}
-            </button>
+            </button> */}
           </div>
         </div>
 
@@ -144,7 +145,7 @@ const HeroSection = () => {
         {missionContent && missionContent.enabled && (
           <div 
             className="py-24 px-4 relative"
-            style={{ backgroundColor: '#A394B8' }}
+            style={{ backgroundColor: 'hsl(var(--aurelle-dark-green))' }}
           >
             {missionContent.backgroundImage && (
               <>
@@ -155,21 +156,21 @@ const HeroSection = () => {
                     transform: 'translateZ(0)'
                   }}
                 />
-                <div className="absolute inset-0 bg-lavender/80" />
+                <div className="absolute inset-0" />
               </>
             )}
             <div className="max-w-6xl mx-auto relative z-10">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {/* Mission Text */}
                 <div className="space-y-8 scroll-reveal">
-                  <h2 className="text-4xl md:text-6xl font-light tracking-tighter text-cream opacity-100">
+                  <h2 className="text-4xl md:text-6xl font-light tracking-tighter text-aurelle-champagne opacity-100">
                     {missionContent.title}
                   </h2>
-                  <div className="space-y-6 text-lg md:text-xl leading-relaxed text-cream">
+                  <div className="space-y-6 text-lg md:text-xl leading-relaxed">
                     {missionContent.paragraphs.map((paragraph, index) => (
-                      <p key={index} className="opacity-100">{paragraph}</p>
+                      <p key={index} className="opacity-100 text-aurelle-champagne/80">{paragraph}</p>
                     ))}
-                    <p className="text-2xl font-light text-cream italic opacity-100">
+                    <p className="text-2xl font-light text-aurelle-brown/50 italic opacity-100">
                       "{missionContent.quote}"
                     </p>
                   </div>
@@ -337,15 +338,6 @@ const HeroSection = () => {
                   </div>
                 </form>
               </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-          <div className="animate-bounce">
-            <div className="w-6 h-10 border-2 border-foreground/40 rounded-full flex justify-center drop-shadow-lg">
-              <div className="w-1 h-3 bg-foreground rounded-full mt-2 animate-pulse" />
             </div>
           </div>
         </div>
