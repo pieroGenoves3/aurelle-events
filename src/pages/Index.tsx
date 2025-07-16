@@ -68,7 +68,7 @@ const Index = () => {
         <ServicesSection />
         <TestimonialsSection />
         <PastEventsSection />
-        <LocationSection />
+        {/* <LocationSection /> */}
         <Footer />
       </div>
     </LanguageProvider>
