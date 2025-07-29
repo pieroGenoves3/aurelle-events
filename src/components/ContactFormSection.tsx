@@ -110,20 +110,10 @@ const ContactFormSection = () => {
             <form 
               name="contact" 
               method="POST" 
-              data-netlify="true" 
-              netlify-honeypot="bot-field"
+              data-netlify="true"
               onSubmit={handleSubmit}
               className="bg-aurelle-champagne/10 backdrop-blur-sm rounded-lg p-8 border border-aurelle-champagne/20"
             >
-              {/* Hidden fields for Netlify */}
-              <input type="hidden" name="form-name" value="contact" />
-              <p className="hidden">
-                <label>
-                  Don't fill this out if you're human: 
-                  <input name="bot-field" />
-                </label>
-              </p>
-
               <h3 className="text-2xl font-light mb-6 text-aurelle-champagne">Send us a message</h3>
               
               <div className="space-y-6">
