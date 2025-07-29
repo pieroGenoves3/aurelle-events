@@ -20,6 +20,7 @@ const ContactFormSection = () => {
     try {
       // Only submit to Netlify if on aurelleevents.com domain
       if (window.location.hostname === 'aurelleevents.com' || window.location.hostname === 'www.aurelleevents.com') {
+        console.log('entrei no try catch')
         const response = await fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -27,6 +28,8 @@ const ContactFormSection = () => {
         });
 
         if (!response.ok) {
+          console.log('deu ruim')
+          console.log(response)
           throw new Error('Form submission failed');
         }
       }
@@ -114,6 +117,15 @@ const ContactFormSection = () => {
               onSubmit={handleSubmit}
               className="bg-aurelle-champagne/10 backdrop-blur-sm rounded-lg p-8 border border-aurelle-champagne/20"
             >
+              {/* Hidden fields for Netlify */}
+              <input type="hidden" name="form-name" value="contact" />
+              <p className="hidden">
+                <label>
+                  Don't fill this out if you're human: 
+                  <input name="bot-field" />
+                </label>
+              </p>
+
               <h3 className="text-2xl font-light mb-6 text-aurelle-champagne">Send us a message</h3>
               
               <div className="space-y-6">
