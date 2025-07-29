@@ -134,7 +134,7 @@ const ContactFormSection = () => {
                     <label htmlFor="name" className="block text-sm font-medium text-aurelle-champagne/80 mb-2">
                       {t.contact.name} *
                     </label>
-                    <Input
+                    <input
                       id="name"
                       name="name"
                       type="text"
@@ -147,7 +147,7 @@ const ContactFormSection = () => {
                     <label htmlFor="email" className="block text-sm font-medium text-aurelle-champagne/80 mb-2">
                       {t.contact.email} *
                     </label>
-                    <Input
+                    <input
                       id="email"
                       name="email"
                       type="email"
@@ -162,7 +162,7 @@ const ContactFormSection = () => {
                   <label htmlFor="subject" className="block text-sm font-medium text-aurelle-champagne/80 mb-2">
                     Subject
                   </label>
-                  <Input
+                  <input
                     id="subject"
                     name="subject"
                     type="text"
@@ -175,7 +175,7 @@ const ContactFormSection = () => {
                   <label htmlFor="message" className="block text-sm font-medium text-aurelle-champagne/80 mb-2">
                     {t.contact.message} *
                   </label>
-                  <Textarea
+                  <textarea
                     id="message"
                     name="message"
                     required
@@ -185,7 +185,7 @@ const ContactFormSection = () => {
                   />
                 </div>
 
-                <Button
+                <button
                   type="submit"
                   disabled={isSubmitting}
                   className="w-full bg-aurelle-champagne text-aurelle-light-green hover:bg-aurelle-champagne/90 py-3 font-medium transition-all duration-200 disabled:opacity-50"
@@ -198,7 +198,7 @@ const ContactFormSection = () => {
                       {t.contact.send}
                     </>
                   )}
-                </Button>
+                </button>
               </div>
             </form>
           </div>
