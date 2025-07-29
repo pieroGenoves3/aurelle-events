@@ -2,10 +2,22 @@ import React from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
+const NetlifyHiddenForm = () => (
+  <form name="contact" method="POST" data-netlify="true" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="text" name="subject" />
+    <textarea name="message"></textarea>
+  </form>
+);
+
 const ContactFormSection = () => {
   const { t } = useLanguage();
 
+  
   return (
+    <>
+    <NetlifyHiddenForm/>
     <section 
       id="contact" 
       className="py-24 px-4 relative"
@@ -69,14 +81,8 @@ const ContactFormSection = () => {
               data-netlify="true"
               className="bg-aurelle-champagne/10 backdrop-blur-sm rounded-lg p-8 border border-aurelle-champagne/20"
             >
-              {/* Hidden fields for Netlify */}
-              <input type="hidden" name="form-name" value="contact" />
-              <p className="hidden">
-                <label>
-                  Don't fill this out if you're human: 
-                  <input name="bot-field" />
-                </label>
-              </p>
+              
+<input type="hidden" name="form-name" value="contact" />
 
               <h3 className="text-2xl font-light mb-6 text-aurelle-champagne">Send us a message</h3>
               
@@ -150,6 +156,7 @@ const ContactFormSection = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
