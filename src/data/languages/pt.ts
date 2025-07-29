@@ -33,6 +33,11 @@ export const pt = {
     subjectPlaceholder: "Sobre o que é?",
     messagePlaceholder: "Conte-nos mais sobre seu projeto ou consulta..."
   },
+  mission: {
+    title: "Nossa missão",
+    description: ["Na Aurelle Events, acreditamos que os momentos mais preciosos da vida merecem ser celebrados com uma beleza e sofisticação inigualáveis. A nossa missão é transformar os seus sonhos em realidades extraordinárias, criando experiências que permanecem na memória muito depois de o último convidado ter partido.","Somos artesãos apaixonados pela celebração, dedicados a criar eventos personalizados que refletem a sua história e visão únicas. Desde reuniões íntimas até grandes galas, dedicamos o nosso coração a cada detalhe, garantindo que cada momento esteja impregnado de elegância, emoção e excelência."],
+    quote: "Não apenas planificamos eventos—criamos experiências intemporais que celebram a arte de viver com beleza."
+  },
   services: {
     underDevelopment: "Em Desenvolvimento",
     underDevelopmentMessage: "Estamos atualmente desenvolvendo este serviço para trazer experiências excepcionais. Fique atento para atualizações emocionantes!"

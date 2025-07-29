@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useContent } from '@/hooks/useContent';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface MissionContent {
   enabled: boolean;
@@ -13,6 +14,7 @@ interface MissionContent {
 
 const MissionSection = () => {
   const content = useContent<MissionContent>('mission');
+  const { t } = useLanguage();
 
   // Don't render if content is disabled or not loaded
   if (!content || !content.enabled) {
@@ -41,14 +43,14 @@ const MissionSection = () => {
       )}
       <div className="max-w-4xl mx-auto text-center scroll-reveal relative z-10">
         <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-8 text-cream opacity-100">
-          {content.title}
+          {t.mission.title}
         </h2>
         <div className="space-y-8 text-lg md:text-xl leading-relaxed text-cream">
-          {content.paragraphs.map((paragraph, index) => (
+          {t.mission.description.map((paragraph, index) => (
             <p key={index} className="opacity-100">{paragraph}</p>
           ))}
           <p className="text-2xl font-light text-cream italic opacity-100">
-            "{content.quote}"
+            "{t.mission.quote}"
           </p>
         </div>
       </div>

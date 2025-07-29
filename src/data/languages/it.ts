@@ -33,6 +33,11 @@ export const it = {
     subjectPlaceholder: "Di cosa si tratta?",
     messagePlaceholder: "Raccontaci di più sul tuo progetto o richiesta..."
   },
+  mission: {
+    title: "Nossa missão",
+description: ["",""],
+    quote: ""
+  },
   services: {
     underDevelopment: "In Sviluppo",
     underDevelopmentMessage: "Stiamo attualmente sviluppando questo servizio per offrirti esperienze eccezionali. Resta sintonizzato per aggiornamenti entusiasmanti!"
