@@ -109,6 +109,7 @@ const ContactFormSection = () => {
               netlify-honeypot="bot-field"
               onSubmit={handleSubmit}
               className="bg-aurelle-champagne/10 backdrop-blur-sm rounded-lg p-8 border border-aurelle-champagne/20"
+              netlify
             >
               {/* Hidden fields for Netlify */}
               <input type="hidden" name="form-name" value="contact" />
