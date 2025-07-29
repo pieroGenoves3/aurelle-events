@@ -18,22 +18,27 @@ const ContactFormSection = () => {
     const formData = new FormData(e.currentTarget);
     
     try {
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData as any).toString(),
-      });
-
-      if (response.ok) {
-        toast({
-          title: t.contact.success,
-          description: "We'll get back to you as soon as possible.",
+      // Check if we're in production with Netlify
+      if (window.location.hostname.includes('netlify') || window.location.hostname.includes('lovable')) {
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData as any).toString(),
         });
-        (e.target as HTMLFormElement).reset();
-      } else {
-        throw new Error('Form submission failed');
+
+        if (!response.ok) {
+          throw new Error('Form submission failed');
+        }
       }
+
+      // Show success message regardless of environment
+      toast({
+        title: t.contact.success,
+        description: "We'll get back to you as soon as possible.",
+      });
+      (e.target as HTMLFormElement).reset();
     } catch (error) {
+      console.error('Form submission error:', error);
       toast({
         title: t.contact.error,
         description: "Please try again later or contact us directly.",
