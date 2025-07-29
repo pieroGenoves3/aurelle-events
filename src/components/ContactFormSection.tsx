@@ -18,7 +18,9 @@ const ContactFormSection = () => {
     const formData = new FormData(e.currentTarget);
     
     try {
-      const response = await fetch('/', {
+      // Only submit to Netlify if on aurelleevents.com domain
+      if (window.location.hostname === 'aurelleevents.com' || window.location.hostname === 'www.aurelleevents.com') {
+        const response = await fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: new URLSearchParams(formData as any).toString(),
@@ -27,6 +29,7 @@ const ContactFormSection = () => {
         if (!response.ok) {
           throw new Error('Form submission failed');
         }
+      }
 
       // Show success message in all environments
       toast({
