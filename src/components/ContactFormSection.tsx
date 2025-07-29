@@ -1,56 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/hooks/use-toast';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const ContactFormSection = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
   const { t } = useLanguage();
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    const formData = new FormData(e.currentTarget);
-    
-    try {
-      // Only submit to Netlify if on aurelleevents.com domain
-      if (window.location.hostname === 'aurelleevents.com' || window.location.hostname === 'www.aurelleevents.com') {
-        console.log('entrei no try catch')
-        const response = await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(formData as any).toString(),
-        });
-
-        if (!response.ok) {
-          console.log('deu ruim')
-          console.log(response)
-          throw new Error('Form submission failed');
-        }
-      }
-
-      // Show success message in all environments
-      toast({
-        title: t.contact.success,
-        description: "We'll get back to you as soon as possible.",
-      });
-      (e.target as HTMLFormElement).reset();
-    } catch (error) {
-      console.error('Form submission error:', error);
-      toast({
-        title: t.contact.error,
-        description: "Please try again later or contact us directly.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <section 
@@ -114,7 +67,6 @@ const ContactFormSection = () => {
               name="contact" 
               method="POST" 
               data-netlify="true"
-              onSubmit={handleSubmit}
               className="bg-aurelle-champagne/10 backdrop-blur-sm rounded-lg p-8 border border-aurelle-champagne/20"
             >
               {/* Hidden fields for Netlify */}
@@ -187,17 +139,10 @@ const ContactFormSection = () => {
 
                 <button
                   type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-aurelle-champagne text-aurelle-light-green hover:bg-aurelle-champagne/90 py-3 font-medium transition-all duration-200 disabled:opacity-50"
+                  className="w-full bg-aurelle-champagne text-aurelle-light-green hover:bg-aurelle-champagne/90 py-3 font-medium transition-all duration-200 flex items-center justify-center"
                 >
-                  {isSubmitting ? (
-                    "Sending..."
-                  ) : (
-                    <>
-                      <Send size={16} className="mr-2" />
-                      {t.contact.send}
-                    </>
-                  )}
+                  <Send size={16} className="mr-2" />
+                  {t.contact.send}
                 </button>
               </div>
             </form>
