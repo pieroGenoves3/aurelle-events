@@ -18,8 +18,8 @@ const ContactFormSection = () => {
     const formData = new FormData(e.currentTarget);
     
     try {
-      // Check if we're in production with Netlify
-      if (window.location.hostname.includes('netlify') || window.location.hostname.includes('lovable')) {
+      // Only attempt Netlify submission on actual Netlify domains
+      if (window.location.hostname.includes('netlify.app') || window.location.hostname.includes('netlify.com')) {
         const response = await fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -31,7 +31,7 @@ const ContactFormSection = () => {
         }
       }
 
-      // Show success message regardless of environment
+      // Show success message in all environments
       toast({
         title: t.contact.success,
         description: "We'll get back to you as soon as possible.",
