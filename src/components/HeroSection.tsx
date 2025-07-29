@@ -80,7 +80,7 @@ const HeroSection = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    // e.preventDefault();
     setIsSubmitting(true);
 
     const formData = new FormData(e.currentTarget);
