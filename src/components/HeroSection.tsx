@@ -4,7 +4,6 @@ import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/hooks/use-toast';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useContent } from '@/hooks/useContent';
 
@@ -33,9 +32,7 @@ const HeroSection = () => {
   const { t } = useLanguage();
   const content = useContent<HeroContent>('hero');
   const missionContent = useContent<MissionContent>('mission');
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
-  const { toast } = useToast();
 
   // Wedding photo carousel images
   const weddingPhotos = [
@@ -79,37 +76,6 @@ const HeroSection = () => {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    setIsSubmitting(true);
-
-    const formData = new FormData(e.currentTarget);
-    
-    try {
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData as any).toString(),
-      });
-
-      if (response.ok) {
-        toast({
-          title: "Message sent successfully!",
-          description: "We'll get back to you as soon as possible.",
-        });
-        (e.target as HTMLFormElement).reset();
-      } else {
-        throw new Error('Form submission failed');
-      }
-    } catch (error) {
-      toast({
-        title: "Error sending message",
-        description: "Please try again later or contact us directly.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <section 
@@ -259,7 +225,6 @@ const HeroSection = () => {
                   method="POST" 
                   data-netlify="true" 
                   netlify-honeypot="bot-field"
-                  onSubmit={handleSubmit}
                   className="bg-white/20 backdrop-blur-sm rounded-lg p-8 border border-white/30"
                 >
                   {/* Hidden fields for Netlify */}
@@ -332,17 +297,10 @@ const HeroSection = () => {
 
                     <Button
                       type="submit"
-                      disabled={isSubmitting}
-                      className="w-full bg-foreground text-background hover:bg-foreground/90 py-3 font-medium transition-all duration-200 disabled:opacity-50"
+                      className="w-full bg-foreground text-background hover:bg-foreground/90 py-3 font-medium transition-all duration-200"
                     >
-                      {isSubmitting ? (
-                        t.hero.sending
-                      ) : (
-                        <>
-                          <Send size={16} className="mr-2" />
-                          {t.hero.sendButton}
-                        </>
-                      )}
+                      <Send size={16} className="mr-2" />
+                      {t.hero.sendButton}
                     </Button>
                   </div>
                 </form>
