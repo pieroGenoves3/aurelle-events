@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useContent } from '@/hooks/useContent';
+import { toast } from 'sonner'; // <== importação do sonner
 
 interface HeroContent {
   enabled: boolean;
@@ -32,23 +33,6 @@ const HeroSection = () => {
   const missionContent = useContent<MissionContent>('mission');
   const [currentImage, setCurrentImage] = useState(0);
 
-  // ADICIONADO: Controle de envio
-  const [submitted, setSubmitted] = useState(false);
-
-  // Handler do submit AJAX Netlify
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.target as HTMLFormElement;
-    const data = new FormData(form);
-
-    fetch("/", {
-      method: "POST",
-      body: data,
-    })
-      .then(() => setSubmitted(true))
-      .catch((error) => alert(error));
-  };
-
   // Wedding photo carousel images
   const weddingPhotos = [
     "/images/wedding-carousel/wedc-1.jpg",
@@ -63,7 +47,7 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, [weddingPhotos.length]);
 
-  // Don't render if content is disabled or not loaded
+  // Não renderiza se não estiver habilitado no CMS
   if (!content || !content.enabled) {
     return null;
   }
@@ -89,6 +73,25 @@ const HeroSection = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  // ---- HANDLE SUBMIT COM TOAST E RESET ----
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const data = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      body: data,
+    })
+      .then(() => {
+        toast.success("Mensagem enviada com sucesso! Em breve retornaremos.");
+        form.reset();
+      })
+      .catch(() => {
+        toast.error("Erro ao enviar mensagem. Tente novamente.");
+      });
   };
 
   return (
@@ -234,97 +237,91 @@ const HeroSection = () => {
 
               {/* Contact Form */}
               <div className="scroll-reveal">
-                {submitted ? (
-                  <div className="text-green-700 text-xl text-center py-12 font-semibold">
-                    Obrigado! Sua mensagem foi enviada com sucesso.
-                  </div>
-                ) : (
-                  <form 
-                    name="contact" 
-                    method="POST" 
-                    data-netlify="true" 
-                    netlify-honeypot="bot-field"
-                    className="bg-white/20 backdrop-blur-sm rounded-lg p-8 border border-white/30"
-                    onSubmit={handleSubmit}
-                  >
-                    {/* Hidden fields for Netlify */}
-                    <input type="hidden" name="form-name" value="contact" />
-                    <p className="hidden">
-                      <label>
-                        Don't fill this out if you're human: 
-                        <input name="bot-field" />
-                      </label>
-                    </p>
+                <form 
+                  name="contact" 
+                  method="POST" 
+                  data-netlify="true" 
+                  netlify-honeypot="bot-field"
+                  className="bg-white/20 backdrop-blur-sm rounded-lg p-8 border border-white/30"
+                  onSubmit={handleSubmit}
+                >
+                  {/* Hidden fields for Netlify */}
+                  <input type="hidden" name="form-name" value="contact" />
+                  <p className="hidden">
+                    <label>
+                      Don't fill this out if you're human: 
+                      <input name="bot-field" />
+                    </label>
+                  </p>
 
-                    <h3 className="text-2xl font-light mb-6 text-foreground">{t.hero.sendMessage}</h3>
-                    
-                    <div className="space-y-6">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                          <label htmlFor="name" className="block text-sm font-medium text-foreground/80 mb-2">
-                            {t.hero.nameRequired}
-                          </label>
-                          <Input
-                            id="name"
-                            name="name"
-                            type="text"
-                            required
-                            className="bg-white/30 border-white/40 text-foreground placeholder:text-foreground/50 focus:border-white/60"
-                            placeholder={t.hero.namePlaceholder}
-                          />
-                        </div>
-                        <div>
-                          <label htmlFor="email" className="block text-sm font-medium text-foreground/80 mb-2">
-                            {t.hero.emailRequired}
-                          </label>
-                          <Input
-                            id="email"
-                            name="email"
-                            type="email"
-                            required
-                            className="bg-white/30 border-white/40 text-foreground placeholder:text-foreground/50 focus:border-white/60"
-                            placeholder={t.hero.emailPlaceholder}
-                          />
-                        </div>
-                      </div>
-
+                  <h3 className="text-2xl font-light mb-6 text-foreground">{t.hero.sendMessage}</h3>
+                  
+                  <div className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label htmlFor="subject" className="block text-sm font-medium text-foreground/80 mb-2">
-                          {t.hero.subjectField}
+                        <label htmlFor="name" className="block text-sm font-medium text-foreground/80 mb-2">
+                          {t.hero.nameRequired}
                         </label>
                         <Input
-                          id="subject"
-                          name="subject"
+                          id="name"
+                          name="name"
                           type="text"
-                          className="bg-white/30 border-white/40 text-foreground placeholder:text-foreground/50 focus:border-white/60"
-                          placeholder={t.hero.subjectPlaceholder}
-                        />
-                      </div>
-
-                      <div>
-                        <label htmlFor="message" className="block text-sm font-medium text-foreground/80 mb-2">
-                          {t.hero.messageRequired}
-                        </label>
-                        <Textarea
-                          id="message"
-                          name="message"
                           required
-                          rows={5}
-                          className="bg-white/30 border-white/40 text-foreground placeholder:text-foreground/50 focus:border-white/60 resize-none"
-                          placeholder={t.hero.messagePlaceholder}
+                          className="bg-white/30 border-white/40 text-foreground placeholder:text-foreground/50 focus:border-white/60"
+                          placeholder={t.hero.namePlaceholder}
                         />
                       </div>
-
-                      <Button
-                        type="submit"
-                        className="w-full bg-foreground text-background hover:bg-foreground/90 py-3 font-medium transition-all duration-200"
-                      >
-                        <Send size={16} className="mr-2" />
-                        {t.hero.sendButton}
-                      </Button>
+                      <div>
+                        <label htmlFor="email" className="block text-sm font-medium text-foreground/80 mb-2">
+                          {t.hero.emailRequired}
+                        </label>
+                        <Input
+                          id="email"
+                          name="email"
+                          type="email"
+                          required
+                          className="bg-white/30 border-white/40 text-foreground placeholder:text-foreground/50 focus:border-white/60"
+                          placeholder={t.hero.emailPlaceholder}
+                        />
+                      </div>
                     </div>
-                  </form>
-                )}
+
+                    <div>
+                      <label htmlFor="subject" className="block text-sm font-medium text-foreground/80 mb-2">
+                        {t.hero.subjectField}
+                      </label>
+                      <Input
+                        id="subject"
+                        name="subject"
+                        type="text"
+                        className="bg-white/30 border-white/40 text-foreground placeholder:text-foreground/50 focus:border-white/60"
+                        placeholder={t.hero.subjectPlaceholder}
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-medium text-foreground/80 mb-2">
+                        {t.hero.messageRequired}
+                      </label>
+                      <Textarea
+                        id="message"
+                        name="message"
+                        required
+                        rows={5}
+                        className="bg-white/30 border-white/40 text-foreground placeholder:text-foreground/50 focus:border-white/60 resize-none"
+                        placeholder={t.hero.messagePlaceholder}
+                      />
+                    </div>
+
+                    <Button
+                      type="submit"
+                      className="w-full bg-foreground text-background hover:bg-foreground/90 py-3 font-medium transition-all duration-200"
+                    >
+                      <Send size={16} className="mr-2" />
+                      {t.hero.sendButton}
+                    </Button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
