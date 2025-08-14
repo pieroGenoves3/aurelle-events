@@ -42,14 +42,14 @@ const MissionSection = () => {
         </>
       )}
       <div className="max-w-4xl mx-auto text-center scroll-reveal relative z-10">
-        <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-8 text-cream opacity-100">
+        <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-8 text-cream opacity-100 font-tenez">
           {t.mission.title}
         </h2>
-        <div className="space-y-8 text-lg md:text-xl leading-relaxed text-cream">
+        <div className="space-y-8 text-lg md:text-xl leading-relaxed text-cream font-gantari">
           {t.mission.description.map((paragraph, index) => (
             <p key={index} className="opacity-100">{paragraph}</p>
           ))}
-          <p className="text-2xl font-light text-cream italic opacity-100">
+          <p className="text-2xl font-light text-cream italic opacity-100 font-tenez">
             "{t.mission.quote}"
           </p>
         </div>

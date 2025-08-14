@@ -180,7 +180,7 @@ const Navigation = () => {
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className="text-aurelle-brown hover:text-aurelle-light-green transition-all duration-200 font-medium tracking-wide hover:scale-105"
+                    className="text-aurelle-brown hover:text-aurelle-light-green transition-all duration-200 font-medium tracking-wide hover:scale-105 font-gantari"
                   >
                     {item.name}
                   </button>
@@ -194,7 +194,7 @@ const Navigation = () => {
                 <React.Fragment key={lang.code}>
                   <button
                     onClick={() => setLanguage(lang.code as any)}
-                    className={`text-sm font-medium tracking-wide transition-all duration-200 hover:scale-105 ${
+                    className={`text-sm font-medium tracking-wide transition-all duration-200 hover:scale-105 font-gantari ${
                       currentLanguage === lang.code
                         ? 'text-aurelle-champagne'
                         : 'text-aurelle-brown hover:text-aurelle-light-green'
@@ -223,7 +223,7 @@ const Navigation = () => {
             isMobileMenuOpen ? 'animate-slide-in-right' : 'animate-slide-out-right'
           }`}>
             <div className="flex justify-between items-center p-6 border-b border-white/20">
-              <span className="text-xl font-medium tracking-tight">Menu</span>
+              <span className="text-xl font-medium tracking-tight font-tenez">Menu</span>
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-foreground"
@@ -236,7 +236,7 @@ const Navigation = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-left text-lg text-foreground/80 hover:text-foreground transition-colors duration-200 font-medium tracking-wide py-2"
+                  className="text-left text-lg text-foreground/80 hover:text-foreground transition-colors duration-200 font-medium tracking-wide py-2 font-gantari"
                 >
                   {item.name}
                 </button>
@@ -246,7 +246,7 @@ const Navigation = () => {
               <div className="pt-4 border-t border-white/20">
                 <div className="flex items-center space-x-2 mb-3">
                   <Globe size={16} className="text-foreground/60" />
-                  <span className="text-sm text-foreground/60">Language</span>
+                  <span className="text-sm text-foreground/60 font-gantari">Language</span>
                 </div>
                 <Select value={currentLanguage} onValueChange={(value) => setLanguage(value as any)}>
                   <SelectTrigger className="w-full bg-white border-gray-200">

@@ -51,10 +51,10 @@ const ServicesSection = () => {
       )}
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16 scroll-reveal">
-          <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6 text-aurelle-champagne">
+          <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6 text-aurelle-champagne font-tenez">
             {content.title}
           </h2>
-          <p className="text-xl text-aurelle-champagne/80 max-w-2xl mx-auto">
+          <p className="text-xl text-aurelle-champagne/80 max-w-2xl mx-auto font-gantari">
             {content.subtitle}
           </p>
         </div>
@@ -76,7 +76,7 @@ const ServicesSection = () => {
                   <div className="flex items-center justify-center mb-4">
                     <div className="inline-flex items-center px-3 py-1 rounded-full border border-aurelle-champagne">
                       <Construction size={14} className="text-aurelle-dark-green/80 mr-2" />
-                      <span className="text-aurelle-dark-green/80 text-sm font-medium">{t.services.underDevelopment}</span>
+                      <span className="text-aurelle-dark-green/80 text-sm font-medium font-gantari">{t.services.underDevelopment}</span>
                     </div>
                   </div>
                 )}
@@ -88,13 +88,13 @@ const ServicesSection = () => {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-light tracking-tight mb-3 text-aurelle-dark-green/80 group-hover:text-aurelle-dark-green transition-colors">
+                    <h3 className="text-2xl font-light tracking-tight mb-3 text-aurelle-dark-green/80 group-hover:text-aurelle-dark-green transition-colors font-tenez">
                       {service.title}
                     </h3>
                   </div>
                 </div>
                 
-                <p className="leading-relaxed mb-6 text-aurelle-dark-green/80 group-hover:text-aurelle-dark-green">
+                <p className="leading-relaxed mb-6 text-aurelle-dark-green/80 group-hover:text-aurelle-dark-green font-gantari">
                   {isUnderDevelopment 
                     ? t.services.underDevelopmentMessage
                     : service.description
@@ -106,7 +106,7 @@ const ServicesSection = () => {
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center space-x-3">
                         <Check size={16} className="text-aurelle-champagne group-hover:text-aurelle-dark-green flex-shrink-0" />
-                        <span className="text-sm text-aurelle-dark-green/80 group-hover:text-aurelle-dark-green">{feature}</span>
+                        <span className="text-sm text-aurelle-dark-green/80 group-hover:text-aurelle-dark-green font-gantari">{feature}</span>
                       </li>
                     ))}
                   </ul>

@@ -155,14 +155,14 @@ const HeroSection = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {/* Mission Text */}
                 <div className="space-y-8 scroll-reveal">
-                  <h2 className="text-4xl md:text-6xl font-light tracking-tighter text-aurelle-champagne opacity-100">
+                  <h2 className="text-4xl md:text-6xl font-light tracking-tighter text-aurelle-champagne opacity-100 font-tenez">
                     {missionContent.title}
                   </h2>
-                  <div className="space-y-6 text-lg md:text-xl leading-relaxed">
+                  <div className="space-y-6 text-lg md:text-xl leading-relaxed font-gantari">
                     {missionContent.paragraphs.map((paragraph, index) => (
                       <p key={index} className="opacity-100 text-aurelle-champagne/80">{paragraph}</p>
                     ))}
-                    <p className="text-2xl font-light text-aurelle-brown/50 italic opacity-100">
+                    <p className="text-2xl font-light text-aurelle-brown/50 italic opacity-100 font-tenez">
                       "{missionContent.quote}"
                     </p>
                   </div>
@@ -187,10 +187,10 @@ const HeroSection = () => {
         <div id="contact-form" className="py-16 px-4 bg-aurelle-champagne">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 scroll-reveal">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tighter mb-6 text-foreground">
+              <h2 className="text-4xl md:text-5xl font-light tracking-tighter mb-6 text-foreground font-tenez">
                 {t.hero.contactTitle}
               </h2>
-              <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
+              <p className="text-lg text-foreground/80 max-w-2xl mx-auto font-gantari">
                 {t.hero.contactSubtitle}
               </p>
             </div>
@@ -199,7 +199,7 @@ const HeroSection = () => {
               {/* Contact Information */}
               <div className="space-y-8 scroll-reveal">
                 <div className="bg-white/20 backdrop-blur-sm rounded-lg p-8 border border-white/30">
-                  <h3 className="text-2xl font-light mb-6 text-foreground">{t.hero.contactInfo}</h3>
+                  <h3 className="text-2xl font-light mb-6 text-foreground font-tenez">{t.hero.contactInfo}</h3>
                   
                   <div className="space-y-4">
                     <div className="flex items-center space-x-4">
@@ -207,8 +207,8 @@ const HeroSection = () => {
                         <Mail size={20} className="text-foreground" />
                       </div>
                       <div>
-                        <p className="text-foreground/80 text-sm">Email</p>
-                        <p className="text-foreground font-medium">contact@aurelle.com</p>
+                        <p className="text-foreground/80 text-sm font-gantari">Email</p>
+                        <p className="text-foreground font-medium font-gantari">contact@aurelle.com</p>
                       </div>
                     </div>
 
@@ -217,8 +217,8 @@ const HeroSection = () => {
                         <Phone size={20} className="text-foreground" />
                       </div>
                       <div>
-                        <p className="text-foreground/80 text-sm">Phone</p>
-                        <p className="text-foreground font-medium">+55 (11) 9999-9999</p>
+                        <p className="text-foreground/80 text-sm font-gantari">Phone</p>
+                        <p className="text-foreground font-medium font-gantari">+55 (11) 9999-9999</p>
                       </div>
                     </div>
 
@@ -227,8 +227,8 @@ const HeroSection = () => {
                         <MapPin size={20} className="text-foreground" />
                       </div>
                       <div>
-                        <p className="text-foreground/80 text-sm">Address</p>
-                        <p className="text-foreground font-medium">R. Carlos de Campos, 198<br />Vila Boa Vista, Barueri - SP</p>
+                        <p className="text-foreground/80 text-sm font-gantari">Address</p>
+                        <p className="text-foreground font-medium font-gantari">R. Carlos de Campos, 198<br />Vila Boa Vista, Barueri - SP</p>
                       </div>
                     </div>
                   </div>
@@ -254,12 +254,12 @@ const HeroSection = () => {
                     </label>
                   </p>
 
-                  <h3 className="text-2xl font-light mb-6 text-foreground">{t.hero.sendMessage}</h3>
+                  <h3 className="text-2xl font-light mb-6 text-foreground font-tenez">{t.hero.sendMessage}</h3>
                   
                   <div className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-foreground/80 mb-2">
+                        <label htmlFor="name" className="block text-sm font-medium text-foreground/80 mb-2 font-gantari">
                           {t.hero.nameRequired}
                         </label>
                         <Input
@@ -272,7 +272,7 @@ const HeroSection = () => {
                         />
                       </div>
                       <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-foreground/80 mb-2">
+                        <label htmlFor="email" className="block text-sm font-medium text-foreground/80 mb-2 font-gantari">
                           {t.hero.emailRequired}
                         </label>
                         <Input
@@ -287,7 +287,7 @@ const HeroSection = () => {
                     </div>
 
                     <div>
-                      <label htmlFor="subject" className="block text-sm font-medium text-foreground/80 mb-2">
+                      <label htmlFor="subject" className="block text-sm font-medium text-foreground/80 mb-2 font-gantari">
                         {t.hero.subjectField}
                       </label>
                       <Input
@@ -300,7 +300,7 @@ const HeroSection = () => {
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-foreground/80 mb-2">
+                      <label htmlFor="message" className="block text-sm font-medium text-foreground/80 mb-2 font-gantari">
                         {t.hero.messageRequired}
                       </label>
                       <Textarea
@@ -315,7 +315,7 @@ const HeroSection = () => {
 
                     <Button
                       type="submit"
-                      className="w-full bg-foreground text-background hover:bg-foreground/90 py-3 font-medium transition-all duration-200"
+                      className="w-full bg-foreground text-background hover:bg-foreground/90 py-3 font-medium transition-all duration-200 font-gantari"
                     >
                       <Send size={16} className="mr-2" />
                       {t.hero.sendButton}
