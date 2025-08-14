@@ -71,9 +71,6 @@ const Footer = () => {
           <p className="opacity-100 text-aurelle-light-green">
             {content.copyright}
           </p>
-          <p className="mt-2 text-sm opacity-75 text-aurelle-light-green">
-            v{import.meta.env.VITE_COMMIT_REF?.slice(0, 7) || 'dev'}
-          </p>
         </div>
       </div>
     </footer>
