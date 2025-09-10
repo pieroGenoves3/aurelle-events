@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CalendarIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { Calendar } from '@/components/ui/calendar';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useContent } from '@/hooks/useContent';
-import { toast } from 'sonner'; // <== importação do sonner
+import { toast } from 'sonner';
+import { format } from 'date-fns';
+import { cn } from '@/lib/utils';
 
 interface HeroContent {
   enabled: boolean;
@@ -32,6 +36,8 @@ const HeroSection = () => {
   const content = useContent<HeroContent>('hero');
   const missionContent = useContent<MissionContent>('mission');
   const [currentImage, setCurrentImage] = useState(0);
+  const [eventDate, setEventDate] = useState<Date>();
+  const [contactDate, setContactDate] = useState<Date>();
 
   // Wedding photo carousel images
   const weddingPhotos = [
@@ -280,6 +286,38 @@ const HeroSection = () => {
                       </div>
                     </div>
 
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <div>
+                        <label htmlFor="countryCode" className="block text-sm font-medium text-foreground/80 mb-2 font-gantari">
+                          Country Code
+                        </label>
+                        <Input
+                          id="countryCode"
+                          name="countryCode"
+                          type="text"
+                          placeholder="+55"
+                          className="bg-white/30 border-white/40 text-foreground placeholder:text-foreground/50 focus:border-white/60"
+                        />
+                      </div>
+                      <div className="md:col-span-2">
+                        <label htmlFor="phone" className="block text-sm font-medium text-foreground/80 mb-2 font-gantari">
+                          Phone Number
+                        </label>
+                        <Input
+                          id="phone"
+                          name="phone"
+                          type="tel"
+                          pattern="[0-9]*"
+                          placeholder="11999999999"
+                          className="bg-white/30 border-white/40 text-foreground placeholder:text-foreground/50 focus:border-white/60"
+                          onInput={(e) => {
+                            const target = e.target as HTMLInputElement;
+                            target.value = target.value.replace(/[^0-9]/g, '');
+                          }}
+                        />
+                      </div>
+                    </div>
+
                     <div>
                       <label htmlFor="subject" className="block text-sm font-medium text-foreground/80 mb-2 font-gantari">
                         {t.hero.subjectField}
@@ -291,6 +329,67 @@ const HeroSection = () => {
                         className="bg-white/30 border-white/40 text-foreground placeholder:text-foreground/50 focus:border-white/60"
                         placeholder={t.hero.subjectPlaceholder}
                       />
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium text-foreground/80 mb-2 font-gantari">
+                          Event Date
+                        </label>
+                        <Popover>
+                          <PopoverTrigger asChild>
+                            <Button
+                              variant="outline"
+                              className={cn(
+                                "w-full justify-start text-left font-normal bg-white/30 border-white/40 text-foreground hover:bg-white/40",
+                                !eventDate && "text-foreground/50"
+                              )}
+                            >
+                              <CalendarIcon className="mr-2 h-4 w-4" />
+                              {eventDate ? format(eventDate, "PPP") : <span>Select event date</span>}
+                            </Button>
+                          </PopoverTrigger>
+                          <PopoverContent className="w-auto p-0" align="start">
+                            <Calendar
+                              mode="single"
+                              selected={eventDate}
+                              onSelect={setEventDate}
+                              initialFocus
+                              className={cn("p-3 pointer-events-auto")}
+                            />
+                          </PopoverContent>
+                        </Popover>
+                        <input type="hidden" name="eventDate" value={eventDate ? format(eventDate, "yyyy-MM-dd") : ""} />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-foreground/80 mb-2 font-gantari">
+                          Preferred Contact Date & Time
+                        </label>
+                        <Popover>
+                          <PopoverTrigger asChild>
+                            <Button
+                              variant="outline"
+                              className={cn(
+                                "w-full justify-start text-left font-normal bg-white/30 border-white/40 text-foreground hover:bg-white/40",
+                                !contactDate && "text-foreground/50"
+                              )}
+                            >
+                              <CalendarIcon className="mr-2 h-4 w-4" />
+                              {contactDate ? format(contactDate, "PPP") : <span>Best time to contact</span>}
+                            </Button>
+                          </PopoverTrigger>
+                          <PopoverContent className="w-auto p-0" align="start">
+                            <Calendar
+                              mode="single"
+                              selected={contactDate}
+                              onSelect={setContactDate}
+                              initialFocus
+                              className={cn("p-3 pointer-events-auto")}
+                            />
+                          </PopoverContent>
+                        </Popover>
+                        <input type="hidden" name="contactDate" value={contactDate ? format(contactDate, "yyyy-MM-dd") : ""} />
+                      </div>
                     </div>
 
                     <div>
