@@ -184,9 +184,9 @@ const HeroSection = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1">
               {/* Contact Information */}
-              <div className="space-y-8 scroll-reveal">
+              {/* <div className="space-y-8 scroll-reveal">
                 <div className="bg-white/20 backdrop-blur-sm rounded-lg p-8 border border-white/30">
                   <h3 className="text-2xl font-light mb-6 text-foreground font-tenez">{t.hero.contactInfo}</h3>
                   
@@ -222,7 +222,7 @@ const HeroSection = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               {/* Contact Form */}
               <div className="scroll-reveal">
