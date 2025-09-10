@@ -106,6 +106,7 @@ const HeroSection = () => {
           muted
           loop
           playsInline
+          preload="auto"
           className="w-full h-full object-cover"
         >
           <source src="/videos/hero-section-video.mp4" type="video/mp4" />
