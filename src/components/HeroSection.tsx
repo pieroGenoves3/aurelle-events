@@ -99,19 +99,23 @@ const HeroSection = () => {
       id="hero" 
       className="relative overflow-hidden"
     >
-      {/* Background Static Image */}
+      {/* Background Video */}
       <div className="fixed inset-0 w-full h-screen overflow-hidden z-0">
-        <img
-          src="/images/hero-section-main.jpeg"
-          alt="Hero background"
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
           className="w-full h-full object-cover"
-        />
+        >
+          <source src="/videos/hero-section-video.mp4" type="video/mp4" />
+        </video>
       </div>
 
       {/* Hero Content */}
       <div className="relative z-20 flex flex-col">
         {/* Top Hero Section with Blurred Background */}
-        <div className="min-h-screen flex items-center justify-center text-center px-4 relative bg-aurelle-dark-green/60">
+        <div className="min-h-screen flex items-center justify-center text-center px-4 relative bg-aurelle-dark-green/60 backdrop-blur-sm">
           {/* Full Screen Logo */}
           <div className="absolute inset-0 flex items-center justify-center">
             <img 
