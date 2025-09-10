@@ -99,30 +99,19 @@ const HeroSection = () => {
       id="hero" 
       className="relative overflow-hidden"
     >
-      {/* Background Wedding Photos Carousel */}
+      {/* Background Static Image */}
       <div className="fixed inset-0 w-full h-screen overflow-hidden z-0">
-        <div className="relative w-full h-full">
-          {weddingPhotos.map((photo, index) => (
-            <div
-              key={index}
-              className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
-                index === currentImage ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              <img
-                src={photo}
-                alt={`Wedding photo ${index + 1}`}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          ))}
-        </div>
+        <img
+          src="/images/hero-section-main.jpeg"
+          alt="Hero background"
+          className="w-full h-full object-cover"
+        />
       </div>
 
       {/* Hero Content */}
       <div className="relative z-20 flex flex-col">
         {/* Top Hero Section with Blurred Background */}
-        <div className="min-h-screen flex items-center justify-center text-center px-4 relative backdrop-blur-md bg-aurelle-dark-green/80">
+        <div className="min-h-screen flex items-center justify-center text-center px-4 relative bg-aurelle-dark-green/60">
           {/* Full Screen Logo */}
           <div className="absolute inset-0 flex items-center justify-center">
             <img 
