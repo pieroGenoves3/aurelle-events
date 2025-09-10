@@ -172,7 +172,7 @@ const HeroSection = () => {
                 <div className="scroll-reveal">
                   <div className="aspect-[4/3] rounded-lg overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20">
                     <img
-                      src="https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+                      src="/public/images/hero-section-main.jpeg"
                       alt="Our Mission"
                       className="w-full h-full object-cover opacity-90"
                     />

@@ -40,9 +40,9 @@ const Footer = () => {
             <p className="text-lg mb-8 leading-relaxed opacity-100" style={{ color: 'hsl(var(--aurelle-champagne))'}}>
               {content.description}
             </p>
-            <button className="neumorphic-btn">
+            {/* <button className="neumorphic-btn">
               {content.buttonText}
-            </button>
+            </button> */}
           </div>
 
           <div className="scroll-reveal">
@@ -54,10 +54,10 @@ const Footer = () => {
                 <Mail size={20} className="text-aurelle-light-green opacity-100" strokeWidth={1} />
                 <span className="text-aurelle-champagne opacity-100">{content.email}</span>
               </div>
-              <div className="flex items-center space-x-3">
+              {/* <div className="flex items-center space-x-3">
                 <Phone size={20} className="text-aurelle-light-green opacity-100" strokeWidth={1} />
                 <span className="text-aurelle-champagne opacity-100">{content.phone}</span>
-              </div>
+              </div> */}
               <div>
                 <p style={{ color: 'hsl(var(--aurelle-champagne))'}}>
                   {content.locations}
