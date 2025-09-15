@@ -41,10 +41,10 @@ const Navigation = () => {
 
   // Get all content sections to build dynamic navigation
   const heroContent = useContent('hero');
-  const mottosContent = useContent('mottos');
-  const servicesContent = useContent('services');
-  const testimonialsContent = useContent('testimonials');
-  const eventsContent = useContent('events');
+  // const mottosContent = useContent('mottos');
+  // const servicesContent = useContent('services');
+  // const testimonialsContent = useContent('testimonials');
+  // const eventsContent = useContent('events');
   const missionContent = useContent('mission');
   const contactContent = useContent('contact');
 
@@ -60,43 +60,43 @@ const Navigation = () => {
       });
     }
     
-    if ((mottosContent as any)?.enabled) {
-      items.push({ 
-        name: t.navigation.about, 
-        id: 'mottos',
-        order: 1
-      });
-    }
+    // if ((mottosContent as any)?.enabled) {
+    //   items.push({ 
+    //     name: t.navigation.about, 
+    //     id: 'mottos',
+    //     order: 1
+    //   });
+    // }
     
-    if ((servicesContent as any)?.enabled) {
-      items.push({ 
-        name: t.navigation.services, 
-        id: 'services',
-        order: 2
-      });
-    }
+    // if ((servicesContent as any)?.enabled) {
+    //   items.push({ 
+    //     name: t.navigation.services, 
+    //     id: 'services',
+    //     order: 2
+    //   });
+    // }
     
-    if ((testimonialsContent as any)?.enabled) {
-      items.push({ 
-        name: t.navigation.testimonials, 
-        id: 'testimonials',
-        order: 3
-      });
-    }
+    // if ((testimonialsContent as any)?.enabled) {
+    //   items.push({ 
+    //     name: t.navigation.testimonials, 
+    //     id: 'testimonials',
+    //     order: 3
+    //   });
+    // }
     
-    if ((eventsContent as any)?.enabled) {
-      items.push({ 
-        name: t.navigation.events, 
-        id: 'events',
-        order: 4
-      });
-    }
+    // if ((eventsContent as any)?.enabled) {
+    //   items.push({ 
+    //     name: t.navigation.events, 
+    //     id: 'events',
+    //     order: 4
+    //   });
+    // }
     
     if ((missionContent as any)?.enabled) {
       items.push({ 
         name: t.navigation.mission, 
         id: 'mission',
-        order: 5
+        order: 2
       });
     }
     
@@ -104,18 +104,18 @@ const Navigation = () => {
       items.push({ 
         name: t.navigation.contact, 
         id: 'contact',
-        order: 6
+        order: 3
       });
     }
     
     return items.sort((a, b) => a.order - b.order);
   }, [
     heroContent, 
-    mottosContent, 
-    servicesContent, 
-    testimonialsContent, 
-    eventsContent, 
-    missionContent, 
+    missionContent,
+    // mottosContent, 
+    // servicesContent, 
+    // testimonialsContent, 
+    // eventsContent,  
     contactContent, 
     t.navigation
   ]);

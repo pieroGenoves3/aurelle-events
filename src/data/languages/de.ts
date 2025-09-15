@@ -2,13 +2,13 @@
 export const de = {
   navigation: {
     home: "Startseite",
-    events: "Veranstaltungen",
-    testimonials: "Referenzen",
-    about: "Über Uns", 
     mission: "Mission",
-    faq: "FAQ",
     contact: "Kontakt",
-    services: "Dienstleistungen"
+    // events: "Veranstaltungen",
+    // testimonials: "Referenzen",
+    // about: "Über Uns", 
+    // faq: "FAQ",
+    // services: "Dienstleistungen"
   },
   hero: {
     title: "Aurelle Events",

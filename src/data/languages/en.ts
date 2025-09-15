@@ -2,13 +2,13 @@
 export const en = {
   navigation: {
     home: "Home",
-    events: "Events", 
-    testimonials: "Testimonials",
-    about: "About",
     mission: "Mission",
-    faq: "FAQ",
     contact: "Contact",
-    services: "Services"
+    // events: "Events", 
+    // testimonials: "Testimonials",
+    // about: "About",
+    // faq: "FAQ",
+    // services: "Services"
   },
   hero: {
     title: "Aurelle Events",
