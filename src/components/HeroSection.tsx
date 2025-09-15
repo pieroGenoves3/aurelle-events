@@ -122,7 +122,7 @@ const HeroSection = () => {
       {/* Hero Content */}
       <div className="relative z-20 flex flex-col">
         {/* Top Hero Section with Blurred Background */}
-        <div className="min-h-screen flex items-center justify-center text-center px-4 relative bg-aurelle-dark-green/60 backdrop-blur-md">
+        <div className="min-h-screen flex items-center justify-center text-center px-4 relative bg-aurelle-dark-green/60 backdrop-blur-sm">
           {/* Full Screen Logo */}
           <div className="absolute inset-0 flex items-center justify-center">
             <img 
