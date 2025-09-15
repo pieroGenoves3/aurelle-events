@@ -103,7 +103,7 @@ const Navigation = () => {
     if ((contactContent as any)?.enabled) {
       items.push({ 
         name: t.navigation.contact, 
-        id: 'hero', // Link to hero section where the form is
+        id: 'contact', // Link to hero section where the form is
         order: 3
       });
     }
