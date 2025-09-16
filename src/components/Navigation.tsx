@@ -122,6 +122,7 @@ const Navigation = () => {
 
   const languages = [
     { code: 'en', label: 'English', flag: '🇺🇸' },
+    { code: 'it', label: 'Italiano', flag: '🇮🇹' },
     { code: 'de', label: 'Deutsch', flag: '🇩🇪' },
     { code: 'pt', label: 'Português', flag: '🇵🇹' }
   ];
@@ -190,7 +191,7 @@ const Navigation = () => {
 
             {/* Language Selector - Right side */}
             <div className="hidden md:flex items-center space-x-1">
-              {languages.slice(0, 3).map((lang, index) => (
+              {languages.map((lang, index) => (
                 <React.Fragment key={lang.code}>
                   <button
                     onClick={() => setLanguage(lang.code as any)}
@@ -202,7 +203,7 @@ const Navigation = () => {
                   >
                     {lang.code.toUpperCase()}
                   </button>
-                  {index < 2 && (
+                  {index < languages.length - 1 && (
                     <span className="text-aurelle-brown/40">|</span>
                   )}
                 </React.Fragment>
