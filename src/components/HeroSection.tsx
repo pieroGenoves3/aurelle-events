@@ -409,7 +409,7 @@ const HeroSection = () => {
 
                     <Button
                       type="submit"
-                      className="w-full bg-foreground text-background hover:bg-foreground/90 py-3 font-medium transition-all duration-200 font-gantari"
+                      className="w-full bg-foreground text-background hover:bg-foreground/90 font-medium transition-all duration-200 font-gantari"
                     >
                       <Send size={16} className="mr-2" />
                       {t.hero.sendButton}
