@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Calendar, MapPin, Users, Tag, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useContent } from '@/hooks/useContent';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface EventsContent {
   enabled: boolean;
@@ -25,6 +26,7 @@ interface EventsContent {
 
 const PastEventsSection = () => {
   const content = useContent<EventsContent>('events');
+  const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
@@ -109,7 +111,7 @@ const PastEventsSection = () => {
               <button
                 onClick={prevEvent}
                 className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-10 bg-cream/80 hover:bg-cream border border-golden-brown/20 rounded-full p-3 transition-all duration-300 hover:scale-110"
-                aria-label="Previous event"
+                aria-label={t.events.previousEvent}
               >
                 <ChevronLeft size={20} className="text-dark-purple" />
               </button>
@@ -117,7 +119,7 @@ const PastEventsSection = () => {
               <button
                 onClick={nextEvent}
                 className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-10 bg-cream/80 hover:bg-cream border border-golden-brown/20 rounded-full p-3 transition-all duration-300 hover:scale-110"
-                aria-label="Next event"
+                aria-label={t.events.nextEvent}
               >
                 <ChevronRight size={20} className="text-dark-purple" />
               </button>
@@ -168,7 +170,7 @@ const PastEventsSection = () => {
                 {currentEvent.guests && (
                   <div className="flex items-center space-x-3">
                     <Users size={18} className="text-aurelle-brown" />
-                    <span className="text-aurelle-champagne/50">{currentEvent.guests} guests</span>
+                    <span className="text-aurelle-champagne/50">{currentEvent.guests} {t.events.guests}</span>
                   </div>
                 )}
               </div>
@@ -176,7 +178,7 @@ const PastEventsSection = () => {
               {currentEvent.client && (
                 <div className="border-t border-aurelle-champagne/20 pt-4">
                   <p className="text-aurelle-brown">
-                    Client: <span className="text-aurelle-champagne font-medium">{currentEvent.client}</span>
+                    {t.events.client}: <span className="text-aurelle-champagne font-medium">{currentEvent.client}</span>
                   </p>
                 </div>
               )}

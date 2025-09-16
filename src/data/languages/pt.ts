@@ -34,9 +34,38 @@ export const pt = {
     messagePlaceholder: "Conte-nos mais sobre seu projeto ou consulta..."
   },
   mission: {
-    title: "Nossa missão",
-    description: ["Na Aurelle Events, acreditamos que os momentos mais preciosos da vida merecem ser celebrados com uma beleza e sofisticação inigualáveis. A nossa missão é transformar os seus sonhos em realidades extraordinárias, criando experiências que permanecem na memória muito depois de o último convidado ter partido.","Somos artesãos apaixonados pela celebração, dedicados a criar eventos personalizados que refletem a sua história e visão únicas. Desde reuniões íntimas até grandes galas, dedicamos o nosso coração a cada detalhe, garantindo que cada momento esteja impregnado de elegância, emoção e excelência."],
-    quote: "Não apenas planificamos eventos—criamos experiências intemporais que celebram a arte de viver com beleza."
+    title: "Nossa Essência",
+    description: [
+      "Na Aurelle, damos forma ao invisível. Cada celebração é concebida como uma composição singular, precisa na estrutura, profunda na presença, impossível de repetir. Não projetamos eventos. Coreografamos atmosferas. Traduzimos silêncio em beleza, detalhe em significado, visão em legado."
+    ],
+    quote: "O que criamos não é fabricado. É sentido. Ressoa. Torna-se memória, ecoando no silêncio, perdurando no tempo"
+  },
+  location: {
+    title: "Encontre-nos",
+    subtitle: "Visite nossa localização",
+    address: "Endereço",
+    phone: "Telefone",
+    email: "Email",
+    officeHours: "Horário de Funcionamento",
+    openInMaps: "Abrir no Maps"
+  },
+  events: {
+    title: "Eventos Passados",
+    subtitle: "Explore nosso trabalho recente",
+    guests: "convidados",
+    client: "Cliente",
+    previousEvent: "Evento anterior",
+    nextEvent: "Próximo evento"
+  },
+  testimonials: {
+    title: "Histórias de Clientes",
+    subtitle: "O que nossos clientes dizem sobre nós",
+    previousTestimonial: "Depoimento anterior",
+    nextTestimonial: "Próximo depoimento"
+  },
+  mottos: {
+    title: "Nossos Valores",
+    subtitle: "O que nos move para frente"
   },
   services: {
     underDevelopment: "Em Desenvolvimento",

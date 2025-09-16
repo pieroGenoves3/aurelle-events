@@ -34,9 +34,38 @@ export const de = {
     messagePlaceholder: "Erzählen Sie uns mehr über Ihr Projekt oder Ihre Anfrage..."
   },
   mission: {
-    title: "Nossa missão",
-description: ["",""],
-    quote: ""
+    title: "Unser Wesen",
+    description: [
+      "Bei Aurelle geben wir dem Unsichtbaren Form. Jede Feier wird als einzigartige Komposition konzipiert, präzise in der Struktur, tiefgreifend in der Präsenz, unmöglich zu wiederholen. Wir gestalten keine Events. Wir choreographieren Atmosphären. Wir übersetzen Stille in Schönheit, Details in Bedeutung, Vision in Vermächtnis."
+    ],
+    quote: "Was wir schaffen, ist nicht erfunden. Es wird gefühlt. Es wirkt nach. Es wird zur Erinnerung, hallt in der Stille wider, besteht in der Zeit"
+  },
+  location: {
+    title: "Finden Sie uns",
+    subtitle: "Besuchen Sie unseren Standort",
+    address: "Adresse",
+    phone: "Telefon",
+    email: "E-Mail",
+    officeHours: "Bürozeiten",
+    openInMaps: "In Karten öffnen"
+  },
+  events: {
+    title: "Vergangene Events",
+    subtitle: "Entdecken Sie unsere neuesten Arbeiten",
+    guests: "Gäste",
+    client: "Kunde",
+    previousEvent: "Vorheriges Event",
+    nextEvent: "Nächstes Event"
+  },
+  testimonials: {
+    title: "Kundengeschichten",
+    subtitle: "Was unsere Kunden über uns sagen",
+    previousTestimonial: "Vorherige Bewertung",
+    nextTestimonial: "Nächste Bewertung"
+  },
+  mottos: {
+    title: "Unsere Werte",
+    subtitle: "Was uns antreibt"
   },
   services: {
     underDevelopment: "In Entwicklung",

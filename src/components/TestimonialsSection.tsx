@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useContent } from '@/hooks/useContent';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface TestimonialsContent {
   enabled: boolean;
@@ -23,6 +24,7 @@ interface TestimonialsContent {
 
 const TestimonialsSection = () => {
   const content = useContent<TestimonialsContent>('testimonials');
+  const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
@@ -104,7 +106,7 @@ const TestimonialsSection = () => {
               <button
                 onClick={prevTestimonial}
                 className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-10 bg-cream/80 hover:bg-cream border border-olive-green/20 rounded-full p-3 transition-all duration-300 hover:scale-110"
-                aria-label="Previous testimonial"
+                aria-label={t.testimonials.previousTestimonial}
               >
                 <ChevronLeft size={20} className="text-foreground" />
               </button>
@@ -112,7 +114,7 @@ const TestimonialsSection = () => {
               <button
                 onClick={nextTestimonial}
                 className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-10 bg-cream/80 hover:bg-cream border border-olive-green/20 rounded-full p-3 transition-all duration-300 hover:scale-110"
-                aria-label="Next testimonial"
+                aria-label={t.testimonials.nextTestimonial}
               >
                 <ChevronRight size={20} className="text-foreground" />
               </button>

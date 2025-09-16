@@ -2,6 +2,7 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Clock, ExternalLink } from 'lucide-react';
 import { useContent } from '@/hooks/useContent';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface LocationContent {
   enabled: boolean;
@@ -21,6 +22,7 @@ interface LocationContent {
 
 const LocationSection = () => {
   const content = useContent<LocationContent>('location');
+  const { t } = useLanguage();
 
   if (!content || !content.enabled) {
     return null;
@@ -67,7 +69,7 @@ const LocationSection = () => {
                 className="absolute bottom-4 right-4 flex items-center space-x-2 text-aurelle-black hover:text-aurelle-champagne px-4 py-2 rounded-lg bg-aurelle-champagne hover:bg-aurelle-light-green transition-colors"
               >
                 <ExternalLink size={16} />
-                <span className="text-sm text-aurelle-black hover:text-aurelle-champagne">Open in Maps</span>
+                <span className="text-sm text-aurelle-black hover:text-aurelle-champagne">{t.location.openInMaps}</span>
               </button>
             </div>
           </div>
@@ -78,7 +80,7 @@ const LocationSection = () => {
               <div className="flex items-start space-x-4 mb-6">
                 <MapPin size={24} className="flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="text-xl font-light mb-2 text-aurelle-dark-green">Address</h3>
+                  <h3 className="text-xl font-light mb-2 text-aurelle-dark-green">{t.location.address}</h3>
                   <p className="leading-relaxed text-aurelle-light-green">{content.address}</p>
                 </div>
               </div>
@@ -86,7 +88,7 @@ const LocationSection = () => {
               <div className="flex items-start space-x-4 mb-6">
                 <Phone size={24} className="flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="text-xl font-light mb-2 text-aurelle-dark-green">Phone</h3>
+                  <h3 className="text-xl font-light mb-2 text-aurelle-dark-green">{t.location.phone}</h3>
                   <a href={`tel:${content.phone}`} className="text-aurelle-light-green hover:text-aurelle-dark-green transition-colors">
                     {content.phone}
                   </a>
@@ -96,7 +98,7 @@ const LocationSection = () => {
               <div className="flex items-start space-x-4 mb-6">
                 <Mail size={24} className="flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="text-xl font-light mb-2 text-aurelle-dark-green">Email</h3>
+                  <h3 className="text-xl font-light mb-2 text-aurelle-dark-green">{t.location.email}</h3>
                   <a href={`mailto:${content.email}`} className="text-aurelle-light-green hover:text-aurelle-dark-green transition-colors">
                     {content.email}
                   </a>
@@ -106,7 +108,7 @@ const LocationSection = () => {
               <div className="flex items-start space-x-4">
                 <Clock size={24} className="flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="text-xl font-light mb-2">Office Hours</h3>
+                  <h3 className="text-xl font-light mb-2">{t.location.officeHours}</h3>
                   <div className="space-y-1">
                     {content.hours.map((hour, index) => (
                       <div key={index} className="flex justify-between">
