@@ -2,6 +2,7 @@
 import React from 'react';
 import { icons } from 'lucide-react';
 import { useContent } from '@/hooks/useContent';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface MottosContent {
   enabled: boolean;
@@ -18,6 +19,7 @@ interface MottosContent {
 
 const MottosSection = () => {
   const content = useContent<MottosContent>('mottos');
+  const { t } = useLanguage();
 
   // Don't render if content is disabled or not loaded
   if (!content || !content.enabled) {
@@ -47,10 +49,10 @@ const MottosSection = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16 scroll-reveal">
           <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6 text-aurelle-black opacity-100">
-            {content.title}
+            {t.mottos.title}
           </h2>
           <p className="text-xl text-aurelle-black/80 max-w-2xl mx-auto opacity-100">
-            {content.subtitle}
+            {t.mottos.subtitle}
           </p>
         </div>
 

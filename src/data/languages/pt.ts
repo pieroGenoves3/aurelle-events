@@ -71,6 +71,10 @@ export const pt = {
     underDevelopment: "Em Desenvolvimento",
     underDevelopmentMessage: "Estamos atualmente desenvolvendo este serviço para trazer experiências excepcionais. Fique atento para atualizações emocionantes!"
   },
+  faq: {
+    title: "Perguntas Frequentes",
+    subtitle: "Encontre respostas para perguntas comuns sobre nossos serviços"
+  },
   footer: {
     contactTitle: "Informações de Contato"
   },

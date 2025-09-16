@@ -71,6 +71,10 @@ export const de = {
     underDevelopment: "In Entwicklung",
     underDevelopmentMessage: "Wir entwickeln derzeit diesen Service, um Ihnen außergewöhnliche Erlebnisse zu bieten. Bleiben Sie dran für spannende Updates!"
   },
+  faq: {
+    title: "Häufig gestellte Fragen",
+    subtitle: "Finden Sie Antworten auf häufige Fragen zu unseren Dienstleistungen"
+  },
   footer: {
     contactTitle: "Kontaktinformationen"
   },

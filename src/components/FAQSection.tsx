@@ -7,6 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useContent } from '@/hooks/useContent';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface FAQContent {
   enabled: boolean;
@@ -20,6 +21,7 @@ interface FAQContent {
 
 const FAQSection = () => {
   const content = useContent<FAQContent>('faq');
+  const { t } = useLanguage();
 
   // Don't render if content is disabled or not loaded
   if (!content || !content.enabled) {
@@ -35,10 +37,10 @@ const FAQSection = () => {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16 scroll-reveal">
           <h2 className="text-4xl md:text-6xl font-light tracking-tighter mb-6 text-foreground opacity-100">
-            {content.title}
+            {t.faq.title}
           </h2>
           <p className="text-xl text-foreground opacity-100">
-            {content.subtitle}
+            {t.faq.subtitle}
           </p>
         </div>
 
