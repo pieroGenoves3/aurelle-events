@@ -76,6 +76,8 @@ export const de = {
     subtitle: "Finden Sie Antworten auf häufige Fragen zu unseren Dienstleistungen"
   },
   footer: {
+    leftTitle: "Bereit, etwas Außergewöhnliches zu erschaffen?",
+    leftDescription: "Wo eine Geschichte mehr verlangt als ein Ereignis, entsteht eine Atmosphäre von seltener Schönheit und bleibender Bedeutung.",
     contactTitle: "Kontaktinformationen"
   },
   contact: {

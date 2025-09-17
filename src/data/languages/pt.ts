@@ -36,9 +36,9 @@ export const pt = {
   mission: {
     title: "Nossa Essência",
     description: [
-      "Na Aurelle, damos forma ao invisível. Cada celebração é concebida como uma composição singular, precisa na estrutura, profunda na presença, impossível de repetir. Não projetamos eventos. Coreografamos atmosferas. Traduzimos silêncio em beleza, detalhe em significado, visão em legado."
+      "Na Aurelle, damos forma ao que não se vê. Cada celebração é concebida como uma composição singular, precisa na estrutura, profunda na presença, impossível de repetir.","Não desenhamos eventos. Coreografamos atmosferas. Traduzimos o silêncio em beleza, o detalhe em significado, a visão em legado."
     ],
-    quote: "O que criamos não é fabricado. É sentido. Ressoa. Torna-se memória, ecoando no silêncio, perdurando no tempo"
+    quote: "O que criamos não é fabricado. É sentido. Ressoa. Transforma-se em memória, ecoando no silêncio, perdurando no tempo."
   },
   location: {
     title: "Encontre-nos",
@@ -76,7 +76,9 @@ export const pt = {
     subtitle: "Encontre respostas para perguntas comuns sobre nossos serviços"
   },
   footer: {
-    contactTitle: "Informações de Contato"
+    leftTitle: "Pronto para Criar Algo Extraordinário?",
+    leftDescription: "Se a sua história exige mais do que um evento, se merece ser esculpida numa atmosfera de rara beleza e significado duradouro, a Aurelle é a sua casa.",
+    contactTitle: "Informações de Contacto"
   },
   contact: {
     title: "Entre em Contato",

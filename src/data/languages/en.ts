@@ -76,6 +76,8 @@ export const en = {
     subtitle: "Find answers to common questions about our services"
   },
   footer: {
+    leftTitle: "Ready to Create Something Extraordinary?",
+    leftDescription: "If your story calls for more than an event, if it deserves to be sculpted into an atmosphere of rare beauty and lasting meaning, Aurelle is your house.",
     contactTitle: "Contact Information"
   },
   contact: {

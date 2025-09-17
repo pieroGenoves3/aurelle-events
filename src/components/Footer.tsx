@@ -35,10 +35,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
           <div className="scroll-reveal">
             <h3 className="text-3xl font-light mb-6 opacity-100" style={{ color: 'hsl(var(--aurelle-champagne))'}}>
-              {content.title}
+              {t.footer.leftTitle}
             </h3>
             <p className="text-lg mb-8 leading-relaxed opacity-100" style={{ color: 'hsl(var(--aurelle-champagne))'}}>
-              {content.description}
+              {t.footer.leftDescription}
             </p>
             {/* <button className="neumorphic-btn">
               {content.buttonText}
