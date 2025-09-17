@@ -222,7 +222,7 @@ const HeroSection = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-foreground/80 mb-2 font-gantari">
-                          {t.hero.nameRequired}
+                          {t.hero.nameField}
                         </label>
                         <Input
                           id="name"
@@ -235,7 +235,7 @@ const HeroSection = () => {
                       </div>
                       <div>
                         <label htmlFor="email" className="block text-sm font-medium text-foreground/80 mb-2 font-gantari">
-                          {t.hero.emailRequired}
+                          {t.hero.emailField}
                         </label>
                         <Input
                           id="email"
@@ -251,26 +251,26 @@ const HeroSection = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       <div>
                         <label htmlFor="countryCode" className="block text-sm font-medium text-foreground/80 mb-2 font-gantari">
-                          Country Code
+                          {t.hero.countryCodeField}
                         </label>
                         <Input
                           id="countryCode"
                           name="countryCode"
                           type="text"
-                          placeholder="+55"
+                          placeholder={t.hero.countryCodePlaceholder}
                           className="bg-white/30 border-white/40 text-foreground placeholder:text-foreground/50 focus:border-white/60"
                         />
                       </div>
                       <div className="md:col-span-2">
                         <label htmlFor="phone" className="block text-sm font-medium text-foreground/80 mb-2 font-gantari">
-                          Phone Number
+                          {t.hero.phoneNumberField}
                         </label>
                         <Input
                           id="phone"
                           name="phone"
                           type="tel"
                           pattern="[0-9]*"
-                          placeholder="11999999999"
+                          placeholder={t.hero.phoneNumberPlaceholder}
                           className="bg-white/30 border-white/40 text-foreground placeholder:text-foreground/50 focus:border-white/60"
                           onInput={(e) => {
                             const target = e.target as HTMLInputElement;
@@ -296,7 +296,7 @@ const HeroSection = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-sm font-medium text-foreground/80 mb-2 font-gantari">
-                          Event Date
+                          {t.hero.eventDateField}
                         </label>
                         <Popover>
                           <PopoverTrigger asChild>
@@ -308,7 +308,7 @@ const HeroSection = () => {
                               )}
                             >
                               <CalendarIcon className="mr-2 h-4 w-4" />
-                              {eventDate ? format(eventDate, "PPP") : <span>Select event date</span>}
+                              {eventDate ? format(eventDate, "PPP") : <span>{t.hero.eventDatePlaceholder}</span>}
                             </Button>
                           </PopoverTrigger>
                           <PopoverContent className="w-auto p-0" align="start">
@@ -325,7 +325,7 @@ const HeroSection = () => {
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-foreground/80 mb-2 font-gantari">
-                          Preferred Contact Date & Time
+                          {t.hero.preferedContactDateField}
                         </label>
                         <Popover>
                           <PopoverTrigger asChild>
@@ -337,7 +337,7 @@ const HeroSection = () => {
                               )}
                             >
                               <CalendarIcon className="mr-2 h-4 w-4" />
-                              {contactDate ? format(contactDate, "PPP") : <span>Best time to contact</span>}
+                              {contactDate ? format(contactDate, "PPP") : <span>{t.hero.preferedContactDatePlaceholder}</span>}
                             </Button>
                           </PopoverTrigger>
                           <PopoverContent className="w-auto p-0" align="start">
@@ -356,7 +356,7 @@ const HeroSection = () => {
 
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium text-foreground/80 mb-2 font-gantari">
-                        {t.hero.messageRequired}
+                        {t.hero.messageField}
                       </label>
                       <Textarea
                         id="message"
