@@ -157,14 +157,14 @@ const HeroSection = () => {
                 {/* Mission Text */}
                 <div className="space-y-8 scroll-reveal">
                   <h2 className="text-4xl md:text-6xl font-light tracking-tighter text-aurelle-champagne opacity-100 font-tenez">
-                    {missionContent.title}
+                    {t.mission.title}
                   </h2>
                   <div className="space-y-6 text-lg md:text-xl leading-relaxed font-gantari">
-                    {missionContent.paragraphs.map((paragraph, index) => (
+                    {t.mission.description.map((paragraph, index) => (
                       <p key={index} className="opacity-100 text-aurelle-champagne/80">{paragraph}</p>
                     ))}
                     <p className="text-2xl font-light text-aurelle-brown/50 italic opacity-100 font-tenez">
-                      "{missionContent.quote}"
+                      "{t.mission.quote}"
                     </p>
                   </div>
                 </div>
@@ -197,45 +197,6 @@ const HeroSection = () => {
             </div>
 
             <div className="grid grid-cols-1">
-              {/* Contact Information */}
-              {/* <div className="space-y-8 scroll-reveal">
-                <div className="bg-white/20 backdrop-blur-sm rounded-lg p-8 border border-white/30">
-                  <h3 className="text-2xl font-light mb-6 text-foreground font-tenez">{t.hero.contactInfo}</h3>
-                  
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
-                        <Mail size={20} className="text-foreground" />
-                      </div>
-                      <div>
-                        <p className="text-foreground/80 text-sm font-gantari">Email</p>
-                        <p className="text-foreground font-medium font-gantari">contact@aurelle.com</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
-                        <Phone size={20} className="text-foreground" />
-                      </div>
-                      <div>
-                        <p className="text-foreground/80 text-sm font-gantari">Phone</p>
-                        <p className="text-foreground font-medium font-gantari">+55 (11) 9999-9999</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
-                        <MapPin size={20} className="text-foreground" />
-                      </div>
-                      <div>
-                        <p className="text-foreground/80 text-sm font-gantari">Address</p>
-                        <p className="text-foreground font-medium font-gantari">R. Carlos de Campos, 198<br />Vila Boa Vista, Barueri - SP</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
-
               {/* Contact Form */}
               <div className="scroll-reveal">
                 <form 

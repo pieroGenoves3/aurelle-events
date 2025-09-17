@@ -36,7 +36,7 @@ export const en = {
   mission: {
     title: "Our Essence",
     description: [
-      "At Aurelle, we give form to the unseen. Every celebration is conceived as a singular composition, precise in structure, profound in presence, impossible to repeat. We do not design events. We choreograph atmospheres. We translate silence into beauty, detail into meaning, vision into legacy."
+      "At Aurelle, we give form to the unseen. Every celebration is conceived as a singular composition, precise in structure, profound in presence, impossible to repeat.","We do not design events. We choreograph atmospheres. We translate silence into beauty, detail into meaning, vision into legacy."
     ],
     quote: "What we create is not fabricated. It is felt. It resonates. It becomes memory,echoing in silence, enduring in time"
   },

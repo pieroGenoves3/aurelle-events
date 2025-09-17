@@ -36,7 +36,7 @@ export const de = {
   mission: {
     title: "Unser Wesen",
     description: [
-      "Bei Aurelle geben wir dem Unsichtbaren Form. Jede Feier wird als einzigartige Komposition konzipiert, präzise in der Struktur, tiefgreifend in der Präsenz, unmöglich zu wiederholen. Wir gestalten keine Events. Wir choreographieren Atmosphären. Wir übersetzen Stille in Schönheit, Details in Bedeutung, Vision in Vermächtnis."
+      "Bei Aurelle geben wir dem Unsichtbaren Form. Jede Feier wird als einzigartige Komposition konzipiert, präzise in der Struktur, tiefgreifend in der Präsenz, unmöglich zu wiederholen.","Wir gestalten keine Events. Wir choreographieren Atmosphären. Wir übersetzen Stille in Schönheit, Details in Bedeutung, Vision in Vermächtnis."
     ],
     quote: "Was wir schaffen, ist nicht erfunden. Es wird gefühlt. Es wirkt nach. Es wird zur Erinnerung, hallt in der Stille wider, besteht in der Zeit"
   },
