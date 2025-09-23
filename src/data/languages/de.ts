@@ -4,9 +4,9 @@ export const de = {
     home: "Startseite",
     mission: "Mission",
     contact: "Kontakt",
+    about: "Über Mich",
     // events: "Veranstaltungen",
     // testimonials: "Referenzen",
-    // about: "Über Uns", 
     // faq: "FAQ",
     // services: "Dienstleistungen"
   },
