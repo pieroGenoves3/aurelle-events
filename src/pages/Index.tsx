@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
-import AboutMeSection from '@/components/AboutMeSection';
+
 import MottosSection from '@/components/MottosSection';
 import ServicesSection from '@/components/ServicesSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
@@ -66,7 +66,6 @@ const Index = () => {
       >
         <Navigation />
         <HeroSection />
-        <AboutMeSection />
         <ServicesSection />
         <TestimonialsSection />
         {/* <PastEventsSection /> */}

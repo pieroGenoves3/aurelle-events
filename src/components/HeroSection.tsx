@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, Phone, MapPin, Send, CalendarIcon } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CalendarIcon, Instagram, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -183,6 +183,76 @@ const HeroSection = () => {
             </div>
           </div>
         )}
+
+        {/* About Me Section */}
+        <div 
+          id="about"
+          className="py-24 px-4 relative"
+          style={{ backgroundColor: 'hsl(var(--aurelle-dark-green))' }}
+        >
+          <div className="max-w-6xl mx-auto relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* About Me Image on the left */}
+              <div className="scroll-reveal">
+                <div className="relative">
+                  <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 shadow-2xl">
+                    <img
+                      src="/images/owner-photo.jpg"
+                      alt={t.about.imageAlt}
+                      className="w-full h-full object-cover opacity-90"
+                    />
+                  </div>
+                  {/* Decorative elements */}
+                  <div className="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-aurelle-champagne/20" />
+                  <div className="absolute -bottom-6 -left-6 w-16 h-16 rounded-full bg-aurelle-brown/30" />
+                </div>
+              </div>
+
+              {/* About Me Content on the right */}
+              <div className="space-y-8 scroll-reveal">
+                <h2 className="text-4xl md:text-6xl font-light tracking-tighter text-aurelle-champagne opacity-100 font-tenez">
+                  {t.about.title}
+                </h2>
+                <div className="space-y-6 text-lg md:text-xl leading-relaxed font-gantari">
+                  {t.about.description.map((paragraph, index) => (
+                    <p key={index} className="opacity-100 text-aurelle-champagne/80">{paragraph}</p>
+                  ))}
+                </div>
+
+                {/* Social Media Icons */}
+                <div className="pt-6">
+                  <p className="text-sm font-gantari text-aurelle-champagne/70 mb-4">
+                    {t.about.followMe}
+                  </p>
+                  <div className="flex space-x-6">
+                    <a
+                      href="https://instagram.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group"
+                      aria-label="Instagram"
+                    >
+                      <div className="p-3 rounded-full transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg bg-aurelle-champagne/20 backdrop-blur-sm border border-aurelle-champagne/30">
+                        <Instagram className="w-6 h-6 text-aurelle-champagne" />
+                      </div>
+                    </a>
+                    <a
+                      href="https://linkedin.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group"
+                      aria-label="LinkedIn"
+                    >
+                      <div className="p-3 rounded-full transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg bg-aurelle-champagne/20 backdrop-blur-sm border border-aurelle-champagne/30">
+                        <Linkedin className="w-6 h-6 text-aurelle-champagne" />
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* Contact Form Section */}
         <div id = "contact" className="py-16 px-4 bg-aurelle-champagne">
