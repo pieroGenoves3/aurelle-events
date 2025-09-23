@@ -6,7 +6,7 @@ export const en = {
     contact: "Contact",
     // events: "Events", 
     // testimonials: "Testimonials",
-    // about: "About",
+    about: "About Me",
     // faq: "FAQ",
     // services: "Services"
   },
@@ -85,9 +85,13 @@ export const en = {
     imageAlt: "Owner of Aurelle Events",
     followMe: "Follow me on social media",
     description: [
-      "Welcome to Aurelle Events! I'm passionate about creating extraordinary experiences that celebrate life's most precious moments. With years of expertise in luxury event planning, I believe every celebration should be as unique as the people it honors.",
-      "From intimate gatherings to grand celebrations, I work closely with each client to bring their vision to life. My attention to detail, creative approach, and dedication to excellence ensures that every event becomes an unforgettable memory.",
-      "Let's create something beautiful together – because every moment deserves to be celebrated with elegance and sophistication."
+      "I am Vanessa Seewald, founder of Aurelle Events. For years I guided roads, literally as a driver, and today I guide destinies, the dreams of those who entrust me to transform fleeting moments into everlasting memories.",
+
+"My journey has always been defined by persistence, determination, and the courage to reinvent myself. Now, I embrace the most exquisite chapter of my career: investing in my true dream, Aurelle, a brand shaped by a discerning eye for detail, a devotion to art in all its forms, and an unshakable belief that life’s celebrations should never be ordinary.",
+
+"I am inspired not by the obvious, but by the extraordinary. I thrive on the unexpected, the delicate, the transformative. I listen intently to unspoken desires and craft atmospheres that transcend expectation, leaving an imprint that is both unique and unforgettable.",
+
+"Aurelle is more than a brand, it is my voice in the world, an invitation to step into a circle where luxury becomes poetry, authenticity becomes presence, and freedom becomes a celebration."
     ]
   },
   footer: {

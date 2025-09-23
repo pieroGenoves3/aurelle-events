@@ -188,7 +188,7 @@ const HeroSection = () => {
         <div id = "contact" className="py-16 px-4 bg-aurelle-champagne">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 scroll-reveal">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tighter mb-6 text-foreground font-tenez">
+              <h2 className="text-4xl md:text-5xl font-medium tracking-tighter mb-6 text-foreground font-tenez">
                 {t.hero.contactTitle}
               </h2>
               <p className="text-lg text-foreground/80 max-w-2xl mx-auto font-gantari">

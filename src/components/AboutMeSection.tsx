@@ -56,7 +56,7 @@ const AboutMeSection = () => {
           {/* Content on the right */}
           <div className="order-1 md:order-2 space-y-6">
             <div>
-              <h2 className="text-4xl md:text-5xl font-tenez mb-6 text-aurelle-black">
+              <h2 className="text-4xl md:text-5xl font-tenez font-medium mb-6 text-aurelle-black">
                 {t.about.title}
               </h2>
               <div className="space-y-4 text-lg leading-relaxed font-gantari text-aurelle-black">
