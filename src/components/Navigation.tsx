@@ -180,7 +180,7 @@ const Navigation = () => {
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className="text-aurelle-brown hover:text-aurelle-light-green transition-all duration-200 font-medium tracking-wide hover:scale-105 font-gantari"
+                    className="text-aurelle-champagne hover:text-aurelle-brown transition-all duration-200 font-medium tracking-wide hover:scale-105 font-gantari"
                   >
                     {item.name}
                   </button>
@@ -196,8 +196,8 @@ const Navigation = () => {
                     onClick={() => setLanguage(lang.code as any)}
                     className={`text-sm font-medium tracking-wide transition-all duration-200 hover:scale-105 font-gantari ${
                       currentLanguage === lang.code
-                        ? 'text-aurelle-champagne'
-                        : 'text-aurelle-brown hover:text-aurelle-light-green'
+                        ? 'text-aurelle-brown'
+                        : 'text-aurelle-champagne hover:text-aurelle-light-green'
                     }`}
                   >
                     {lang.code.toUpperCase()}
