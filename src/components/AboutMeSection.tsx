@@ -14,8 +14,8 @@ const AboutMeSection = () => {
   return (
     <section 
       id="about" 
-      className="py-16 md:py-24 px-4"
-      style={{ backgroundColor: 'hsl(var(--aurelle-champagne))' }}
+      className="py-16 md:py-24 px-4 backdrop-blur-sm"
+      style={{ backgroundColor: 'hsl(var(--aurelle-champagne) / 0.9)' }}
     >
       <div className="max-w-6xl mx-auto scroll-reveal">
         <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
