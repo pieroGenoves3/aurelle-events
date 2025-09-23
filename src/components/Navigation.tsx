@@ -68,19 +68,19 @@ const Navigation = () => {
         order: 1
       });
     }
-    
-    if ((contactContent as any)?.enabled) {
-      items.push({ 
-        name: t.navigation.contact, 
-        id: 'contact', // Link to hero section where the form is
-        order: 2
-      });
-    }
 
     if ((aboutContent as any)?.enabled) {
       items.push({ 
         name: t.navigation.about, 
         id: 'about', 
+        order: 2
+      });
+    }
+
+    if ((contactContent as any)?.enabled) {
+      items.push({ 
+        name: t.navigation.contact, 
+        id: 'contact', // Link to hero section where the form is
         order: 3
       });
     }
