@@ -137,7 +137,7 @@ const HeroSection = () => {
         {missionContent && missionContent.enabled && (
           <div
           id = "mission" 
-            className="py-24 px-4 relative"
+            className="pt-10 pb-0 px-4 relative"
             style={{ backgroundColor: 'hsl(var(--aurelle-dark-green))' }}
           >
             {missionContent.backgroundImage && (
@@ -187,7 +187,7 @@ const HeroSection = () => {
         {/* About Me Section */}
         <div 
           id="about"
-          className="py-24 px-4 relative"
+          className="pt-10 pb-10 px-4 relative"
           style={{ backgroundColor: 'hsl(var(--aurelle-dark-green))' }}
         >
           <div className="max-w-6xl mx-auto relative z-10">
@@ -197,9 +197,9 @@ const HeroSection = () => {
                 <div className="relative">
                   <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 shadow-2xl">
                     <img
-                      src="/images/owner-photo.jpg"
+                      src="/images/vanessa.jpeg"
                       alt={t.about.imageAlt}
-                      className="w-full h-full object-cover opacity-90"
+                      className="w-full h-full object-cover opacity-60"
                     />
                   </div>
                   {/* Decorative elements */}
@@ -221,12 +221,12 @@ const HeroSection = () => {
 
                 {/* Social Media Icons */}
                 <div className="pt-6">
-                  <p className="text-sm font-gantari text-aurelle-champagne/70 mb-4">
+                  <p className="text-sm font-gantari text-aurelle-light-green mb-4">
                     {t.about.followMe}
                   </p>
                   <div className="flex space-x-6">
                     <a
-                      href="https://instagram.com"
+                      href="https://www.instagram.com/seewald.vanessa"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group"
@@ -237,7 +237,7 @@ const HeroSection = () => {
                       </div>
                     </a>
                     <a
-                      href="https://linkedin.com"
+                      href="https://www.linkedin.com/in/vanessa-seewald-853232137/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group"
