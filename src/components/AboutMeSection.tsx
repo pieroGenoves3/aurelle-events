@@ -21,34 +21,80 @@ const AboutMeSection = () => {
         <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
           {/* Image on the left */}
           <div className="order-2 md:order-1">
-            <div className="relative">
-              <div 
-                className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl"
-                style={{ backgroundColor: 'hsl(var(--aurelle-light-green))' }}
-              >
-                <img
-                  src="/images/owner-photo.jpg"
-                  alt={t.about.imageAlt}
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    // Fallback placeholder
-                    e.currentTarget.style.display = 'none';
-                    const placeholder = document.createElement('div');
-                    placeholder.className = 'w-full h-full flex items-center justify-center text-aurelle-champagne text-lg font-tenez';
-                    placeholder.textContent = 'Owner Photo';
-                    placeholder.style.backgroundColor = 'hsl(var(--aurelle-light-green))';
-                    e.currentTarget.parentNode?.appendChild(placeholder);
+            <div className="relative group">
+              {/* Main image container with luxury styling */}
+              <div className="relative">
+                {/* Elegant frame/border */}
+                <div 
+                  className="absolute inset-0 rounded-3xl transform rotate-1 transition-transform duration-500 group-hover:rotate-2"
+                  style={{ 
+                    background: 'linear-gradient(135deg, hsl(var(--aurelle-champagne)), hsl(var(--aurelle-lavender)))',
+                    filter: 'blur(1px)'
                   }}
                 />
+                <div 
+                  className="relative aspect-[4/5] rounded-3xl overflow-hidden border-4 border-white/20 backdrop-blur-sm transform transition-transform duration-500 group-hover:scale-[1.02]"
+                  style={{ 
+                    backgroundColor: 'hsl(var(--aurelle-light-green))',
+                    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+                  }}
+                >
+                  <img
+                    src="/images/owner-photo.jpg"
+                    alt={t.about.imageAlt}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    onError={(e) => {
+                      // Fallback placeholder
+                      e.currentTarget.style.display = 'none';
+                      const placeholder = document.createElement('div');
+                      placeholder.className = 'w-full h-full flex items-center justify-center text-aurelle-champagne text-lg font-tenez';
+                      placeholder.textContent = 'Owner Photo';
+                      placeholder.style.backgroundColor = 'hsl(var(--aurelle-light-green))';
+                      e.currentTarget.parentNode?.appendChild(placeholder);
+                    }}
+                  />
+                  {/* Subtle overlay gradient for depth */}
+                  <div 
+                    className="absolute inset-0 opacity-20"
+                    style={{
+                      background: 'linear-gradient(135deg, transparent 0%, hsl(var(--aurelle-champagne) / 0.1) 100%)'
+                    }}
+                  />
+                </div>
               </div>
-              {/* Decorative elements */}
+              
+              {/* Luxury decorative elements */}
               <div 
-                className="absolute -top-4 -right-4 w-20 h-20 rounded-full opacity-60"
-                style={{ backgroundColor: 'hsl(var(--aurelle-lavender))' }}
+                className="absolute -top-8 -right-8 w-24 h-24 rounded-full opacity-70 animate-pulse"
+                style={{ 
+                  background: 'radial-gradient(circle, hsl(var(--aurelle-lavender)) 0%, hsl(var(--aurelle-lavender) / 0.3) 70%)',
+                  filter: 'blur(2px)'
+                }}
               />
               <div 
-                className="absolute -bottom-6 -left-6 w-16 h-16 rounded-full opacity-40"
-                style={{ backgroundColor: 'hsl(var(--aurelle-brown))' }}
+                className="absolute -bottom-8 -left-8 w-20 h-20 rounded-full opacity-50"
+                style={{ 
+                  background: 'radial-gradient(circle, hsl(var(--aurelle-brown)) 0%, hsl(var(--aurelle-brown) / 0.2) 70%)',
+                  filter: 'blur(1px)'
+                }}
+              />
+              
+              {/* Floating accent elements */}
+              <div 
+                className="absolute top-1/4 -left-4 w-3 h-3 rounded-full opacity-80 animate-bounce"
+                style={{ 
+                  backgroundColor: 'hsl(var(--aurelle-champagne))',
+                  animationDelay: '0.5s',
+                  animationDuration: '3s'
+                }}
+              />
+              <div 
+                className="absolute bottom-1/3 -right-2 w-2 h-2 rounded-full opacity-60 animate-bounce"
+                style={{ 
+                  backgroundColor: 'hsl(var(--aurelle-lavender))',
+                  animationDelay: '1s',
+                  animationDuration: '4s'
+                }}
               />
             </div>
           </div>
