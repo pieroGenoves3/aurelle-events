@@ -47,6 +47,7 @@ const Navigation = () => {
   // const eventsContent = useContent('events');
   const missionContent = useContent('mission');
   const contactContent = useContent('contact');
+  const aboutContent = useContent('about');
 
   // Build navigation items dynamically based on enabled sections
   const navigationItems = useMemo(() => {
@@ -60,43 +61,11 @@ const Navigation = () => {
       });
     }
     
-    // if ((mottosContent as any)?.enabled) {
-    //   items.push({ 
-    //     name: t.navigation.about, 
-    //     id: 'mottos',
-    //     order: 1
-    //   });
-    // }
-    
-    // if ((servicesContent as any)?.enabled) {
-    //   items.push({ 
-    //     name: t.navigation.services, 
-    //     id: 'services',
-    //     order: 2
-    //   });
-    // }
-    
-    // if ((testimonialsContent as any)?.enabled) {
-    //   items.push({ 
-    //     name: t.navigation.testimonials, 
-    //     id: 'testimonials',
-    //     order: 3
-    //   });
-    // }
-    
-    // if ((eventsContent as any)?.enabled) {
-    //   items.push({ 
-    //     name: t.navigation.events, 
-    //     id: 'events',
-    //     order: 4
-    //   });
-    // }
-    
     if ((missionContent as any)?.enabled) {
       items.push({ 
         name: t.navigation.mission, 
         id: 'mission',
-        order: 2
+        order: 1
       });
     }
     
@@ -104,6 +73,14 @@ const Navigation = () => {
       items.push({ 
         name: t.navigation.contact, 
         id: 'contact', // Link to hero section where the form is
+        order: 2
+      });
+    }
+
+    if ((aboutContent as any)?.enabled) {
+      items.push({ 
+        name: t.navigation.about, 
+        id: 'about', 
         order: 3
       });
     }
@@ -117,6 +94,7 @@ const Navigation = () => {
     // testimonialsContent, 
     // eventsContent,  
     contactContent, 
+    aboutContent,
     t.navigation
   ]);
 

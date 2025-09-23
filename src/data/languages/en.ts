@@ -4,9 +4,9 @@ export const en = {
     home: "Home",
     mission: "Mission",
     contact: "Contact",
+    about: "About Me",
     // events: "Events", 
     // testimonials: "Testimonials",
-    about: "About Me",
     // faq: "FAQ",
     // services: "Services"
   },
