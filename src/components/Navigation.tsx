@@ -249,12 +249,16 @@ const Navigation = () => {
                   <span className="text-sm text-foreground/60 font-gantari">Language</span>
                 </div>
                 <Select value={currentLanguage} onValueChange={(value) => setLanguage(value as any)}>
-                  <SelectTrigger className="w-full bg-white border-gray-200">
+                  <SelectTrigger className="w-full bg-white border-gray-200 focus:ring-0 focus:ring-offset-0 data-[state=open]:ring-0">
                     <SelectValue />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="bg-white border-gray-200">
                     {languages.map((lang) => (
-                      <SelectItem key={lang.code} value={lang.code}>
+                      <SelectItem 
+                        key={lang.code} 
+                        value={lang.code}
+                        className="focus:bg-transparent focus:text-current hover:bg-gray-50 data-[highlighted]:bg-gray-50 data-[highlighted]:text-current"
+                      >
                         <span className="flex items-center space-x-2">
                           <span>{lang.flag}</span>
                           <span>{lang.label}</span>
