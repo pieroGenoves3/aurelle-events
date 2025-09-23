@@ -80,6 +80,16 @@ export const pt = {
     title: "Perguntas Frequentes",
     subtitle: "Encontre respostas para perguntas comuns sobre nossos serviços"
   },
+  about: {
+    title: "Sobre Mim",
+    imageAlt: "Proprietária da Aurelle Events",
+    followMe: "Siga-me nas redes sociais",
+    description: [
+      "Bem-vindos à Aurelle Events! Sou apaixonada por criar experiências extraordinárias que celebram os momentos mais preciosos da vida. Com anos de experiência em planejamento de eventos de luxo, acredito que cada celebração deve ser tão única quanto as pessoas que ela homenageia.",
+      "De encontros íntimos a grandes celebrações, trabalho de perto com cada cliente para dar vida à sua visão. Minha atenção aos detalhes, abordagem criativa e dedicação à excelência garantem que cada evento se torne uma memória inesquecível.",
+      "Vamos criar algo belo juntos – porque cada momento merece ser celebrado com elegância e sofisticação."
+    ]
+  },
   footer: {
     leftTitle: "Pronto para Criar Algo Extraordinário?",
     leftDescription: "Se a sua história exige mais do que um evento, se merece ser esculpida numa atmosfera de rara beleza e significado duradouro, a Aurelle é a sua casa.",

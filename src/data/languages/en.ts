@@ -80,6 +80,16 @@ export const en = {
     title: "Frequently Asked Questions",
     subtitle: "Find answers to common questions about our services"
   },
+  about: {
+    title: "About Me",
+    imageAlt: "Owner of Aurelle Events",
+    followMe: "Follow me on social media",
+    description: [
+      "Welcome to Aurelle Events! I'm passionate about creating extraordinary experiences that celebrate life's most precious moments. With years of expertise in luxury event planning, I believe every celebration should be as unique as the people it honors.",
+      "From intimate gatherings to grand celebrations, I work closely with each client to bring their vision to life. My attention to detail, creative approach, and dedication to excellence ensures that every event becomes an unforgettable memory.",
+      "Let's create something beautiful together – because every moment deserves to be celebrated with elegance and sophistication."
+    ]
+  },
   footer: {
     leftTitle: "Ready to Create Something Extraordinary?",
     leftDescription: "If your story calls for more than an event, if it deserves to be sculpted into an atmosphere of rare beauty and lasting meaning, Aurelle is your house.",
