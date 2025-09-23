@@ -2,12 +2,14 @@
 import React, { useEffect, useRef } from 'react';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
+import AboutMeSection from '@/components/AboutMeSection';
 import MottosSection from '@/components/MottosSection';
 import ServicesSection from '@/components/ServicesSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import LocationSection from '@/components/LocationSection';
 import PastEventsSection from '@/components/PastEventsSection';
-import MissionSection from '@/components/MissionSection';
+
+
 import Footer from '@/components/Footer';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 
@@ -64,7 +66,7 @@ const Index = () => {
       >
         <Navigation />
         <HeroSection />
-        <MissionSection />
+        <AboutMeSection />
         <ServicesSection />
         <TestimonialsSection />
         {/* <PastEventsSection /> */}

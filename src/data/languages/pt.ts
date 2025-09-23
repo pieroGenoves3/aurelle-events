@@ -4,9 +4,9 @@ export const pt = {
     home: "Início",
     mission: "Missão", 
     contact: "Contato",
-    about: "Sobre Mim",
     // events: "Eventos",
     // testimonials: "Depoimentos",
+    // about: "Sobre Nós",
     // faq: "FAQ",
     // services: "Serviços"
   },
