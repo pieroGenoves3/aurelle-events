@@ -255,7 +255,7 @@ const HeroSection = () => {
         </div>
 
         {/* Contact Form Section */}
-        <div id = "contact" className="py-16 px-4 bg-aurelle-champagne">
+        <div id = "contact" className="py-16 px-4 bg-aurelle-champagne-dark">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 scroll-reveal">
               <h2 className="text-4xl md:text-5xl font-medium tracking-tighter mb-6 text-foreground font-tenez">
