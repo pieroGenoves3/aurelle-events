@@ -255,13 +255,13 @@ const HeroSection = () => {
         </div>
 
         {/* Contact Form Section */}
-        <div id = "contact" className="py-16 px-4 bg-aurelle-champagne">
+        <div id = "contact" className="py-16 px-4 bg-aurelle-dark-green">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 scroll-reveal">
-              <h2 className="text-4xl md:text-5xl font-medium tracking-tighter mb-6 text-foreground font-tenez">
+              <h2 className="text-4xl md:text-5xl font-medium tracking-tighter mb-6 font-tenez text-aurelle-champagne">
                 {t.hero.contactTitle}
               </h2>
-              <p className="text-lg text-foreground/80 max-w-2xl mx-auto font-gantari">
+              <p className="text-lg text-aurelle-champagne/60 max-w-2xl mx-auto font-gantari">
                 {t.hero.contactSubtitle}
               </p>
             </div>
@@ -286,12 +286,12 @@ const HeroSection = () => {
                     </label>
                   </p>
 
-                  <h3 className="text-2xl font-light mb-6 text-foreground font-tenez">{t.hero.sendMessage}</h3>
+                  <h3 className="text-2xl font-light mb-6 text-aurelle-champagne font-tenez">{t.hero.sendMessage}</h3>
                   
                   <div className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-foreground/80 mb-2 font-gantari">
+                        <label htmlFor="name" className="block text-sm font-medium text-aurelle-champagne mb-2 font-gantari">
                           {t.hero.nameField}
                         </label>
                         <Input
@@ -299,12 +299,12 @@ const HeroSection = () => {
                           name="name"
                           type="text"
                           required
-                          className="bg-white/30 border-white/40 text-foreground placeholder:text-foreground/50 focus:border-white/60"
+                          className="bg-white/30 border-white/40 text-aurelle-champagne placeholder:text-foreground/50 focus:border-white/60"
                           placeholder={t.hero.namePlaceholder}
                         />
                       </div>
                       <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-foreground/80 mb-2 font-gantari">
+                        <label htmlFor="email" className="block text-sm font-medium text-aurelle-champagne mb-2 font-gantari">
                           {t.hero.emailField}
                         </label>
                         <Input
@@ -312,7 +312,7 @@ const HeroSection = () => {
                           name="email"
                           type="email"
                           required
-                          className="bg-white/30 border-white/40 text-foreground placeholder:text-foreground/50 focus:border-white/60"
+                          className="bg-white/30 border-white/40 text-aurelle-champagne placeholder:text-foreground/50 focus:border-white/60"
                           placeholder={t.hero.emailPlaceholder}
                         />
                       </div>
@@ -320,7 +320,7 @@ const HeroSection = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       <div>
-                        <label htmlFor="countryCode" className="block text-sm font-medium text-foreground/80 mb-2 font-gantari">
+                        <label htmlFor="countryCode" className="block text-sm font-medium text-aurelle-champagne mb-2 font-gantari">
                           {t.hero.countryCodeField}
                         </label>
                         <Input
@@ -328,11 +328,11 @@ const HeroSection = () => {
                           name="countryCode"
                           type="text"
                           placeholder={t.hero.countryCodePlaceholder}
-                          className="bg-white/30 border-white/40 text-foreground placeholder:text-foreground/50 focus:border-white/60"
+                          className="bg-white/30 border-white/40 text-aurelle-champagne placeholder:text-foreground/50 focus:border-white/60"
                         />
                       </div>
                       <div className="md:col-span-2">
-                        <label htmlFor="phone" className="block text-sm font-medium text-foreground/80 mb-2 font-gantari">
+                        <label htmlFor="phone" className="block text-sm font-medium text-aurelle-champagne mb-2 font-gantari">
                           {t.hero.phoneNumberField}
                         </label>
                         <Input
@@ -341,7 +341,7 @@ const HeroSection = () => {
                           type="tel"
                           pattern="[0-9]*"
                           placeholder={t.hero.phoneNumberPlaceholder}
-                          className="bg-white/30 border-white/40 text-foreground placeholder:text-foreground/50 focus:border-white/60"
+                          className="bg-white/30 border-white/40 text-aurelle-champagne placeholder:text-foreground/50 focus:border-white/60"
                           onInput={(e) => {
                             const target = e.target as HTMLInputElement;
                             target.value = target.value.replace(/[^0-9]/g, '');
@@ -351,21 +351,21 @@ const HeroSection = () => {
                     </div>
 
                     <div>
-                      <label htmlFor="subject" className="block text-sm font-medium text-foreground/80 mb-2 font-gantari">
+                      <label htmlFor="subject" className="block text-sm font-medium text-aurelle-champagne mb-2 font-gantari">
                         {t.hero.subjectField}
                       </label>
                       <Input
                         id="subject"
                         name="subject"
                         type="text"
-                        className="bg-white/30 border-white/40 text-foreground placeholder:text-foreground/50 focus:border-white/60"
+                        className="bg-white/30 border-white/40 text-aurelle-champagne placeholder:text-foreground/50 focus:border-white/60"
                         placeholder={t.hero.subjectPlaceholder}
                       />
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-foreground/80 mb-2 font-gantari">
+                        <label className="block text-sm font-medium text-aurelle-champagne mb-2 font-gantari">
                           {t.hero.eventDateField}
                         </label>
                         <Popover>
@@ -373,7 +373,7 @@ const HeroSection = () => {
                             <Button
                               variant="outline"
                               className={cn(
-                                "w-full justify-start text-left font-normal bg-white/30 border-white/40 text-foreground hover:bg-white/40",
+                                "w-full justify-start text-left font-normal bg-white/30 border-white/40 text-aurelle-champagne hover:bg-white/40",
                                 !eventDate && "text-foreground/50"
                               )}
                             >
@@ -394,7 +394,7 @@ const HeroSection = () => {
                         <input type="hidden" name="eventDate" value={eventDate ? format(eventDate, "yyyy-MM-dd") : ""} />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-foreground/80 mb-2 font-gantari">
+                        <label className="block text-sm font-medium text-aurelle-champagne mb-2 font-gantari">
                           {t.hero.preferedContactDateField}
                         </label>
                         <Popover>
@@ -402,7 +402,7 @@ const HeroSection = () => {
                             <Button
                               variant="outline"
                               className={cn(
-                                "w-full justify-start text-left font-normal bg-white/30 border-white/40 text-foreground hover:bg-white/40",
+                                "w-full justify-start text-left font-normal bg-white/30 border-white/40 text-aurelle-champagne hover:bg-white/40",
                                 !contactDate && "text-foreground/50"
                               )}
                             >
@@ -425,7 +425,7 @@ const HeroSection = () => {
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-foreground/80 mb-2 font-gantari">
+                      <label htmlFor="message" className="block text-sm font-medium text-aurelle-champagne mb-2 font-gantari">
                         {t.hero.messageField}
                       </label>
                       <Textarea
@@ -433,14 +433,14 @@ const HeroSection = () => {
                         name="message"
                         required
                         rows={5}
-                        className="bg-white/30 border-white/40 text-foreground placeholder:text-foreground/50 focus:border-white/60 resize-none"
+                        className="bg-white/30 border-white/40 text-aurelle-champagne placeholder:text-foreground/50 focus:border-white/60 resize-none"
                         placeholder={t.hero.messagePlaceholder}
                       />
                     </div>
 
                     <Button
                       type="submit"
-                      className="w-full bg-aurelle-dark-green text-aurelle-champagne hover:bg-aurelle-light-green hover:text-aurelle-champagne font-medium transition-all duration-200 font-gantari"
+                      className="w-full bg-aurelle-dark-green text-aurelle-champagne hover:bg-aurelle-champagne hover:text-aurelle-black font-medium transition-all duration-200 font-gantari"
                     >
                       <Send size={16} className="mr-2" />
                       {t.hero.sendButton}
