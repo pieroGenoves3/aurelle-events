@@ -30,94 +30,65 @@ const Footer = () => {
   const contents = {
     privacy: (
       <div>
-        <h2 className="text-2xl font-semibold mb-4">Privacy Policy</h2>
+        <h2 className="text-2xl font-semibold mb-4">{t.privacyPolicy.title}</h2>
         <p>
-          [COMPANY NAME], headquartered at [FULL ADDRESS], respects your
-          privacy and processes personal data in accordance with the Swiss
-          Federal Data Protection Act (nFADP – Neue Datenschutzgesetz, effective
-          since 01/09/2023).
+          {t.privacyPolicy.introduction}
         </p>
 
-        <h3 className="mt-4 font-semibold">1. Data Collected</h3>
+        <h3 className="mt-4 font-semibold">{t.privacyPolicy.firstItem}</h3>
         <p>
-          We collect personal data that you voluntarily provide through our{" "}
-          <strong>contact form</strong>, including: name, email, phone number with country code, subject of the message, event date, preferred contact date and the message itself.
-        </p>
-        <p>
-          You may also contact us via email, phone, or WhatsApp. In this case,
-          the data you provide will be processed in the same way.
+          {t.privacyPolicy.firstDescription}
         </p>
 
-        <h3 className="mt-4 font-semibold">2. Use of Cookies</h3>
+        <h3 className="mt-4 font-semibold">{t.privacyPolicy.secondItem}</h3>
         <p>
-          This site <strong>does not use tracking, marketing, or analytics
-          cookies</strong>. Only <strong>essential technical cookies</strong> are
-          used, necessary for the operation of the page and automatically set
-          by the hosting provider (Netlify). These cookies do not personally
-          identify visitors and are not used for marketing purposes.
+          {t.privacyPolicy.secondDescription}
         </p>
 
-        <h3 className="mt-4 font-semibold">3. Purpose of Processing</h3>
-        <ul className="list-disc ml-6">
+        <h3 className="mt-4 font-semibold">{t.privacyPolicy.thirdItem}</h3>
+        <p>{t.privacyPolicy.thirdDescription}</p>
+        {/* <ul className="list-disc ml-6">
           <li>Responding to received inquiries;</li>
           <li>Providing information about our services;</li>
           <li>
             Keeping communication records, when required by law.
           </li>
-        </ul>
+        </ul> */}
 
-        <h3 className="mt-4 font-semibold">4. Legal Basis</h3>
+        <h3 className="mt-4 font-semibold">{t.privacyPolicy.fourthItem}</h3>
         <p>
-          The processing of your data is based on your{" "}
-          <strong>consent</strong> when submitting information through the form
-          or contacting us directly.
+          {t.privacyPolicy.fourthDescription}
         </p>
 
-        <h3 className="mt-4 font-semibold">5. Data Sharing</h3>
+        <h3 className="mt-4 font-semibold">{t.privacyPolicy.fifthItem}</h3>
         <p>
-          We do not share your personal data with third parties, except when
-          required by law or competent Swiss authorities.
+          {t.privacyPolicy.fifthDescription}
         </p>
 
-        <h3 className="mt-4 font-semibold">6. Data Subject Rights</h3>
+        <h3 className="mt-4 font-semibold">{t.privacyPolicy.sixthItem}</h3>
         <p>
-          Under the nFADP, you have the right to access, rectify, or delete
-          your data; revoke consent; and obtain information on the purpose and
-          processing methods of your personal data.
+          {t.privacyPolicy.sixthDescription}
         </p>
 
-        <h3 className="mt-4 font-semibold">7. Security</h3>
+        <h3 className="mt-4 font-semibold">{t.privacyPolicy.seventhItem}</h3>
         <p>
-          We implement appropriate technical and organizational measures to
-          protect your data from unauthorized access, loss, or misuse.
+          {t.privacyPolicy.seventhDescription}
         </p>
 
-        <h3 className="mt-4 font-semibold">8. Contact</h3>
+        <h3 className="mt-4 font-semibold">{t.privacyPolicy.eighthItem}</h3>
         <p>
           📧 Email: <a href={`mailto:${content.email}`}>{content.email}</a>
           <br />
-          📍 Address: {content.locations}
+          📍 Address: {t.privacyPolicy.eighthDescription}
         </p>
       </div>
     ),
 
     terms: (
       <div>
-        <h2 className="text-2xl font-semibold mb-4">Terms of Use</h2>
+        <h2 className="text-2xl font-semibold mb-4">{t.termsOfUse.title}</h2>
         <p>
-          By using this website, you agree to the following Terms of Use. The
-          website must be used only for lawful purposes and in compliance with
-          Swiss law.
-        </p>
-        <p>
-          All contents and materials displayed are the exclusive property of
-          [COMPANY NAME]. We do not guarantee the absence of technical errors,
-          and external links are the responsibility of their respective
-          operators.
-        </p>
-        <p>
-          These Terms are governed by Swiss law, and the competent court of
-          [CITY/REGION] is chosen for resolving any disputes.
+          {t.termsOfUse.description}
         </p>
       </div>
     ),
@@ -126,13 +97,7 @@ const Footer = () => {
       <div>
         <h2 className="text-2xl font-semibold mb-4">Cookie Policy</h2>
         <p>
-          This website only uses <strong>essential technical cookies</strong>,
-          necessary for the operation of the page and automatically set by the
-          hosting provider (Netlify). 
-        </p>
-        <p>
-          We do not use analytics, marketing, or tracking cookies. You can
-          manage cookies at any time via your browser settings.
+          {t.cookiePolicy.description}
         </p>
       </div>
     ),
@@ -187,26 +152,26 @@ const Footer = () => {
 
         <div className="border-t pt-8 text-center border-aurelle-light-green">
           <p className="opacity-100 text-aurelle-light-green">
-            {content.copyright}
+            {t.copyRight.description}
           </p>
           <div className="mt-4 space-x-4">
             <button
               onClick={() => setPopup("privacy")}
               className="text-aurelle-champagne underline"
             >
-              Privacy Policy
+{t.privacyPolicy.title}
             </button>
             <button
               onClick={() => setPopup("cookies")}
               className="text-aurelle-champagne underline"
             >
-              Cookie Policy
+              {t.cookiePolicy.title}
             </button>
             <button
               onClick={() => setPopup("terms")}
               className="text-aurelle-champagne underline"
             >
-              Terms of Use
+              {t.termsOfUse.title}
             </button>
           </div>
         </div>

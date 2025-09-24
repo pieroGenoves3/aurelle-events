@@ -114,4 +114,46 @@ export const en = {
     success: "Message sent successfully!",
     error: "Failed to send message. Please try again.",
   },
+  privacyPolicy: {
+    title: "Privacy Policy",
+    introduction:
+      "Aurelle Events, headquartered at Au Tombex 51, 3280 Murten, Switzerland, respects your privacy and processes personal data in accordance with the Swiss Federal Data Protection Act (nFADP – Neue Datenschutzgesetz, effective since 01/09/2023) and, for clients within the European Union, in accordance with the General Data Protection Regulation (GDPR – EU 2016/679).",
+    firstItem: "1. Data Collected",
+    secondItem: "2. Use of Cookies",
+    thirdItem: "3. Purpose of Processing",
+    fourthItem: "4. Legal Basis",
+    fifthItem: "5. Data Sharing",
+    sixthItem: "6. Data Subject Rights",
+    seventhItem: "7. Security",
+    eighthItem: "8. Contact",
+    firstDescription:
+      "We only collect personal data voluntarily provided through the contact form, including name, e-mail, phone number (if provided), and message.",
+    secondDescription:
+      "This website only uses essential technical cookies, necessary for the operation of the page and automatically set by the hosting provider (Netlify). We do not use analytics, marketing, or tracking cookies. Since no optional cookies are used, user consent is not required.",
+    thirdDescription:
+      "Responding to inquiries, Providing information about our services and Complying with legal record-keeping requirements.",
+    fourthDescription:
+      "The processing of your data is based on your consent when submitting information via the contact form or contacting us directly.",
+    fifthDescription:
+      "We do not share your data with third parties, except when required by law or Swiss/EU authorities.",
+    sixthDescription:
+      "You have the right to access, rectify, or delete your data, and to withdraw consent at any time.",
+    seventhDescription:
+      "We implement appropriate technical and organizational measures to protect your data from unauthorized access, loss, or misuse.",
+    eighthDescription:
+      "Address: Au Tombex 51, 3280 Murten, Switzerland",
+  },
+  cookiePolicy: {
+    title: "Cookie Policy",
+    description: "This website only uses essential technical cookies, necessary for the operation of the page and automatically set by the hosting provider (Netlify). We do not use analytics, marketing, or tracking cookies. You can manage cookies at any time via your browser settings.",
+  },
+  termsOfUse: {
+    title: "Terms of Use",
+    description:
+      "By using this website, you agree to the following Terms of Use. The website must be used only for lawful purposes and in compliance with Swiss law. All contents and materials displayed are the exclusive property of Aurelle Events. We do not guarantee the absence of technical errors, and external links are the responsibility of their respective operators. These Terms are governed by Swiss law, and the competent court of Murten (Gerichtskreis See) is chosen for resolving any disputes.",
+  },
+  copyRight: {
+    description:
+      "©️ 2025 Aurelle Events. All rights reserved. Crafted with passion for extraordinary experiences.",
+  },
 };
