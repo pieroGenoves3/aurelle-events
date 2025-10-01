@@ -138,7 +138,7 @@ const HeroSection = () => {
           <div
           id = "mission" 
             className="pt-10 pb-0 px-4 relative"
-            style={{ backgroundColor: 'hsl(var(--aurelle-dark-green))' }}
+            style={{ backgroundColor: 'hsl(var(--aurelle-full-black))' }}
           >
             {missionContent.backgroundImage && (
               <>
@@ -156,14 +156,14 @@ const HeroSection = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {/* Mission Text */}
                 <div className="space-y-8 scroll-reveal">
-                  <h2 className="text-4xl md:text-6xl font-light tracking-tighter text-aurelle-champagne opacity-100 font-tenez">
+                  <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-aurelle-brown opacity-100 font-tenez">
                     {t.mission.title}
                   </h2>
-                  <div className="space-y-6 text-lg md:text-xl leading-relaxed font-gantari">
+                  <div className="space-y-6 text-md md:text-md leading-relaxed font-gantari">
                     {t.mission.description.map((paragraph, index) => (
                       <p key={index} className="opacity-100 text-aurelle-champagne/80">{paragraph}</p>
                     ))}
-                    <p className="text-2xl font-light text-aurelle-brown/50 italic opacity-100 font-tenez">
+                    <p className="text-xl font-medium text-aurelle-brown/70 italic opacity-100 font-tenez">
                       "{t.mission.quote}"
                     </p>
                   </div>
@@ -188,7 +188,7 @@ const HeroSection = () => {
         <div 
           id="about"
           className="pt-10 pb-10 px-4 relative"
-          style={{ backgroundColor: 'hsl(var(--aurelle-dark-green))' }}
+          style={{ backgroundColor: 'hsl(var(--aurelle-full-black))' }}
         >
           <div className="max-w-6xl mx-auto relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -210,10 +210,10 @@ const HeroSection = () => {
 
               {/* About Me Content on the right */}
               <div className="space-y-8 scroll-reveal">
-                <h2 className="text-4xl md:text-6xl font-light tracking-tighter text-aurelle-champagne opacity-100 font-tenez">
+                <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-aurelle-brown opacity-100 font-tenez">
                   {t.about.title}
                 </h2>
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed font-gantari">
+                <div className="space-y-6 text-md md:text-md leading-relaxed font-gantari">
                   {t.about.description.map((paragraph, index) => (
                     <p key={index} className="opacity-100 text-aurelle-champagne/80">{paragraph}</p>
                   ))}
@@ -221,7 +221,7 @@ const HeroSection = () => {
 
                 {/* Social Media Icons */}
                 <div className="pt-6">
-                  <p className="text-sm font-gantari text-aurelle-light-green mb-4">
+                  <p className="text-sm font-gantari text-aurelle-brown mb-4">
                     {t.about.followMe}
                   </p>
                   <div className="flex space-x-6">
@@ -255,13 +255,13 @@ const HeroSection = () => {
         </div>
 
         {/* Contact Form Section */}
-        <div id = "contact" className="py-16 px-4 bg-aurelle-dark-green">
+        <div id = "contact" className="py-16 px-4" style={{ backgroundColor: 'hsl(var(--aurelle-full-black))' }}>
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 scroll-reveal">
-              <h2 className="text-4xl md:text-5xl font-medium tracking-tighter mb-6 font-tenez text-aurelle-champagne">
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-6 font-tenez text-aurelle-brown">
                 {t.hero.contactTitle}
               </h2>
-              <p className="text-lg text-aurelle-champagne/60 max-w-2xl mx-auto font-gantari">
+              <p className="text-md text-aurelle-champagne/90 max-w-2xl mx-auto font-gantari">
                 {t.hero.contactSubtitle}
               </p>
             </div>
@@ -440,7 +440,7 @@ const HeroSection = () => {
 
                     <Button
                       type="submit"
-                      className="w-full bg-aurelle-dark-green text-aurelle-champagne hover:bg-aurelle-champagne hover:text-aurelle-black font-medium transition-all duration-200 font-gantari"
+                      className="w-full bg-aurelle-champagne text-aurelle-black hover:bg-aurelle-brown hover:text-aurelle-champagne font-light transition-all duration-200 font-gantari"
                     >
                       <Send size={16} className="mr-2" />
                       {t.hero.sendButton}

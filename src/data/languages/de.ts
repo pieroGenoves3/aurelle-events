@@ -16,7 +16,7 @@ export const de = {
       "Außergewöhnliche Erlebnisse für Luxushochzeiten, Firmenevents und Haute-Couture-Modenschauen schaffen",
     cta: "Entdecken Sie Unsere Arbeit",
     missionQuote: "Unvergessliche Momente schaffen, die ein Leben lang halten",
-    contactTitle: "Betreten Sie den Aurelle-Circle",
+    contactTitle: "BETRETEN SIE DEN AURELLE-CIRCLE",
     contactSubtitle:
       "Aurelle richtet sich an jene, die das Wesentliche dem Überfluss vorziehen, die Reinheit der Form der blossen Inszenierung, die Präsenz der Darbietung.",
     contactInfo: "Kontaktinformationen",
@@ -42,7 +42,7 @@ export const de = {
       "Erzählen Sie uns mehr über Ihr Projekt oder Ihre Anfrage...",
   },
   mission: {
-    title: "Unser Wesen",
+    title: "UNSER WESEN",
     description: [
       "Bei Aurelle geben wir dem Unsichtbaren Form. Jede Feier wird als einzigartige Komposition konzipiert, präzise in der Struktur, tiefgreifend in der Präsenz, unmöglich zu wiederholen.",
       "Wir gestalten keine Events. Wir choreographieren Atmosphären. Wir übersetzen Stille in Schönheit, Details in Bedeutung, Vision in Vermächtnis.",
@@ -88,7 +88,7 @@ export const de = {
       "Finden Sie Antworten auf häufige Fragen zu unseren Dienstleistungen",
   },
   about: {
-    title: "Über Mich",
+    title: "ÜBER MICH",
     imageAlt: "Inhaberin von Aurelle Events",
     followMe: "Folgen Sie mir in den sozialen Medien",
     description: [

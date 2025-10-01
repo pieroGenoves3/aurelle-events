@@ -107,7 +107,7 @@ const Footer = () => {
     <footer
       id="contact"
       className="relative z-30 py-16 px-4"
-      style={{ backgroundColor: "hsl(var(--aurelle-dark-green))" }}
+      style={{ backgroundColor: "hsl(var(--aurelle-full-black))" }}
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
@@ -134,7 +134,7 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Mail
                   size={20}
-                  className="text-aurelle-light-green opacity-100"
+                  className="text-aurelle-brown opacity-100"
                   strokeWidth={1}
                 />
                 <span className="text-aurelle-champagne opacity-100">
@@ -150,8 +150,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t pt-8 text-center border-aurelle-light-green">
-          <p className="opacity-100 text-aurelle-light-green">
+        <div className="border-t pt-8 text-center border-aurelle-brown">
+          <p className="opacity-100 text-aurelle-champagne">
             {t.copyRight.description}
           </p>
           <div className="mt-4 space-x-4">

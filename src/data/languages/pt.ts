@@ -16,7 +16,7 @@ export const pt = {
       "Criando experiências extraordinárias para casamentos de luxo, eventos corporativos e desfiles de alta costura",
     cta: "Descubra Nosso Trabalho",
     missionQuote: "Criando momentos inesquecíveis que duram para sempre",
-    contactTitle: "Entre no Círculo Aurelle",
+    contactTitle: "ENTRE NO CÍRCULO AURELLE",
     contactSubtitle:
       "A Aurelle é para aqueles que procuram a essência em vez do excesso, a verdade em vez da ostentação, a presença em vez da performance.",
     contactInfo: "Informações de Contato",
@@ -41,7 +41,7 @@ export const pt = {
     messagePlaceholder: "Diga-nos mais sobre o seu projeto ou questão...",
   },
   mission: {
-    title: "Nossa Essência",
+    title: "NOSSA ESSÊNCIA",
     description: [
       "Na Aurelle, damos forma ao que não se vê. Cada celebração é concebida como uma composição singular, precisa na estrutura, profunda na presença, impossível de repetir.",
       "Não desenhamos eventos. Coreografamos atmosferas. Traduzimos o silêncio em beleza, o detalhe em significado, a visão em legado.",
@@ -86,7 +86,7 @@ export const pt = {
     subtitle: "Encontre respostas para perguntas comuns sobre nossos serviços",
   },
   about: {
-    title: "Sobre Mim",
+    title: "SOBRE MIM",
     imageAlt: "Proprietária da Aurelle Events",
     followMe: "Siga-me nas redes sociais",
     description: [
